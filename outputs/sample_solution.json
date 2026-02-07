@@ -1,0 +1,26 @@
+{
+  "N": 1,
+  "m": 2,
+  "A": [
+    0,
+    1
+  ],
+  "metrics": {
+    "N": 1,
+    "m": 2,
+    "S": 1,
+    "missing_count": 0,
+    "peak": 1,
+    "H3": 0,
+    "H4": 0,
+    "E": 1,
+    "Emin": 1,
+    "rho": 1.0,
+    "count_w1": 1,
+    "count_w2": 0,
+    "count_w3": 0,
+    "count_w4": 0,
+    "count_w5": 0,
+    "count_w6plus": 0
+  }
+}

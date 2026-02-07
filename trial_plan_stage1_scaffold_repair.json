@@ -1,0 +1,120 @@
+{
+  "suite_name": "N200_m26_stage1_kernel_to_global",
+  "base_problem": { "N": 200, "m": 26 },
+
+  "init": {
+    "initial_marks": [0,1,5,6,7,8,10,16,19,21,32,46,48,56,68,70,96,104,112,127,144,152,160,168,176,200],
+    "note": "This is the kernel-best warm start (M50=0) with missing_count=35."
+  },
+
+  "phase_plan": [
+    {
+      "phase": "stage1_scaffold_repair",
+      "iterations": 500000,
+      "seeds": [1,2,3,4,5,6,7,8,9,10],
+
+      "freeze_policy": {
+        "always_freeze": [0,1,5,6,7,8,10,16,19,21,200],
+        "freeze_low_le": 70,
+        "also_freeze_top_scaffold_by_support": 2,
+        "support_range_max_d": 50,
+        "note": "Keeps the small-distance toolbox stable."
+      },
+
+      "move_policy": {
+        "scaffold_threshold": 80,
+        "movable_marks_rule": "only_move_marks_gt_threshold_and_not_frozen",
+        "proposal_mix": { "repair_mode_prob": 0.85, "random_mode_prob": 0.15 },
+
+        "repair_mode": {
+          "target_missing_only": true,
+          "target_missing_min_d": 51,
+          "missing_weight": "d^2",
+          "anchors": {
+            "mode": "marks_le_value_plus_frozen_support",
+            "le_value": 80
+          },
+          "candidate_positions": {
+            "mode": "b_plus_minus_d",
+            "dedupe": true
+          },
+          "mark_selection": {
+            "strategy": "low_unique_coverage_responsibility",
+            "top_k_bias": 5
+          }
+        },
+
+        "random_mode": {
+          "strategy": "random_scaffold_move",
+          "sample_range": [81, 199]
+        }
+      },
+
+      "acceptance": {
+        "objective": "weighted_missing_sum",
+        "weight_function": "d^2",
+        "kernel_guard": {
+          "require_M25": 0,
+          "allow_M50_max": 2,
+          "M26_to_M50_penalty": 2000
+        },
+        "metropolis": {
+          "T0": 8000,
+          "alpha": 0.99999,
+          "accept_equal_prob": 0.05
+        }
+      },
+
+      "escape_hatch": {
+        "enable_two_mark_moves": true,
+        "trigger": { "stall_steps": 5000, "missing_count_at_most": 20 },
+        "proposal_prob_when_enabled": 0.30,
+        "coupled_move": {
+          "step1": "place_mark_to_hit_target_missing_d",
+          "step2": "repair_largest_newly_missing_or_restore_kernel_guard"
+        }
+      },
+
+      "outputs": {
+        "root_dir": "results/N200_m26/stage1_scaffold_repair/",
+        "save_per_seed_best": true,
+        "save_per_seed_trace": true,
+        "save_missing_list": true,
+        "save_marks_best": true,
+        "save_hotspot_table": true,
+        "stop_early": {
+          "enabled": true,
+          "condition": "missing_count == 0",
+          "save_and_halt_seed": true
+        }
+      }
+    }
+  ],
+
+  "reporting": {
+    "per_seed_best_json": {
+      "fields": [
+        "seed",
+        "iterations_run",
+        "best.missing_count",
+        "best.M25",
+        "best.M50",
+        "best.marks",
+        "best.missing_distances",
+        "diagnostics.accept_rate",
+        "diagnostics.repair_accepts",
+        "diagnostics.random_accepts",
+        "diagnostics.coupled_accepts",
+        "hotspots_top20"
+      ]
+    },
+    "trial_summary_json": {
+      "fields": [
+        "best_missing_overall",
+        "median_best_missing",
+        "complete_hits",
+        "best_seed"
+      ]
+    }
+  }
+}
