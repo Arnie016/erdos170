@@ -1,0 +1,5 @@
+policy,D_max,thrash_count,E_total,max_pair_peak,defect_count
+anytime_maximin,1,5999,13022793333,97,10101093
+end_of_horizon,1,5999,13022635254,95,10101204
+round_robin,1,5999,127175577000,600,1056840
+design_based,6,5999,38639181900,599,5342575
