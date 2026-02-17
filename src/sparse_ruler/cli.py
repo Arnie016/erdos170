@@ -4,6 +4,8 @@ import argparse
 import json
 from pathlib import Path
 
+from .e_hunt import run_e_hunt_from_config_path
+from .excess import parse_fixed_points, run_excess_baseline
 from .metrics import compute_W, format_csv_header, summarize_metrics
 from .search import (
     default_large_scan,
@@ -44,6 +46,36 @@ def build_parser() -> argparse.ArgumentParser:
     metrics_parser = subparsers.add_parser("metrics", help="compute metrics for a given ruler")
     metrics_parser.add_argument("N", type=int)
     metrics_parser.add_argument("A", type=str, help="comma-separated mark list")
+
+    e_hunt_parser = subparsers.add_parser(
+        "e-hunt",
+        help="run the staged delete-and-repair E-hunt campaign",
+    )
+    e_hunt_parser.add_argument(
+        "--config",
+        type=Path,
+        required=True,
+        help="Path to E-hunt JSON config",
+    )
+
+    excess_parser = subparsers.add_parser(
+        "excess",
+        help="generate deterministic Wichmann excess baseline reports",
+    )
+    excess_parser.add_argument("--start", type=int, default=500)
+    excess_parser.add_argument("--end", type=int, default=20000)
+    excess_parser.add_argument("--step", type=int, default=100)
+    excess_parser.add_argument(
+        "--fixed-points",
+        nargs="+",
+        default=["500,700,1000"],
+        help="Comma-separated and/or space-separated list of fixed N points",
+    )
+    excess_parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=Path("results/excess_baseline"),
+    )
 
     return parser
 
@@ -92,6 +124,25 @@ def handle_metrics(args: argparse.Namespace) -> int:
     return 0
 
 
+def handle_e_hunt(args: argparse.Namespace) -> int:
+    summary = run_e_hunt_from_config_path(args.config)
+    print(json.dumps(summary, indent=2))
+    return 0
+
+
+def handle_excess(args: argparse.Namespace) -> int:
+    fixed_points = parse_fixed_points(args.fixed_points)
+    summary = run_excess_baseline(
+        start=args.start,
+        end=args.end,
+        step=args.step,
+        fixed_points=fixed_points,
+        out_dir=args.out_dir,
+    )
+    print(json.dumps(summary, indent=2))
+    return 0
+
+
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
@@ -103,6 +154,10 @@ def main() -> int:
         return handle_large_scan(args)
     if args.command == "metrics":
         return handle_metrics(args)
+    if args.command == "e-hunt":
+        return handle_e_hunt(args)
+    if args.command == "excess":
+        return handle_excess(args)
     raise ValueError(f"Unknown command {args.command}")
 
 

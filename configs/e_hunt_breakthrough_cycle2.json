@@ -1,0 +1,107 @@
+{
+  "suite": "E_hunt_breakthrough_cycle2",
+  "random_seed_base": 20260216,
+  "targets": [
+    {
+      "N": 500,
+      "m_try": 39,
+      "start_marks": [0, 1, 2, 3, 4, 5, 6, 13, 26, 39, 52, 65, 78, 91, 118, 145, 172, 199, 226, 253, 280, 307, 334, 361, 388, 402, 416, 430, 444, 458, 472, 486, 487, 488, 489, 490, 491, 492, 499, 500],
+      "candidate_allowlist_deleted_marks": [499, 6, 13]
+    },
+    {
+      "N": 700,
+      "m_try": 46,
+      "start_marks": [0, 1, 2, 3, 4, 5, 6, 7, 15, 30, 45, 60, 75, 90, 105, 120, 151, 182, 213, 244, 275, 306, 337, 368, 399, 430, 461, 492, 523, 554, 570, 586, 602, 618, 634, 650, 666, 682, 683, 684, 685, 686, 687, 688, 689, 697, 700],
+      "candidate_allowlist_deleted_marks": [697, 1, 2]
+    },
+    {
+      "N": 1000,
+      "m_try": 55,
+      "start_marks": [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 34, 51, 68, 85, 102, 119, 136, 153, 188, 223, 258, 293, 328, 363, 398, 433, 468, 503, 538, 573, 608, 643, 678, 713, 748, 783, 818, 836, 854, 872, 890, 908, 926, 944, 962, 980, 981, 982, 983, 984, 985, 986, 987, 988, 997, 1000],
+      "candidate_allowlist_deleted_marks": [997, 6, 7]
+    }
+  ],
+  "freeze_policy": {
+    "always_freeze": [0, "N"],
+    "freeze_prefix_le": 8
+  },
+  "objective": {
+    "missing_power_p": 2,
+    "kernel_penalty_lambda": 2000,
+    "kernel_guard": {
+      "require_M25": 0,
+      "allow_M50_max": 2
+    }
+  },
+  "moves": {
+    "repair_prob": 0.9,
+    "random_prob": 0.1,
+    "accept_equal_prob": 0.02,
+    "anchors": {
+      "le_value": 120,
+      "top_high": 6
+    },
+    "candidate_positions": {
+      "pool_size": 120,
+      "dedupe": true,
+      "bias_to_upper_half": true,
+      "upper_half_prob": 0.75
+    },
+    "mark_selection": {
+      "top_k_bias": 8,
+      "responsibility_max_d": 50
+    },
+    "coupled": {
+      "enabled": true,
+      "trigger": {
+        "stall_steps": 5000,
+        "best_missing_count_at_most": 25
+      },
+      "proposal_prob": 0.35
+    },
+    "endpoint_hole_mode": {
+      "enabled": true,
+      "target_distances": ["N-2"],
+      "attempt_positions": [2, "N-1", "N-2"],
+      "streak_steps": 5000
+    },
+    "endpoint_window_mode": {
+      "enabled": true,
+      "trigger_best_missing_at_most": 12,
+      "trigger_stall_steps": 3000,
+      "tail_window_k": 16,
+      "low_anchor_max": 12,
+      "proposal_prob": 0.45
+    }
+  },
+  "search": {
+    "log_interval": 0,
+    "save_best_every": 0,
+    "skip_championship_if_complete": true,
+    "stop_on_first_complete_global": true,
+    "resume_existing_candidates": true,
+    "stages": {
+      "screen": {
+        "enabled": true,
+        "seeds": 12,
+        "iterations_per_seed": 60000,
+        "promote_top_k": 2
+      },
+      "deep": {
+        "enabled": true,
+        "seeds": 36,
+        "iterations_per_seed": 220000,
+        "promote_top_k": 1
+      },
+      "championship": {
+        "enabled": true,
+        "seeds": 80,
+        "iterations_per_seed": 400000
+      }
+    }
+  },
+  "outputs": {
+    "root_dir": "results/e_hunt_breakthrough_cycle2",
+    "save_trace": false
+  }
+}

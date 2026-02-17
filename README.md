@@ -59,3 +59,30 @@ python -m sparse_ruler.cli small-scan --runs 200 --steps 200000 --processes 8 --
 ```bash
 pytest
 ```
+
+## Paper Automation (GitHub + Overleaf)
+
+Generate the latest paper bundle locally:
+
+```bash
+cd /Users/hema/Desktop/erdos170
+export PYTHONPATH=src
+python3 scripts/generate_research_report_to_date.py
+python3 scripts/build_paper_artifacts.py --repo-root .
+```
+
+This writes:
+
+- `paper/main.tex`
+- `paper/generated/tables.tex`
+- `paper/generated/status_snapshot.json`
+- copies of generated markdown/json reports into `paper/generated/`
+
+CI workflow: `.github/workflows/paper-automation.yml`
+
+- Auto-runs on `main` pushes, nightly, and manual dispatch.
+- Rebuilds paper artifacts and uploads `erdos170-paper-bundle` artifact.
+- Optional Overleaf sync if repository secrets are set:
+  - `OVERLEAF_GIT_URL` (required for sync; use Overleaf project Git URL, no token in URL)
+  - `OVERLEAF_GIT_TOKEN` (required for sync; generated in Overleaf account Git settings)
+  - `OVERLEAF_GIT_BRANCH` (optional, default `master`)
