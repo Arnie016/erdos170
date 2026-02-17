@@ -138,7 +138,18 @@ jobs:
               ;;
           esac
 
-          BRANCH="${OVERLEAF_GIT_BRANCH:-master}"
+          RAW_BRANCH="${OVERLEAF_GIT_BRANCH:-master}"
+          BRANCH="$(printf '%s' "$RAW_BRANCH" | tr -d '\r' | xargs)"
+          BRANCH="${BRANCH#refs/heads/}"
+          if [ -z "$BRANCH" ]; then
+            BRANCH="master"
+          fi
+          case "$BRANCH" in
+            *[!A-Za-z0-9._/-]*)
+              echo "::warning::Invalid OVERLEAF_GIT_BRANCH value; defaulting to master."
+              BRANCH="master"
+              ;;
+          esac
           rm -rf /tmp/overleaf-sync
           export GIT_TERMINAL_PROMPT=0
           AUTH_B64="$(printf 'git:%s' "$OVERLEAF_GIT_TOKEN" | base64 | tr -d '\n')"
