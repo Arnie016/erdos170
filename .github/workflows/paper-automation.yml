@@ -145,10 +145,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git show-ref --verify --quiet "refs/remotes/origin/${BRANCH}"; then
-            git checkout -B "$BRANCH" "origin/$BRANCH"
+          if git rev-parse --verify HEAD >/dev/null 2>&1; then
+            if git show-ref --verify --quiet "refs/remotes/origin/${BRANCH}"; then
+              git checkout -B "$BRANCH" "origin/$BRANCH"
+            else
+              git checkout -B "$BRANCH"
+            fi
           else
-            git checkout -B "$BRANCH"
+            echo "Overleaf repo appears empty; creating orphan branch ${BRANCH}."
+            git checkout --orphan "$BRANCH"
           fi
 
           rsync -a --delete "$GITHUB_WORKSPACE/paper/" /tmp/overleaf-sync/
