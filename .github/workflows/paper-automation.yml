@@ -154,7 +154,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           echo "Preparing sync to branch ${BRANCH}."
 
-          rsync -a --delete "$GITHUB_WORKSPACE/paper/" /tmp/overleaf-sync/
+          rsync -a --delete --exclude ".git" "$GITHUB_WORKSPACE/paper/" /tmp/overleaf-sync/
           git add -A
           if git diff --cached --quiet; then
             echo "No paper changes to sync."
