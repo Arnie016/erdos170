@@ -98,12 +98,15 @@ jobs:
           fi
 
       - name: Optional Overleaf sync
-        if: ${{ secrets.OVERLEAF_GIT_URL != '' && secrets.OVERLEAF_GIT_TOKEN != '' }}
         env:
           OVERLEAF_GIT_URL: ${{ secrets.OVERLEAF_GIT_URL }}
           OVERLEAF_GIT_TOKEN: ${{ secrets.OVERLEAF_GIT_TOKEN }}
           OVERLEAF_GIT_BRANCH: ${{ secrets.OVERLEAF_GIT_BRANCH }}
         run: |
+          if [ -z "${OVERLEAF_GIT_URL:-}" ] || [ -z "${OVERLEAF_GIT_TOKEN:-}" ]; then
+            echo "Skipping Overleaf sync: missing OVERLEAF_GIT_URL or OVERLEAF_GIT_TOKEN."
+            exit 0
+          fi
           BRANCH="${OVERLEAF_GIT_BRANCH:-master}"
           rm -rf /tmp/overleaf-sync
           mkdir -p /tmp/overleaf-sync
