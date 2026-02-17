@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-12T19:21:33.092318+00:00",
+  "generated_at": "2026-02-17T09:46:11.582719+00:00",
   "range": {
     "start": 500,
     "end": 20000,
@@ -53,7 +53,7 @@
   "ratio": {
     "min": 1.7146428199482247,
     "max": 1.7888543819998317,
-    "mean": 1.7400838531003002
+    "mean": 1.7400838531003007
   },
   "E_distribution": {
     "-1": 1,
@@ -62,7 +62,7 @@
   },
   "complete_failures": [],
   "files": {
-    "table": "/Users/hema/Desktop/erdos170/results/excess_baseline/excess_table.csv",
-    "summary": "/Users/hema/Desktop/erdos170/results/excess_baseline/excess_summary.json"
+    "table": "results/excess_baseline/excess_table.csv",
+    "summary": "results/excess_baseline/excess_summary.json"
   }
 }

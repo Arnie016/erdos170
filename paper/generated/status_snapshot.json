@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-02-17T09:21:40.158828+00:00",
+  "generated_at_utc": "2026-02-17T09:46:11.785147+00:00",
   "paths": {
-    "baseline_summary": "/Users/hema/Desktop/erdos170/results/excess_baseline/excess_summary.json",
-    "cycle1_summary": "/Users/hema/Desktop/erdos170/results/e_hunt_delete_repair/summary.json",
-    "cycle2_root": "/Users/hema/Desktop/erdos170/results/e_hunt_breakthrough_cycle2",
-    "generated_dir": "/Users/hema/Desktop/erdos170/paper/generated"
+    "baseline_summary": "/home/runner/work/erdos170/erdos170/results/excess_baseline/excess_summary.json",
+    "cycle1_summary": "/home/runner/work/erdos170/erdos170/results/e_hunt_delete_repair/summary.json",
+    "cycle2_root": "/home/runner/work/erdos170/erdos170/results/e_hunt_breakthrough_cycle2",
+    "generated_dir": "/home/runner/work/erdos170/erdos170/paper/generated"
   },
   "copied": {
     "research_report_cycle1_md": true,
@@ -14,49 +14,11 @@
     "cycle1_summary_json": true
   },
   "cycle2_progress": {
-    "mode": "partial",
+    "mode": "missing",
     "summary_exists": false,
-    "summary_path": "/Users/hema/Desktop/erdos170/results/e_hunt_breakthrough_cycle2/summary.json",
-    "best_rows": [
-      {
-        "N": 500,
-        "m_try": 39,
-        "stage_best_missing_count": 1,
-        "stage_best_missing_list": [
-          493
-        ],
-        "stage": "screen",
-        "candidate_id": "delete_499_idx_38",
-        "deleted_mark": 499
-      },
-      {
-        "N": 700,
-        "m_try": 46,
-        "stage_best_missing_count": 3,
-        "stage_best_missing_list": [
-          690,
-          691,
-          692
-        ],
-        "stage": "screen",
-        "candidate_id": "delete_697_idx_45",
-        "deleted_mark": 697
-      },
-      {
-        "N": 1000,
-        "m_try": 55,
-        "stage_best_missing_count": 3,
-        "stage_best_missing_list": [
-          989,
-          990,
-          991
-        ],
-        "stage": "screen",
-        "candidate_id": "delete_997_idx_54",
-        "deleted_mark": 997
-      }
-    ],
-    "best_file_count": 465,
-    "candidate_file_count": 16
+    "summary_path": "/home/runner/work/erdos170/erdos170/results/e_hunt_breakthrough_cycle2/summary.json",
+    "best_rows": [],
+    "best_file_count": 0,
+    "candidate_file_count": 0
   }
 }
