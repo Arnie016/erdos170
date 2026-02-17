@@ -1,0 +1,47 @@
+\section{Methods}
+
+\subsection{Software and Artifact Layout}
+All experiments and reports are generated from the repository pipeline:
+\begin{itemize}[leftmargin=1.6em]
+\item deterministic baseline: \texttt{scripts/report\_excess\_baseline.py},
+\item staged delete-and-repair: \texttt{scripts/run\_e\_hunt\_*.py},
+\item report generation: \texttt{scripts/generate\_research\_report\_*.py},
+\item paper packaging: \texttt{scripts/build\_paper\_artifacts.py}.
+\end{itemize}
+The GitHub Action assembles a reproducible bundle and syncs \texttt{paper/}
+to Overleaf.
+
+\subsection{Deterministic Baseline Lane}
+We evaluate a deterministic constructor over
+$N=500,\dots,20000$ in increments of $100$, and fixed points
+$N=500,700,1000$. For each $N$, we record:
+\begin{itemize}[leftmargin=1.6em]
+\item mark count $m$,
+\item ratio $m/\sqrt{N}$,
+\item base term and excess $E$,
+\item completeness (\texttt{missing\_count}).
+\end{itemize}
+
+\subsection{Delete-and-Repair Lane}
+We target $m-1$ instances:
+\[
+(N,m_{\text{try}})\in\{(500,39),(700,46),(1000,55)\}.
+\]
+For each target, we delete one non-endpoint mark from a complete seed and run
+staged repair search. Objective is lexicographic:
+\begin{enumerate}[leftmargin=1.6em]
+\item minimize \texttt{missing\_count},
+\item minimize weighted missing-distance score
+      $\sum_{d \in \mathcal{M}} d^2 + 2000\cdot M50$.
+\end{enumerate}
+Kernel guards enforce $M25=0$ and $M50\le 2$.
+
+\subsection{Integrity and Verification}
+Before any completeness claim, we require:
+\begin{itemize}[leftmargin=1.6em]
+\item sorted/unique marks,
+\item fixed endpoints,
+\item exact mark count,
+\item independent completeness re-check outside move-state caches.
+\end{itemize}
+This prevents false positives from incremental-state bugs.

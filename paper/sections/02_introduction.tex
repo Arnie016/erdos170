@@ -1,0 +1,25 @@
+\section{Introduction}
+
+Let $A \subseteq \{0,1,\dots,N\}$ with $0,N \in A$. The set $A$ is a
+\emph{complete sparse ruler} if every distance $d \in \{1,\dots,N\}$ is
+realized as $d = a-b$ for some $a,b \in A$. Define $F(N)$ as the minimum
+number of marks in such a set. Erd\H{o}s Problem 170 asks for the limiting
+constant
+\[
+\lim_{N\to\infty}\frac{F(N)}{\sqrt{N}}.
+\]
+
+The problem is open. Existing literature places the asymptotic constant between
+roughly $1.56$ (lower-bound territory) and $\sqrt{3}\approx1.732$ from
+construction-based upper bounds \cite{erdos170,wolframSparseRuler}.
+
+This work focuses on a practical, finite-$N$, reproducible program:
+\begin{enumerate}[leftmargin=1.6em]
+\item Validate deterministic constructions as a correctness baseline.
+\item Run staged delete-and-repair searches at fixed targets
+      $N\in\{500,700,1000\}$ for $m-1$ witnesses.
+\item Produce machine-checkable artifacts and a paper-ready report pipeline.
+\end{enumerate}
+
+Our objective is not to claim asymptotic resolution, but to generate reliable
+finite-$N$ evidence and structural signals that can guide stronger theory.

@@ -1,0 +1,25 @@
+\section{Background and Framing}
+
+\subsection{Known Construction Baseline}
+Wichmann-style rulers provide explicit complete constructions and motivate the
+classical $\sqrt{3}$ upper-constant narrative \cite{wolframSparseRuler}.
+For computational work, this baseline is essential as both:
+\begin{enumerate}[leftmargin=1.6em]
+\item a source of deterministic witnesses, and
+\item an oracle to validate completeness checkers and endpoint handling.
+\end{enumerate}
+
+\subsection{Excess Parameterization}
+Following common sparse-ruler practice, we track an excess term
+\[
+E = m - \mathrm{nint}\!\left(\sqrt{3N+\frac{9}{4}}\right),
+\]
+which separates ``construction quality at finite $N$'' from raw $m/\sqrt{N}$
+ratios. In this campaign, excess reporting provides interpretable comparisons
+across deterministic baseline and heuristic outputs.
+
+\subsection{Interpretation Discipline}
+When randomized sweeps produce zero complete hits for a fixed $(N,m)$, metrics
+such as \texttt{best\_missing} measure \emph{search performance under budget},
+not impossibility. Therefore, all claims here are restricted to verified
+artifacts and explicitly avoid extrapolating no-hit runs into asymptotic claims.

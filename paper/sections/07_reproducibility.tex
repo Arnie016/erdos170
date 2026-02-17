@@ -1,0 +1,22 @@
+\section{Reproducibility}
+
+\subsection{Core Commands}
+\begin{verbatim}
+cd /Users/hema/Desktop/erdos170
+export PYTHONPATH=src
+python3 scripts/report_excess_baseline.py --start 500 --end 20000 --step 100 \
+  --fixed-points 500,700,1000 --out-dir results/excess_baseline
+python3 scripts/generate_research_report_cycle1.py
+python3 scripts/generate_research_report_to_date.py
+python3 scripts/build_paper_artifacts.py --repo-root .
+\end{verbatim}
+
+\subsection{Continuous Sync}
+GitHub Actions automatically rebuilds reports, refreshes
+\texttt{paper/generated/*}, uploads a paper artifact bundle, and synchronizes
+to Overleaf via Git integration when credentials are present.
+
+\subsection{Data Sources in This Draft}
+This manuscript reflects committed repository artifacts under
+\texttt{results/} and \texttt{paper/generated/}. Generated tables are included
+verbatim from the latest pipeline output at build time \cite{repoArtifacts}.

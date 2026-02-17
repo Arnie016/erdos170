@@ -2,7 +2,9 @@
 
 This folder is Overleaf-ready.
 
-- `main.tex`: entrypoint.
+- `main.tex`: entrypoint (loads section files).
+- `sections/*.tex`: narrative draft sections.
+- `references.bib`: bibliography.
 - `generated/`: auto-created artifacts from experiment outputs.
 
 Local refresh:
