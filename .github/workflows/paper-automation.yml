@@ -144,22 +144,7 @@ jobs:
           cd /tmp/overleaf-sync
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          if git rev-parse --verify HEAD >/dev/null 2>&1; then
-            if git show-ref --verify --quiet "refs/remotes/origin/${BRANCH}"; then
-              git checkout -B "$BRANCH" "origin/$BRANCH"
-            else
-              git checkout -B "$BRANCH"
-            fi
-          else
-            CURRENT_UNBORN_BRANCH="$(git symbolic-ref --short HEAD 2>/dev/null || true)"
-            if [ "$CURRENT_UNBORN_BRANCH" = "$BRANCH" ]; then
-              echo "Overleaf repo appears empty; using existing unborn branch ${BRANCH}."
-            else
-              echo "Overleaf repo appears empty; creating orphan branch ${BRANCH}."
-              git checkout --orphan "$BRANCH"
-            fi
-          fi
+          echo "Preparing sync to branch ${BRANCH}."
 
           rsync -a --delete "$GITHUB_WORKSPACE/paper/" /tmp/overleaf-sync/
           git add -A
@@ -169,7 +154,7 @@ jobs:
           fi
 
           git commit -m "Auto-sync paper artifacts $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          if ! git push origin "$BRANCH"; then
+          if ! git push origin HEAD:"$BRANCH"; then
             echo "::error::Failed to push to Overleaf. Token may be invalid or branch may be protected."
             exit 1
           fi
