@@ -86,3 +86,40 @@ CI workflow: `.github/workflows/paper-automation.yml`
   - `OVERLEAF_GIT_URL` (required for sync; use Overleaf project Git URL, no token in URL)
   - `OVERLEAF_GIT_TOKEN` (required for sync; generated in Overleaf account Git settings)
   - `OVERLEAF_GIT_BRANCH` (optional, default `master`)
+
+## Cycle-3 Tail-Focused Run
+
+```bash
+cd /Users/hema/Desktop/erdos170
+source .venv/bin/activate
+export PYTHONPATH=src
+python3 scripts/run_e_hunt_breakthrough_cycle3.py \
+  --config configs/e_hunt_breakthrough_cycle3_tailfocus.json
+```
+
+Outputs land under:
+
+- `results/e_hunt_breakthrough_cycle3_tailfocus/`
+
+## SAT Feasibility Lane (N=500, m=39)
+
+Build DIMACS + attempt direct solve (requires `python-sat`):
+
+```bash
+cd /Users/hema/Desktop/erdos170
+source .venv/bin/activate
+pip install "python-sat[pblib,aiger]"
+export PYTHONPATH=src
+python3 scripts/run_sat_sparse_ruler_feasibility.py \
+  --N 500 --m 39 \
+  --mode solve \
+  --dimacs-out results/sat_feasibility/sparse_ruler_N500_m39.cnf \
+  --json-out results/sat_feasibility/sparse_ruler_N500_m39_result.json
+```
+
+DIMACS-only mode (external solver):
+
+```bash
+python3 scripts/run_sat_sparse_ruler_feasibility.py \
+  --N 500 --m 39 --mode dimacs
+```
