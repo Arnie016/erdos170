@@ -107,11 +107,18 @@ jobs:
             echo "Skipping Overleaf sync: missing OVERLEAF_GIT_URL or OVERLEAF_GIT_TOKEN."
             exit 0
           fi
-          case "$OVERLEAF_GIT_URL" in
-            https://git.overleaf.com/*) ;;
+
+          RAW_OVERLEAF_GIT_URL="$OVERLEAF_GIT_URL"
+          case "$RAW_OVERLEAF_GIT_URL" in
+            https://git@git.overleaf.com/*)
+              OVERLEAF_GIT_URL="https://git.overleaf.com/${RAW_OVERLEAF_GIT_URL#https://git@git.overleaf.com/}"
+              echo "Normalized OVERLEAF_GIT_URL from https://git@git.overleaf.com/... to https://git.overleaf.com/..."
+              ;;
+            https://git.overleaf.com/*)
+              OVERLEAF_GIT_URL="$RAW_OVERLEAF_GIT_URL"
+              ;;
             *)
-              echo "::error::OVERLEAF_GIT_URL is invalid. Expected format: https://git.overleaf.com/<project_id>"
-              echo "::error::Current value does not match Overleaf Git endpoint."
+              echo "::error::OVERLEAF_GIT_URL is invalid. Expected https://git.overleaf.com/<project_id> or https://git@git.overleaf.com/<project_id>"
               exit 1
               ;;
           esac
