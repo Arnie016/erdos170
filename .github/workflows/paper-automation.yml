@@ -124,19 +124,11 @@ jobs:
           esac
 
           BRANCH="${OVERLEAF_GIT_BRANCH:-master}"
-          rm -rf /tmp/overleaf-sync /tmp/overleaf-askpass.sh
-          cat > /tmp/overleaf-askpass.sh << 'EOF'
-          #!/bin/sh
-          case "$1" in
-            *sername*) echo "git" ;;
-            *assword*) echo "$OVERLEAF_GIT_TOKEN" ;;
-          esac
-          EOF
-          chmod 700 /tmp/overleaf-askpass.sh
-          export GIT_ASKPASS=/tmp/overleaf-askpass.sh
+          rm -rf /tmp/overleaf-sync
           export GIT_TERMINAL_PROMPT=0
+          AUTH_B64="$(printf 'git:%s' "$OVERLEAF_GIT_TOKEN" | base64 | tr -d '\n')"
 
-          if ! git clone "$OVERLEAF_GIT_URL" /tmp/overleaf-sync; then
+          if ! git -c "http.extraHeader=Authorization: Basic ${AUTH_B64}" clone "$OVERLEAF_GIT_URL" /tmp/overleaf-sync; then
             echo "::error::Failed to clone Overleaf project. Check OVERLEAF_GIT_URL and OVERLEAF_GIT_TOKEN."
             exit 1
           fi
@@ -154,7 +146,7 @@ jobs:
           fi
 
           git commit -m "Auto-sync paper artifacts $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          if ! git push origin HEAD:"$BRANCH"; then
+          if ! git -c "http.extraHeader=Authorization: Basic ${AUTH_B64}" push origin HEAD:"$BRANCH"; then
             echo "::error::Failed to push to Overleaf. Token may be invalid or branch may be protected."
             exit 1
           fi
