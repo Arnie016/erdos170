@@ -128,8 +128,9 @@ jobs:
           export GIT_TERMINAL_PROMPT=0
           AUTH_B64="$(printf 'git:%s' "$OVERLEAF_GIT_TOKEN" | base64 | tr -d '\n')"
 
-          if ! git -c "http.extraHeader=Authorization: Basic ${AUTH_B64}" clone "$OVERLEAF_GIT_URL" /tmp/overleaf-sync; then
+          if ! git -c "http.extraHeader=Authorization: Basic ${AUTH_B64}" clone "$OVERLEAF_GIT_URL" /tmp/overleaf-sync 2>/tmp/overleaf_clone.err; then
             echo "::error::Failed to clone Overleaf project. Check OVERLEAF_GIT_URL and OVERLEAF_GIT_TOKEN."
+            sed -n '1,120p' /tmp/overleaf_clone.err || true
             exit 1
           fi
 
@@ -146,7 +147,8 @@ jobs:
           fi
 
           git commit -m "Auto-sync paper artifacts $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-          if ! git -c "http.extraHeader=Authorization: Basic ${AUTH_B64}" push origin HEAD:"$BRANCH"; then
+          if ! git -c "http.extraHeader=Authorization: Basic ${AUTH_B64}" push origin HEAD:"$BRANCH" 2>/tmp/overleaf_push.err; then
             echo "::error::Failed to push to Overleaf. Token may be invalid or branch may be protected."
+            sed -n '1,120p' /tmp/overleaf_push.err || true
             exit 1
           fi
