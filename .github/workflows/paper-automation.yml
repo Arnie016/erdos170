@@ -107,20 +107,17 @@ jobs:
             echo "Skipping Overleaf sync: missing OVERLEAF_GIT_URL or OVERLEAF_GIT_TOKEN."
             exit 0
           fi
+          case "$OVERLEAF_GIT_URL" in
+            https://git.overleaf.com/*) ;;
+            *)
+              echo "::error::OVERLEAF_GIT_URL is invalid. Expected format: https://git.overleaf.com/<project_id>"
+              echo "::error::Current value does not match Overleaf Git endpoint."
+              exit 1
+              ;;
+          esac
+
           BRANCH="${OVERLEAF_GIT_BRANCH:-master}"
-          rm -rf /tmp/overleaf-sync
-          mkdir -p /tmp/overleaf-sync
-          rsync -a --delete paper/ /tmp/overleaf-sync/
-          cd /tmp/overleaf-sync
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          if git diff --cached --quiet; then
-            echo "No paper changes to sync."
-            exit 0
-          fi
-          git commit -m "Auto-sync paper artifacts $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          rm -rf /tmp/overleaf-sync /tmp/overleaf-askpass.sh
           cat > /tmp/overleaf-askpass.sh << 'EOF'
           #!/bin/sh
           case "$1" in
@@ -131,5 +128,31 @@ jobs:
           chmod 700 /tmp/overleaf-askpass.sh
           export GIT_ASKPASS=/tmp/overleaf-askpass.sh
           export GIT_TERMINAL_PROMPT=0
-          git remote add overleaf "$OVERLEAF_GIT_URL"
-          git push --force overleaf HEAD:"$BRANCH"
+
+          if ! git clone "$OVERLEAF_GIT_URL" /tmp/overleaf-sync; then
+            echo "::error::Failed to clone Overleaf project. Check OVERLEAF_GIT_URL and OVERLEAF_GIT_TOKEN."
+            exit 1
+          fi
+
+          cd /tmp/overleaf-sync
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git show-ref --verify --quiet "refs/remotes/origin/${BRANCH}"; then
+            git checkout -B "$BRANCH" "origin/$BRANCH"
+          else
+            git checkout -B "$BRANCH"
+          fi
+
+          rsync -a --delete "$GITHUB_WORKSPACE/paper/" /tmp/overleaf-sync/
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No paper changes to sync."
+            exit 0
+          fi
+
+          git commit -m "Auto-sync paper artifacts $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          if ! git push origin "$BRANCH"; then
+            echo "::error::Failed to push to Overleaf. Token may be invalid or branch may be protected."
+            exit 1
+          fi
