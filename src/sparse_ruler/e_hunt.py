@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -77,10 +78,15 @@ def _resolve_token(value: Any, N: int) -> int:
         token = value.strip().upper()
         if token == "N":
             return N
-        if token == "N-1":
-            return N - 1
-        if token == "N-2":
-            return N - 2
+        if token.lstrip("-").isdigit():
+            return int(token)
+
+        # Accept symbolic offsets such as N-1, N-4, N+2.
+        match = re.fullmatch(r"N([+-])(\d+)", token)
+        if match:
+            sign, offset_text = match.groups()
+            offset = int(offset_text)
+            return N + offset if sign == "+" else N - offset
     raise ValueError(f"unsupported token {value!r}")
 
 
