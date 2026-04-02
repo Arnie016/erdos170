@@ -101,6 +101,12 @@ Outputs land under:
 
 - `results/e_hunt_breakthrough_cycle3_tailfocus/`
 
+Refresh the frontier evidence bundle from live artifacts:
+
+```bash
+python3 scripts/refresh_frontier_artifacts.py
+```
+
 ## SAT Feasibility Lane (N=500, m=39)
 
 Build DIMACS + attempt direct solve (requires `python-sat`):

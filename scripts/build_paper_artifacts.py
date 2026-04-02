@@ -145,7 +145,7 @@ def _build_tables_tex(
         lines.append(r"\subsection*{Cycle-1 Best Results}")
         lines.append(r"\begin{tabular}{rrrrl}")
         lines.append(r"\hline")
-        lines.append(_table_row(["N", "m\_try", "best\_missing", "deleted", "missing\_list"]))
+        lines.append(_table_row(["N", "m\\_try", "best\\_missing", "deleted", "missing\\_list"]))
         lines.append(r"\hline")
         for target in cycle1.get("targets", []):
             best = target.get("best_overall", {})
@@ -179,7 +179,7 @@ def _build_tables_tex(
     lines.append("")
     lines.append(r"\begin{tabular}{rrrrl}")
     lines.append(r"\hline")
-    lines.append(_table_row(["N", "m\_try", "best\_missing", "deleted", "missing\_list"]))
+    lines.append(_table_row(["N", "m\\_try", "best\\_missing", "deleted", "missing\\_list"]))
     lines.append(r"\hline")
     for row in cycle2.get("best_rows", []):
         lines.append(
@@ -239,6 +239,14 @@ def build_paper_artifacts(repo_root: Path) -> Tuple[Path, Dict]:
         "research_report_to_date_md": _copy_if_exists(
             results_dir / "research_report_to_date.md",
             generated_dir / "research_report_to_date.md",
+        ),
+        "exact_frontier_summary_md": _copy_if_exists(
+            results_dir / "exact_frontier_summary.md",
+            generated_dir / "exact_frontier_summary.md",
+        ),
+        "rigidity_memo_md": _copy_if_exists(
+            results_dir / "rigidity_memo.md",
+            generated_dir / "rigidity_memo.md",
         ),
         "baseline_summary_json": _copy_if_exists(
             baseline_path,

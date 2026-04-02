@@ -967,6 +967,49 @@ def run_e_hunt(config: Dict[str, Any]) -> Dict[str, Any]:
     total_complete_hits = 0
     stopped_early_global = False
 
+    def _write_root_summary() -> None:
+        summary = {
+            "suite": config.get("suite", "E_hunt_delete_and_repair"),
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "config": config,
+            "targets": overall_targets,
+            "overall": {
+                "target_count": len(overall_targets),
+                "total_complete_hits": total_complete_hits,
+                "success_targets": [t["N"] for t in overall_targets if t["complete_target"]],
+                "stopped_early_global": stopped_early_global,
+            },
+        }
+        summary_path = root_dir / "summary.json"
+        summary_path.write_text(json.dumps(summary, indent=2))
+
+    def _write_target_summary(
+        *,
+        target_dir: Path,
+        N: int,
+        m_try: int,
+        start_marks: List[int],
+        allowlist: Optional[List[int]],
+        candidates_count: int,
+        best_overall: Dict[str, Any],
+        best_hole_taxonomy: Dict[str, int],
+        stage_summaries: List[Dict[str, Any]],
+        target_complete: bool,
+    ) -> Dict[str, Any]:
+        target_summary = {
+            "N": N,
+            "m_try": m_try,
+            "start_marks": start_marks,
+            "deletion_candidates_count": candidates_count,
+            "candidate_allowlist_deleted_marks": allowlist,
+            "stages": stage_summaries,
+            "best_overall": best_overall,
+            "best_hole_taxonomy": best_hole_taxonomy,
+            "complete_target": target_complete,
+        }
+        (target_dir / "target_summary.json").write_text(json.dumps(target_summary, indent=2))
+        return target_summary
+
     for target_slot, target in enumerate(config["targets"]):
         if stopped_early_global:
             break
@@ -997,6 +1040,7 @@ def run_e_hunt(config: Dict[str, Any]) -> Dict[str, Any]:
         all_candidate_rows: List[Dict[str, Any]] = []
         active_ids = [c["id"] for c in candidates]
         has_complete = False
+        target_summary: Dict[str, Any] = {}
 
         for stage_slot, stage_name in enumerate(STAGE_ORDER):
             stage_cfg = stages_cfg.get(stage_name, {})
@@ -1152,6 +1196,26 @@ def run_e_hunt(config: Dict[str, Any]) -> Dict[str, Any]:
             }
             stage_summaries.append(stage_summary)
 
+            best_overall = min(all_candidate_rows, key=_candidate_sort_key)
+            best_hole_taxonomy = _classify_holes(best_overall["stage_best_missing_list"], N)
+            target_complete = (
+                best_overall["stage_best_complete_independent"]
+                and best_overall["stage_best_missing_count"] == 0
+                and (best_overall["rerun_verified"] in {True, None})
+            )
+            target_summary = _write_target_summary(
+                target_dir=target_dir,
+                N=N,
+                m_try=m_try,
+                start_marks=start_marks,
+                allowlist=None if allowlist is None else [int(v) for v in allowlist],
+                candidates_count=len(candidates),
+                best_overall=best_overall,
+                best_hole_taxonomy=best_hole_taxonomy,
+                stage_summaries=stage_summaries,
+                target_complete=target_complete,
+            )
+
             if stopped_early_global:
                 break
 
@@ -1159,35 +1223,17 @@ def run_e_hunt(config: Dict[str, Any]) -> Dict[str, Any]:
                 promote_top_k = int(stage_cfg.get("promote_top_k", len(candidate_rows)))
                 active_ids = [row["candidate_id"] for row in candidate_rows[:promote_top_k]]
 
-        best_overall = min(all_candidate_rows, key=_candidate_sort_key)
-        best_hole_taxonomy = _classify_holes(best_overall["stage_best_missing_list"], N)
-
-        target_complete = (
-            best_overall["stage_best_complete_independent"]
-            and best_overall["stage_best_missing_count"] == 0
-            and (best_overall["rerun_verified"] in {True, None})
-        )
-        if target_complete:
+        if target_summary["complete_target"]:
             total_complete_hits += 1
             if stop_on_first_complete_global:
                 stopped_early_global = True
 
-        target_summary = {
-            "N": N,
-            "m_try": m_try,
-            "start_marks": start_marks,
-            "deletion_candidates_count": len(candidates),
-            "candidate_allowlist_deleted_marks": None if allowlist is None else [int(v) for v in allowlist],
-            "stages": stage_summaries,
-            "best_overall": best_overall,
-            "best_hole_taxonomy": best_hole_taxonomy,
-            "complete_target": target_complete,
-        }
         overall_targets.append(target_summary)
 
-        (target_dir / "target_summary.json").write_text(json.dumps(target_summary, indent=2))
+        _write_root_summary()
 
-    summary = {
+    summary_path = root_dir / "summary.json"
+    summary = json.loads(summary_path.read_text()) if summary_path.exists() else {
         "suite": config.get("suite", "E_hunt_delete_and_repair"),
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "config": config,
@@ -1199,9 +1245,6 @@ def run_e_hunt(config: Dict[str, Any]) -> Dict[str, Any]:
             "stopped_early_global": stopped_early_global,
         },
     }
-
-    summary_path = root_dir / "summary.json"
-    summary_path.write_text(json.dumps(summary, indent=2))
     summary["summary_path"] = str(summary_path)
     return summary
 
