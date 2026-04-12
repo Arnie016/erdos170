@@ -131,6 +131,7 @@ def generate_research_report_to_date(
     cycle1_summary_path: Path,
     cycle2_root: Path,
     cycle2_config_path: Optional[Path],
+    frontier_atlas_path: Optional[Path],
     out_path: Path,
 ) -> Path:
     baseline = _load_json(baseline_summary_path)
@@ -269,11 +270,30 @@ def generate_research_report_to_date(
     lines.append("- For Erdos #170 relevance: this is finite-N structural evidence, not an asymptotic proof.")
     lines.append("")
 
-    lines.append("## 6) Reproducibility")
+    lines.append("## 6) Frontier Atlas")
+    lines.append("")
+    if frontier_atlas_path and frontier_atlas_path.exists():
+        atlas = _load_json(frontier_atlas_path)
+        lines.append(f"- Atlas source: `{frontier_atlas_path}`")
+        lines.append(f"- Records analyzed: {atlas.get('record_count', 0)}")
+        for motif in atlas.get("motifs", []):
+            lines.append(
+                f"- N={motif['N']}: shared_missing={motif['shared_missing']}, "
+                f"shared_terminal_run={motif['shared_terminal_run']}, "
+                f"furthest_missing_gaps={motif['furthest_missing_gaps']}."
+            )
+    else:
+        lines.append("- No frontier atlas is present yet.")
+    lines.append("")
+    lines.append("- Structural read: the frontier certificates look like a rigid tail scaffold, not a drifting missing-distance family.")
+    lines.append("")
+
+    lines.append("## 7) Reproducibility")
     lines.append("")
     lines.append("- Baseline summary source: `results/excess_baseline/excess_summary.json`.")
     lines.append("- Cycle-1 summary source: `results/e_hunt_delete_repair/summary.json`.")
     lines.append("- Cycle-2 artifacts source: `results/e_hunt_breakthrough_cycle2/**`.")
+    lines.append("- Frontier atlas source: `results/frontier_atlas.json`.")
     lines.append("- Regenerate this report:")
     lines.append(
         "  - `export PYTHONPATH=src && python3 scripts/generate_research_report_to_date.py`"

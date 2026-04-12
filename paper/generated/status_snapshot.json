@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-12T14:26:03.604768+00:00",
+  "generated_at_utc": "2026-04-12T14:36:40.673106+00:00",
   "paths": {
     "baseline_summary": "/Users/arnav/.codex/worktrees/6ed8/erdos/results/excess_baseline/excess_summary.json",
     "cycle1_summary": "/Users/arnav/.codex/worktrees/6ed8/erdos/results/e_hunt_delete_repair/summary.json",
@@ -11,11 +11,13 @@
     "research_report_cycle2_md": false,
     "research_report_to_date_md": true,
     "baseline_summary_json": true,
-    "cycle1_summary_json": true
+    "cycle1_summary_json": true,
+    "frontier_atlas_md": true,
+    "frontier_atlas_json": true
   },
   "cycle2_progress": {
-    "mode": "partial",
-    "summary_exists": false,
+    "mode": "final",
+    "summary_exists": true,
     "summary_path": "/Users/arnav/.codex/worktrees/6ed8/erdos/results/e_hunt_breakthrough_cycle2/summary.json",
     "best_rows": [
       {
@@ -25,7 +27,7 @@
         "stage_best_missing_list": [
           493
         ],
-        "stage": "deep",
+        "stage": "screen",
         "candidate_id": "delete_499_idx_38",
         "deleted_mark": 499
       },
@@ -41,9 +43,22 @@
         "stage": "screen",
         "candidate_id": "delete_697_idx_45",
         "deleted_mark": 697
+      },
+      {
+        "N": 1000,
+        "m_try": 55,
+        "stage_best_missing_count": 3,
+        "stage_best_missing_list": [
+          989,
+          990,
+          991
+        ],
+        "stage": "screen",
+        "candidate_id": "delete_997_idx_54",
+        "deleted_mark": 997
       }
     ],
-    "best_file_count": 14,
-    "candidate_file_count": 3
+    "best_file_count": 30,
+    "candidate_file_count": 6
   }
 }

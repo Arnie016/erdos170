@@ -31,6 +31,11 @@ def main() -> None:
         default=Path("configs/e_hunt_breakthrough_cycle2.json"),
     )
     parser.add_argument(
+        "--frontier-atlas",
+        type=Path,
+        default=Path("results/frontier_atlas.json"),
+    )
+    parser.add_argument(
         "--out",
         type=Path,
         default=Path("results/research_report_to_date.md"),
@@ -42,6 +47,7 @@ def main() -> None:
         cycle1_summary_path=args.cycle1_summary,
         cycle2_root=args.cycle2_root,
         cycle2_config_path=args.cycle2_config,
+        frontier_atlas_path=args.frontier_atlas,
         out_path=args.out,
     )
     print(out)

@@ -248,6 +248,14 @@ def build_paper_artifacts(repo_root: Path) -> Tuple[Path, Dict]:
             cycle1_path,
             generated_dir / "cycle1_summary.json",
         ),
+        "frontier_atlas_md": _copy_if_exists(
+            results_dir / "frontier_atlas.md",
+            generated_dir / "frontier_atlas.md",
+        ),
+        "frontier_atlas_json": _copy_if_exists(
+            results_dir / "frontier_atlas.json",
+            generated_dir / "frontier_atlas.json",
+        ),
     }
 
     _build_tables_tex(

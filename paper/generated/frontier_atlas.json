@@ -1,0 +1,441 @@
+{
+  "generated_at_utc": "2026-04-12T14:36:37.959618+00:00",
+  "sources": {
+    "cycle1_summary": "results/e_hunt_delete_repair/summary.json",
+    "cycle2_summary": "results/e_hunt_breakthrough_cycle2/summary.json"
+  },
+  "record_count": 6,
+  "records": [
+    {
+      "source": "cycle1",
+      "N": 500,
+      "m_try": 39,
+      "stage": "screen",
+      "candidate_id": "delete_499_idx_38",
+      "deleted_mark": 499,
+      "best_missing_count": 1,
+      "missing_list": [
+        493
+      ],
+      "missing_span": 0,
+      "furthest_missing_gap": 7,
+      "terminal_run": [
+        486,
+        487,
+        488,
+        489,
+        490,
+        491,
+        492
+      ],
+      "terminal_run_len": 7,
+      "run_prefix_gap": 14,
+      "endpoint_gap": 8,
+      "terminal_gaps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        8
+      ],
+      "tail_density_25": 8,
+      "tail_density_50": 10,
+      "residue_mod_4_tail": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "residue_mod_8_tail": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "source": "cycle1",
+      "N": 700,
+      "m_try": 46,
+      "stage": "screen",
+      "candidate_id": "delete_697_idx_45",
+      "deleted_mark": 697,
+      "best_missing_count": 3,
+      "missing_list": [
+        690,
+        691,
+        692
+      ],
+      "missing_span": 2,
+      "furthest_missing_gap": 8,
+      "terminal_run": [
+        682,
+        683,
+        684,
+        685,
+        686,
+        687,
+        688,
+        689
+      ],
+      "terminal_run_len": 8,
+      "run_prefix_gap": 16,
+      "endpoint_gap": 11,
+      "terminal_gaps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        11
+      ],
+      "tail_density_25": 9,
+      "tail_density_50": 11,
+      "residue_mod_4_tail": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "residue_mod_8_tail": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "source": "cycle1",
+      "N": 1000,
+      "m_try": 55,
+      "stage": "screen",
+      "candidate_id": "delete_997_idx_54",
+      "deleted_mark": 997,
+      "best_missing_count": 3,
+      "missing_list": [
+        989,
+        990,
+        991
+      ],
+      "missing_span": 2,
+      "furthest_missing_gap": 9,
+      "terminal_run": [
+        980,
+        981,
+        982,
+        983,
+        984,
+        985,
+        986,
+        987,
+        988
+      ],
+      "terminal_run_len": 9,
+      "run_prefix_gap": 18,
+      "endpoint_gap": 12,
+      "terminal_gaps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        12
+      ],
+      "tail_density_25": 10,
+      "tail_density_50": 11,
+      "residue_mod_4_tail": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "residue_mod_8_tail": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "source": "cycle2",
+      "N": 500,
+      "m_try": 39,
+      "stage": "screen",
+      "candidate_id": "delete_499_idx_38",
+      "deleted_mark": 499,
+      "best_missing_count": 1,
+      "missing_list": [
+        493
+      ],
+      "missing_span": 0,
+      "furthest_missing_gap": 7,
+      "terminal_run": [
+        486,
+        487,
+        488,
+        489,
+        490,
+        491,
+        492
+      ],
+      "terminal_run_len": 7,
+      "run_prefix_gap": 14,
+      "endpoint_gap": 8,
+      "terminal_gaps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        8
+      ],
+      "tail_density_25": 8,
+      "tail_density_50": 10,
+      "residue_mod_4_tail": [
+        3,
+        1,
+        2,
+        2
+      ],
+      "residue_mod_8_tail": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "source": "cycle2",
+      "N": 700,
+      "m_try": 46,
+      "stage": "screen",
+      "candidate_id": "delete_697_idx_45",
+      "deleted_mark": 697,
+      "best_missing_count": 3,
+      "missing_list": [
+        690,
+        691,
+        692
+      ],
+      "missing_span": 2,
+      "furthest_missing_gap": 8,
+      "terminal_run": [
+        682,
+        683,
+        684,
+        685,
+        686,
+        687,
+        688,
+        689
+      ],
+      "terminal_run_len": 8,
+      "run_prefix_gap": 16,
+      "endpoint_gap": 11,
+      "terminal_gaps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        11
+      ],
+      "tail_density_25": 9,
+      "tail_density_50": 11,
+      "residue_mod_4_tail": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "residue_mod_8_tail": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "source": "cycle2",
+      "N": 1000,
+      "m_try": 55,
+      "stage": "screen",
+      "candidate_id": "delete_997_idx_54",
+      "deleted_mark": 997,
+      "best_missing_count": 3,
+      "missing_list": [
+        989,
+        990,
+        991
+      ],
+      "missing_span": 2,
+      "furthest_missing_gap": 9,
+      "terminal_run": [
+        980,
+        981,
+        982,
+        983,
+        984,
+        985,
+        986,
+        987,
+        988
+      ],
+      "terminal_run_len": 9,
+      "run_prefix_gap": 18,
+      "endpoint_gap": 12,
+      "terminal_gaps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        12
+      ],
+      "tail_density_25": 10,
+      "tail_density_50": 11,
+      "residue_mod_4_tail": [
+        4,
+        2,
+        2,
+        2
+      ],
+      "residue_mod_8_tail": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "motifs": [
+    {
+      "N": 500,
+      "sources": [
+        "cycle1",
+        "cycle2"
+      ],
+      "missing_lists": [
+        [
+          493
+        ]
+      ],
+      "terminal_runs": [
+        [
+          486,
+          487,
+          488,
+          489,
+          490,
+          491,
+          492
+        ]
+      ],
+      "furthest_missing_gaps": [
+        7
+      ],
+      "shared_missing": true,
+      "shared_terminal_run": true
+    },
+    {
+      "N": 700,
+      "sources": [
+        "cycle1",
+        "cycle2"
+      ],
+      "missing_lists": [
+        [
+          690,
+          691,
+          692
+        ]
+      ],
+      "terminal_runs": [
+        [
+          682,
+          683,
+          684,
+          685,
+          686,
+          687,
+          688,
+          689
+        ]
+      ],
+      "furthest_missing_gaps": [
+        8
+      ],
+      "shared_missing": true,
+      "shared_terminal_run": true
+    },
+    {
+      "N": 1000,
+      "sources": [
+        "cycle1",
+        "cycle2"
+      ],
+      "missing_lists": [
+        [
+          989,
+          990,
+          991
+        ]
+      ],
+      "terminal_runs": [
+        [
+          980,
+          981,
+          982,
+          983,
+          984,
+          985,
+          986,
+          987,
+          988
+        ]
+      ],
+      "furthest_missing_gaps": [
+        9
+      ],
+      "shared_missing": true,
+      "shared_terminal_run": true
+    }
+  ]
+}

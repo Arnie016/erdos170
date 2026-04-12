@@ -17,6 +17,7 @@ from .metrics import (
     energy_ratio,
     summarize_metrics,
 )
+from .frontier_atlas import generate_frontier_atlas
 from .search import anneal_run, run_experiments
 from .research_report_cycle2 import generate_research_report_cycle2
 from .wichmann import (
@@ -32,6 +33,7 @@ __all__ = [
     "energy_floor",
     "energy_ratio",
     "summarize_metrics",
+    "generate_frontier_atlas",
     "anneal_run",
     "run_experiments",
     "generate_research_report_cycle2",
