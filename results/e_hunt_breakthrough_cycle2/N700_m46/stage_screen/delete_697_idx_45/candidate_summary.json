@@ -1,0 +1,103 @@
+{
+  "stage": "screen",
+  "N": 700,
+  "m_try": 46,
+  "deleted_index": 45,
+  "deleted_mark": 697,
+  "candidate_id": "delete_697_idx_45",
+  "evaluated_seeds": [
+    21260412,
+    21260413,
+    21260414,
+    21260415
+  ],
+  "stage_best_seed": 21260412,
+  "stage_best_objective_key": [
+    0,
+    0,
+    0,
+    3,
+    1432445
+  ],
+  "stage_best_missing_count": 3,
+  "stage_best_secondary": 1432445,
+  "stage_best_M25": 0,
+  "stage_best_M50": 0,
+  "stage_best_marks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    15,
+    30,
+    45,
+    60,
+    75,
+    90,
+    105,
+    120,
+    151,
+    182,
+    213,
+    244,
+    275,
+    306,
+    337,
+    368,
+    399,
+    430,
+    461,
+    492,
+    523,
+    554,
+    570,
+    586,
+    602,
+    618,
+    634,
+    650,
+    666,
+    682,
+    683,
+    684,
+    685,
+    686,
+    687,
+    688,
+    689,
+    700
+  ],
+  "stage_best_missing_list": [
+    690,
+    691,
+    692
+  ],
+  "stage_best_complete_independent": false,
+  "complete_hits": 0,
+  "coupled_attempts": 27444,
+  "coupled_accepts": 0,
+  "endpoint_window_attempts": 24438,
+  "endpoint_window_accepts": 0,
+  "tail_trigger_count": 28801,
+  "endpoint_hole_mode_fired": false,
+  "rerun_verified": null,
+  "holes_top10": [
+    [
+      690,
+      4
+    ],
+    [
+      691,
+      4
+    ],
+    [
+      692,
+      4
+    ]
+  ],
+  "artifact_dir": "results/e_hunt_breakthrough_cycle2/N700_m46/stage_screen/delete_697_idx_45"
+}

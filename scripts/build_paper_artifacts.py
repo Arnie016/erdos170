@@ -145,7 +145,7 @@ def _build_tables_tex(
         lines.append(r"\subsection*{Cycle-1 Best Results}")
         lines.append(r"\begin{tabular}{rrrrl}")
         lines.append(r"\hline")
-        lines.append(_table_row(["N", "m\_try", "best\_missing", "deleted", "missing\_list"]))
+        lines.append(_table_row([r"N", r"m\_try", r"best\_missing", r"deleted", r"missing\_list"]))
         lines.append(r"\hline")
         for target in cycle1.get("targets", []):
             best = target.get("best_overall", {})
@@ -179,7 +179,7 @@ def _build_tables_tex(
     lines.append("")
     lines.append(r"\begin{tabular}{rrrrl}")
     lines.append(r"\hline")
-    lines.append(_table_row(["N", "m\_try", "best\_missing", "deleted", "missing\_list"]))
+    lines.append(_table_row([r"N", r"m\_try", r"best\_missing", r"deleted", r"missing\_list"]))
     lines.append(r"\hline")
     for row in cycle2.get("best_rows", []):
         lines.append(

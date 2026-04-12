@@ -1,6 +1,6 @@
 # Erdos #170 Research Report (To Date)
 
-- Generated at (UTC): `2026-03-25T04:50:00.599293+00:00`
+- Generated at (UTC): `2026-04-12T14:26:00.275479+00:00`
 - Baseline summary: `results/excess_baseline/excess_summary.json`
 - Cycle-1 summary: `results/e_hunt_delete_repair/summary.json`
 - Cycle-2 root: `results/e_hunt_breakthrough_cycle2`
@@ -39,10 +39,18 @@
 ## 4) Cycle-2 (In Progress Snapshot)
 
 - `summary.json` present: False
-- Seed artifact count (`best.json`): 0 / 456 (0.0%)
-- Candidate artifact count (`candidate_summary.json`): 0 / 15 (0.0%)
+- Seed artifact count (`best.json`): 14 / 456 (3.1%)
+- Candidate artifact count (`candidate_summary.json`): 3 / 15 (20.0%)
 - By target/stage (`best.json` counts):
+  - N500_m39: {'stage_deep': 6, 'stage_screen': 4}
+  - N700_m46: {'stage_screen': 4}
 - Best observed so far per target:
+  - N=500: best_missing=1 (stage=deep, candidate=delete_499_idx_38, delete=499).
+    missing_list=[493], M25=0, M50=0.
+    coupled_accepts=0/84619, endpoint_window_accepts=0/75219, tail_trigger_count=88801.
+  - N=700: best_missing=3 (stage=screen, candidate=delete_697_idx_45, delete=697).
+    missing_list=[690, 691, 692], M25=0, M50=0.
+    coupled_accepts=0/27444, endpoint_window_accepts=0/24438, tail_trigger_count=28801.
 
 ## 5) Research Interpretation
 
