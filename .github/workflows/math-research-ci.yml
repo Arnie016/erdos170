@@ -1,0 +1,43 @@
+name: Math Research Verification
+on:
+  push:
+    paths:
+      - 'research-lab/**'
+      - '.github/workflows/math-research-ci.yml'
+  pull_request:
+    paths:
+      - 'research-lab/**'
+      - '.github/workflows/math-research-ci.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lean-witnesses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: research-lab/lean
+          auto-config: false
+          build: true
+          build-args: '--wfail'
+          test: false
+          use-mathlib-cache: false
+      - name: Inspect theorem dependencies
+        working-directory: research-lab/lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          lake env lean OpenMath/Certificates.lean | tee axioms.log
+          if grep -E 'sorryAx|Lean\.ofReduceBool|Lean\.trustCompiler' axioms.log; then
+            echo 'Unapproved theorem dependency detected'
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lean-witness-axioms
+          path: research-lab/lean/axioms.log
+          if-no-files-found: warn

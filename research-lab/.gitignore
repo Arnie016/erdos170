@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.o
+*.olean
+*.ilean
+.lake/
+.build/
+_generated/
+results/*.jsonl
+*.tar.zst
+*.zip
+.env
+*CONTACT*
+*Contacts*
+*PRIVATE*
