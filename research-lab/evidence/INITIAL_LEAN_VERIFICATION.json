@@ -1,0 +1,17 @@
+{
+  "repository":"Arnie016/erdos170",
+  "commit":"e4c0bc8ac647538f5dd22c84613b6745446f7bfe",
+  "workflow_run_id":37905339322,
+  "job_id":113737335751,
+  "workflow_url":"https://github.com/Arnie016/erdos170/actions/runs/37905339322",
+  "observed_conclusion":"success",
+  "toolchain":"leanprover/lean4:v4.19.0",
+  "declarations":12,
+  "axioms_artifact_id":11604715304,
+  "artifact_digest":"sha256:3f10095a9244691dbeb95de451fc68a47f4944bd2dcdc1ff015f574b9241ec8b",
+  "no_axiom_dependencies":["cliqueA_distinct","cliqueB_distinct","cliqueA_size","cliqueB_size","cliqueA_checked","cliqueB_checked","coverA_size","coverB_size","product_noncommutes_left","product_noncommutes_right"],
+  "standard_axiom_dependencies":{"coverA_checked":["propext"],"coverB_checked":["propext"]},
+  "unapproved_axioms":[],
+  "scope":"Explicit finite witness predicates and product implication only; not the general group reduction or the large censuses.",
+  "prior_setup_failure":{"run_id":37905052781,"reason":"Missing lake-manifest.json; Lean compilation did not start."}
+}

@@ -41,3 +41,20 @@ jobs:
           name: lean-witness-axioms
           path: research-lab/lean/axioms.log
           if-no-files-found: warn
+  computational-certificates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Reproduce all eight studies with exact acceptance checks
+        run: python3 research-lab/tools/verify_all.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mathematical-certificates-and-receipts
+          path: research-lab/_generated/**
+          include-hidden-files: true
+          if-no-files-found: error

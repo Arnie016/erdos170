@@ -6,7 +6,7 @@ __pycache__/
 .lake/
 .build/
 _generated/
-results/*.jsonl
+**/results/*.jsonl
 *.tar.zst
 *.zip
 .env
