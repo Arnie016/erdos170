@@ -34,3 +34,9 @@ Formal layer: UNFORMALIZED, LEAN_PENDING, LEAN_VERIFIED_AT_COMMIT.
 Literature: KNOWN, PRIORITY_UNCHECKED, CANDIDATE_NOVELTY.
 
 A complete finite result is not a solution beyond its quantified domain. Neither a local improvement nor a repository badge proves a new global bound.
+
+## 2026-10-10 bounded contribution
+
+- E117-LINE-20261010: [ordinary line-packing/matching proof](studies/erdos117-2026-10-10/proofs/line_packing_matching.md) under **no totally isotropic 3-space** in F2^5. ANALYTICAL_PROOF; UNFORMALIZED; literature priority unchecked; no all-group bound change.
+- E117-EX-20261010: [one faithful order-256 group](studies/erdos117-2026-10-10/proofs/order256_witness.md), masks 201/756/259, with a(G)=omega(G)=14, using an independently replayed exact maximal-clique check and 14-color witness. This is not a 3-pencil census.
+- Active and parked questions remain as above. Next unit should select a structurally justified three-coordinate candidate and check clique upper and chromatic lower with independently checkable exclusions, rather than grow the random sample.

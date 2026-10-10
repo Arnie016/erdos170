@@ -1,0 +1,15 @@
+# Exact line-packing/matching identity for binary rank-five commutation graphs
+
+**Claim E117-LINE-20261010. Status: ANALYTICAL_PROOF. Formal: UNFORMALIZED. Literature: PRIORITY_UNCHECKED. The all-group h(n) bound is unchanged.**
+
+Let V=F₂⁵, W an F₂-vector space and B:V×V→W alternating bilinear. Put S=V minus {0}, containing 31 points. Graph Γ has edges B(x,y)≠0; the complementary commuting graph H has edges B(x,y)=0 between distinct nonzero points. Assume **no 3-dimensional totally B-isotropic linear subspace** exists. Let ℒ be the three-point sets L minus {0} for B-isotropic 2-spaces L. For a pairwise-disjoint packing P of elements of ℒ let R(P) be the points not covered by P. Write ν(H[R]) for the maximum matching size in the induced commuting graph.
+
+**Theorem:** χ(Γ) = 31 − max over such P of (2|P| + ν(H[R(P)])).
+
+**Proof.** Every color class consists of pairwise B-orthogonal vectors. Its span is totally B-isotropic by bilinearity. The hypothesis therefore forces each color class to have at most three nonzero vectors. A class of three distinct mutually commuting vectors must be all nonzero vectors of one B-isotropic 2-space, since three linearly independent commuting vectors would span a forbidden isotropic 3-space. A class of two vectors is an H-edge. Thus a proper coloring partitions S into t disjoint isotropic lines, p disjoint commuting pairs in the residual graph and s singletons, with color count t+p+s=31−2t−p. Its matching count p cannot exceed ν(H[R(P)]), so every coloring has at least the claimed minimum. Conversely choose P maximizing the displayed expression, take a maximum H-matching on the remaining points, then color each line, matching pair and unmatched singleton individually. This realizes exactly the stated number. QED.
+
+**Falsifier of the hypothesis:** a linearly independent triple x,y,z satisfying B(x,y)=B(x,z)=B(y,z)=0. If it exists, the reduction does not apply. To establish a chromatic gap χ>ω, a clique of size k only proves ω≥k. One must separately exclude every clique of size k+1 or more to obtain ω≤k, then prove χ>k by exhaustive packings/matchings or another sound method.
+
+**Realization as an actual group.** Let c(x,y)=Σ_{i<j} x_i y_j B(e_i,e_j) and form G=V×W with (x,u)(y,v)=(x+y,u+v+c(x,y)). The bilinear-cocycle identity gives associativity and the commutator is B. If rad(B)=0 and the image of B spans W, then G/Z(G)=V and G′=W. As long as V is nonzero, abelian subgroup covers correspond to proper colorings of Γ, and pairwise noncommuting sets to cliques; hence a(G)=χ(Γ) and ω(G)=ω(Γ). The abelian boundary uses a(G)=max(1,χ) and ω(G)=1.
+
+**Dependencies and scope.** The group-to-graph reduction for arbitrary groups is in Guillaume Lecomte, *Sharp Asymptotics for Abelian Covers of Groups with Bounded Noncommutativity*, arXiv:2608.20507v1, Lemma 2.1 (PDF page 3). The previous [October 9 rank-five two-coordinate result](../erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md) covered a different domain. This elementary new-to-project identity is not claimed to be new to mathematical literature and yields no change to h(n) without a further global argument.
