@@ -1,0 +1,25 @@
+SMOKE_OK generator_order5_order2, zero_graph, rref
+ORBIT 1 size=69440 basis=1017,1018,1020 omega=a=17 edges=384 total=69440
+ORBIT 2 size=624960 basis=1017,1018,1004 omega=a=15 edges=396 total=694400
+ORBIT 3 size=624960 basis=1017,1018,988 omega=a=13 edges=396 total=1319360
+ORBIT 4 size=416640 basis=1017,1018,964 omega=a=15 edges=408 total=1736000
+ORBIT 5 size=1249920 basis=1017,1018,956 omega=a=13 edges=408 total=2985920
+ORBIT 6 size=624960 basis=1017,1018,860 omega=a=17 edges=408 total=3610880
+ORBIT 7 size=69440 basis=1017,1018,844 omega=a=15 edges=372 total=3680320
+ORBIT 8 size=208320 basis=1017,1018,796 omega=a=13 edges=408 total=3888640
+ORBIT 9 size=39060 basis=1017,1018,492 omega=a=11 edges=384 total=3927700
+ORBIT 10 size=156240 basis=1017,1018,484 omega=a=11 edges=408 total=4083940
+ORBIT 11 size=208320 basis=1017,1018,412 omega=a=13 edges=384 total=4292260
+ORBIT 12 size=52080 basis=1017,1018,12 omega=a=11 edges=384 total=4344340
+ORBIT 13 size=1666560 basis=1017,994,964 omega=a=14 edges=420 total=6010900
+ORBIT 14 size=208320 basis=1017,994,892 omega=a=15 edges=420 total=6219220
+ORBIT 15 size=26040 basis=1017,978,756 omega=a=13 edges=408 total=6245260
+ORBIT 16 size=59520 basis=1017,978,540 omega=a=9 edges=420 total=6304780
+ORBIT 17 size=3255 basis=1017,930,916 omega=a=11 edges=384 total=6308035
+ORBIT 18 size=17360 basis=1017,930,788 omega=a=9 edges=384 total=6325395
+ORBIT 19 size=2170 basis=1017,930,308 omega=a=13 edges=408 total=6327565
+ORBIT 20 size=19530 basis=1017,930,36 omega=a=9 edges=360 total=6347095
+ORBIT 21 size=465 basis=889,986,1004 omega=a=9 edges=336 total=6347560
+ORBIT 22 size=155 basis=617,906,336 omega=a=7 edges=336 total=6347715
+COMPLETE_RANK5_THREE_PLANE_CENSUS visited=6347715 total=6347715 orbits=22 expected=6347715
+ORBIT_OMEGA_HIST 7:1 9:4 11:4 13:6 14:1 15:4 17:2

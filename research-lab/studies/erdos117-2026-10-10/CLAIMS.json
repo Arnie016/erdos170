@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-10",
+  "repo_base": "e103025a88c0cec188dd94a2a74b89819f40487a",
+  "claims": [
+    {
+      "id": "R117-R5-THREE-ORBITS",
+      "exact_statement": "All 6347715 3-dimensional scalar subspaces of Alt(F2^5) form 22 GL5 orbits; for each orbit representative χ=ω.",
+      "domain": "rank3 output maps F2^5 x F2^5 -> F2^3",
+      "validity": "EXACT_FINITE_CERTIFICATE",
+      "novelty": "PRIORITY_UNCHECKED",
+      "formal": "UNFORMALIZED",
+      "evidence": [
+        "src/full_three_orbits.cpp",
+        "evidence/three_orbits.stdout",
+        "proofs/rank5_three_coordinate_orbits.md"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "R117-R5-WLE3",
+      "exact_statement": "For all groups G with G/Z(G) elementary abelian over F2 of rank <=5 and dim_F2 G'<=3, a(G)=omega(G), including infinite centers.",
+      "domain": "all groups in specified finite-central-quotient class",
+      "validity": "CONDITIONAL_DERIVATION",
+      "novelty": "PRIORITY_UNCHECKED",
+      "formal": "UNFORMALIZED",
+      "evidence": [
+        "proofs/rank5_three_coordinate_orbits.md"
+      ],
+      "dependencies": [
+        "R117-R5-THREE-ORBITS",
+        "R117-R5-W2 (2026-10-09)",
+        "R117-R4-ALL (2026-10-08)",
+        "ordinary group-to-graph reduction"
+      ]
+    }
+  ],
+  "global_h_bound_change": "NONE"
+}

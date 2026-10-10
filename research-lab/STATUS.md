@@ -9,7 +9,7 @@ This is a public research notebook, not a list of solved headline Erdős problem
 | Quotient dimension <=5, derived dimension <=2 | Exact stated group class | Ordinary reduction plus complete 174,251-plane certificate and lower-dimensional result | UNFORMALIZED |
 | Modular n=6, N=69 | Complete signed unit-dyadic replacement-distance census | Two independent implementations, 66 canonical sets, 4,224 sign lifts | UNFORMALIZED |
 | Basis-independent cross-radical bound | Exact hypotheses in October 5 note | Ordinary proof and finite matrix regression | UNFORMALIZED |
-| General Erdős #117 | h(n)=sup a(G) over all groups with omega(G)<=n | No solution claimed by this project | OPEN IN THIS PROJECT |
+| Rank-five, three-coordinate map (2026-10-10) | All 6,347,715 scalar three-planes; 22 GL5 orbits | Exact finite C++ orbit, clique and coloring certificate; independent orbit reimplementation pending | UNFORMALIZED |\n| General Erdős #117 | h(n)=sup a(G) over all groups with omega(G)<=n | No solution claimed by this project | OPEN IN THIS PROJECT |
 | General Erdős #170 | Restricted difference bases and sparse-ruler asymptotics | Original suite outside this subtree retained; no solution claimed | OPEN IN THIS PROJECT |
 | Earlier claimed recurrence improvements | Historical local/asymptotic calculations not imported here | Dependency audit needed before acceptance | NOT ACCEPTED AS GLOBAL THEOREMS |
 
@@ -21,9 +21,9 @@ The study implementations were replayed from recovered source during publication
 
 ## Active and parked questions
 
-Active: does a three-coordinate alternating map on F2^5 have a cover number larger than its noncommuting clique number? One exact independently checked witness would decide existence positively.
+Active: independently recheck the 22 rank-five, three-coordinate GL5 orbits and their exact clique/cover certificates; falsify by an unmatched RREF key or a graph with χ>ω.
 
-Parked: formalize the general clique-lower-bound and group-cover reduction in Lean before attempting full census formalization. Merely storing a theorem statement in a `.lean` file is not a proof.
+Parked: test the rank-five, four-coordinate case for a verified χ>ω witness or complete orbit exclusion. Lean formalization remains a separate uncompleted verification step.
 
 ## Vocabulary
 
