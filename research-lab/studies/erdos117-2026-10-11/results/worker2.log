@@ -1,0 +1,31 @@
+SMOKE_PASS involutions_5x1024 and RREF_identity
+ORBIT root=4196353 forms=1,2,4 size=465 omega=9 greedy=9 radical_vectors=1 gap=0 unknown=0
+ORBIT root=4196377 forms=25,2,4 size=39060 omega=11 greedy=11 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4196369 forms=17,2,4 size=19530 omega=9 greedy=9 radical_vectors=1 gap=0 unknown=0
+ORBIT root=4196449 forms=97,2,4 size=69440 omega=15 greedy=15 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4196545 forms=193,2,4 size=69440 omega=17 greedy=17 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4196489 forms=137,2,4 size=3255 omega=11 greedy=11 radical_vectors=1 gap=0 unknown=0
+ORBIT root=4196785 forms=433,2,4 size=52080 omega=11 greedy=11 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4220977 forms=49,26,4 size=624960 omega=15 greedy=15 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4220985 forms=57,26,4 size=156240 omega=11 greedy=11 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4221025 forms=97,26,4 size=208320 omega=13 greedy=13 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4221049 forms=121,26,4 size=208320 omega=13 greedy=13 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4221121 forms=193,26,4 size=1249920 omega=13 greedy=13 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4221129 forms=201,26,4 size=416640 omega=15 greedy=15 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4221753 forms=825,26,4 size=624960 omega=13 greedy=13 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4221569 forms=641,26,4 size=624960 omega=17 greedy=17 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4212865 forms=129,18,4 size=17360 omega=9 greedy=9 radical_vectors=1 gap=0 unknown=0
+ORBIT root=4237473 forms=161,42,4 size=26040 omega=13 greedy=13 radical_vectors=0 gap=0 unknown=0
+ORBIT root=4237985 forms=673,42,4 size=2170 omega=13 greedy=13 radical_vectors=1 gap=0 unknown=0
+ORBIT root=29411449 forms=121,50,28 size=59520 omega=9 greedy=9 radical_vectors=0 gap=0 unknown=0
+ORBIT root=29411521 forms=193,50,28 size=1666560 omega=14 greedy=14 radical_vectors=0 gap=0 unknown=0
+ORBIT root=29411489 forms=161,50,28 size=208320 omega=15 greedy=15 radical_vectors=0 gap=0 unknown=0
+ORBIT root=16779265 forms=1,2,16 size=155 omega=7 greedy=7 radical_vectors=3 gap=0 unknown=0
+FINAL total=6347715 expected=6347715 orbits=22 faithful_orbits=16 degenerate_orbits=6 gaps=0 unknown=0 greedy_bigger=0 seconds=1.10523
+HIST omega=7 greedy=7 planes=155
+HIST omega=9 greedy=9 planes=96875
+HIST omega=11 greedy=11 planes=250635
+HIST omega=13 greedy=13 planes=2319730
+HIST omega=14 greedy=14 planes=1666560
+HIST omega=15 greedy=15 planes=1319360
+HIST omega=17 greedy=17 planes=694400

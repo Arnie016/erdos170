@@ -1,0 +1,6 @@
+# SOURCES and reading depth, 2026-10-11
+
+- Erdős Problem #117: https://www.erdosproblems.com/117 . Direct page access returned 403 in this run; public indexed extract last edited Jan 23, 2026 labels OPEN. This is historical page metadata, not a current proof audit.
+- Guillaume Lecomte, *Sharp Asymptotics for Abelian Covers of Groups with Bounded Noncommutativity*, arXiv:2608.20507v1, submitted Aug 20, 2026: https://arxiv.org/abs/2608.20507 . Indexed abstract confirms log2 h(n)=n/2+O(sqrt(n)(log(n+2))^3). V1 surfaced in current public alphaXiv result; the actual proof body was NOT examined in this run, and no newer version was ruled out.
+- Repository baseline: Arnie016/erdos170 at commit 73d0fe3a4604c973efd68e6242944f639ba919a7. Files read completely: research-lab/STATUS.md, AGENTS.md, SOURCES.md, REPRODUCING.md and studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md, 2026-10-08/proofs/all_rank4_pencils_census.md, 2026-10-09/proofs/rank5_two_coordinate_pencils.md. Earlier algorithm source code was not fully re-audited.
+- Literature priority for the new finite class remains unchecked. Private correspondence, manuscript claims, email addresses and documents are not included in this public source ledger.

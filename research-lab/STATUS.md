@@ -34,3 +34,7 @@ Formal layer: UNFORMALIZED, LEAN_PENDING, LEAN_VERIFIED_AT_COMMIT.
 Literature: KNOWN, PRIORITY_UNCHECKED, CANDIDATE_NOVELTY.
 
 A complete finite result is not a solution beyond its quantified domain. Neither a local improvement nor a repository badge proves a new global bound.
+
+## 2026-10-11 candidate, independent replay pending
+
+A completed **single-implementation** exact-arithmetic GL(5,2) orbit enumeration of the 6,347,715 three-dimensional scalar pencils on F2^5 found 22 orbits, each with matching exact clique and proper greedy coloring. This suggests equality a(G)=omega(G) for elementary binary central quotients of dimension <=5 with derived rank <=3, after combining the October 8-9 prior cases. Full independent orbit replay and explicit witness export are **PENDING**, so do not label the extended class independently verified or Lean-proved. See [dated study](studies/erdos117-2026-10-11/proofs/rank5_three_coordinate_orbits.md). Global h(n) bound unchanged.

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-11",
+  "commit_base": "73d0fe3a4604c973efd68e6242944f639ba919a7",
+  "claims": [
+    {
+      "id": "R117-20261011-ORB",
+      "statement": "All 6347715 3-planes of Alt(F2^5) partition into 22 GL(5,2)-orbits.",
+      "dependencies": [],
+      "status": "EXACT_FINITE_CERTIFICATE",
+      "audit": "One exact implementation complete; independent full checker pending.",
+      "evidence": "src/orbits.cpp and results/worker2.log",
+      "novelty": "PRIORITY_UNCHECKED"
+    },
+    {
+      "id": "R117-20261011-NOGAP",
+      "statement": "For every 3-plane P<=Alt(F2^5), chi(Gamma(P))=omega(Gamma(P)).",
+      "dependencies": [
+        "R117-20261011-ORB"
+      ],
+      "status": "EXACT_FINITE_CERTIFICATE",
+      "audit": "Single exact implementation on 22 complete-orbit representatives; independent full replication pending.",
+      "evidence": "proofs/rank5_three_coordinate_orbits.md and results/worker2.log",
+      "novelty": "PRIORITY_UNCHECKED"
+    },
+    {
+      "id": "R117-20261011-GROUP",
+      "statement": "For groups G with G/Z(G) elementary abelian of dimension<=5 and dim_F2 G'<=3, a(G)=omega(G).",
+      "dependencies": [
+        "R117-20261011-NOGAP",
+        "PREV-20261009-RANK5-TWO",
+        "PREV-20261008-RANK4",
+        "BILINEAR-REDUCTION"
+      ],
+      "status": "CONDITIONAL_DERIVATION",
+      "audit": "Dependent on prior finite checks and current one-method certificate; no Lean proof.",
+      "evidence": "proofs/rank5_three_coordinate_orbits.md",
+      "novelty": "PRIORITY_UNCHECKED"
+    }
+  ]
+}
