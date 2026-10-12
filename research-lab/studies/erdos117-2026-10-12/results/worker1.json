@@ -1,0 +1,1 @@
+{"status":"EARLY_STOP","indices_processed":1024,"full_rank":1015,"faithful":1007,"no_iso3_cases":787,"hist":{"clique_ge_11":787,"iso3":220,"radical":8},"candidate":[],"wall_seconds":0.8916529299999993,"python":"3.13.5"}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-12",
+  "status": "ANALYTICAL_PROOF",
+  "literature": "PRIORITY_UNCHECKED",
+  "formal": "UNFORMALIZED",
+  "claims": [
+    {
+      "id": "R5W3-INC",
+      "statement": "For spanning faithful B:F2^5 x F2^5 -> F2^3, 3n1+n2=7+6t.",
+      "dependencies": [
+        "finite field rank-nullity",
+        "alternating forms have even rank"
+      ],
+      "evidence": "proofs/rank_incidence_identity.md"
+    },
+    {
+      "id": "R5W3-MOD",
+      "statement": "n2 congruent 1 mod 3; when t=0, possible (n1,n2)=(0,7),(1,4),(2,1).",
+      "dependencies": [
+        "R5W3-INC"
+      ],
+      "evidence": "proofs/rank_incidence_identity.md"
+    },
+    {
+      "id": "R5W3-SAMPLE",
+      "statement": "1007 fixed faithful sampled maps satisfy the identity; no candidate to a narrow sufficient gap test among 787 no-iso3 samples.",
+      "status": "NUMERICAL_LEAD",
+      "evidence": "src/worker1.py,src/worker2.py,results/worker1.json,results/worker2.json"
+    }
+  ],
+  "global_h_bound": "UNCHANGED"
+}
