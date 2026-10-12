@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-12",
+  "claims": [
+    {
+      "id": "R117-CHART-20261012",
+      "statement": "Pivot (0,1,2) rank-three RREF subspaces of Alt(F2^5) are in bijection with 21 independent binary parameters.",
+      "hypotheses": "ordered 10 scalar alternating coefficients over F2",
+      "status": "ANALYTICAL_PROOF",
+      "literature": "KNOWN",
+      "dependencies": [],
+      "evidence": "proofs/partial_chart.md"
+    },
+    {
+      "id": "R117-SAMPLE-20261012",
+      "statement": "First exact search returned chi=omega on 8192 specified samples.",
+      "hypotheses": "31 nonzero vector graph",
+      "status": "NUMERICAL_LEAD",
+      "literature": "PRIORITY_UNCHECKED",
+      "dependencies": [
+        "R117-CHART-20261012"
+      ],
+      "evidence": "proofs/partial_chart.md and local archived scripts/receipts"
+    },
+    {
+      "id": "R117-PREFIX-20261012",
+      "statement": "Second check has a 491520-case completed prefix and 4096 sampled overlaps, without normal exit.",
+      "hypotheses": "same graph, t in [0,491520)",
+      "status": "NUMERICAL_LEAD",
+      "literature": "PRIORITY_UNCHECKED",
+      "dependencies": [
+        "R117-CHART-20261012"
+      ],
+      "evidence": "proofs/partial_chart.md and local archived log"
+    },
+    {
+      "id": "R117-GLOBAL-20261012",
+      "statement": "No universal h(n), C or n0 conclusion follows.",
+      "status": "CORRECTION",
+      "literature": "KNOWN",
+      "dependencies": [],
+      "evidence": "CHECKPOINT.md"
+    }
+  ]
+}

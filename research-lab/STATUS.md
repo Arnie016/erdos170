@@ -34,3 +34,7 @@ Formal layer: UNFORMALIZED, LEAN_PENDING, LEAN_VERIFIED_AT_COMMIT.
 Literature: KNOWN, PRIORITY_UNCHECKED, CANDIDATE_NOVELTY.
 
 A complete finite result is not a solution beyond its quantified domain. Neither a local improvement nor a repository badge proves a new global bound.
+
+## October 12 scoped computation (not a theorem)
+
+An exploratory three-coordinate alternating-pencil scan on F2^5 found no chromatic/clique gap in 8,192 predeclared pencils. A second independent matrix-based program reached a completed contiguous prefix of 491,520 of 2,097,152 RREF-chart pencils, agreeing on 4,096 overlaps, before a timeout. This is a NUMERICAL_LEAD with **no complete chart certificate**. The full dimension-five question remains active; no universal bound for h(n), uniform constant or eventual threshold changes. See studies/erdos117-2026-10-12.
