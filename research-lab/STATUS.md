@@ -9,6 +9,7 @@ This is a public research notebook, not a list of solved headline Erdős problem
 | Quotient dimension <=5, derived dimension <=2 | Exact stated group class | Ordinary reduction plus complete 174,251-plane certificate and lower-dimensional result | UNFORMALIZED |
 | Modular n=6, N=69 | Complete signed unit-dyadic replacement-distance census | Two independent implementations, 66 canonical sets, 4,224 sign lifts | UNFORMALIZED |
 | Basis-independent cross-radical bound | Exact hypotheses in October 5 note | Ordinary proof and finite matrix regression | UNFORMALIZED |
+| Binary three-edge coordinate maps in dimension five | All 120 labelled edge sets, four relabelling types | Ordinary proof plus independent exact clique/cover certificates for values 7, 9, 9, 15 | UNFORMALIZED |
 | General Erdős #117 | h(n)=sup a(G) over all groups with omega(G)<=n | No solution claimed by this project | OPEN IN THIS PROJECT |
 | General Erdős #170 | Restricted difference bases and sparse-ruler asymptotics | Original suite outside this subtree retained; no solution claimed | OPEN IN THIS PROJECT |
 | Earlier claimed recurrence improvements | Historical local/asymptotic calculations not imported here | Dependency audit needed before acceptance | NOT ACCEPTED AS GLOBAL THEOREMS |
@@ -21,7 +22,7 @@ The study implementations were replayed from recovered source during publication
 
 ## Active and parked questions
 
-Active: does a three-coordinate alternating map on F2^5 have a cover number larger than its noncommuting clique number? One exact independently checked witness would decide existence positively.
+Active: does an indecomposable, common-radical-free, three-coordinate alternating map on F2^5 have a cover number larger than its noncommuting clique number? The special three-edge coordinate family is excluded by the October 12 study, but arbitrary three-dimensional pencils are not covered. A checked gap witness would decide existence positively.
 
 Parked: formalize the general clique-lower-bound and group-cover reduction in Lean before attempting full census formalization. Merely storing a theorem statement in a `.lean` file is not a proof.
 
