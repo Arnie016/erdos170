@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-14",
+  "literature": "PRIORITY_UNCHECKED",
+  "claims": [
+    {
+      "id": "R14-GROUP",
+      "scope": "all independent faithful three-form maps on F2^5",
+      "status": "ANALYTICAL_PROOF",
+      "formal": "UNFORMALIZED",
+      "evidence": "README.md group construction",
+      "dependencies": []
+    },
+    {
+      "id": "R14-64",
+      "scope": "exact 64 inputs in certificates.txt",
+      "statement": "a(G)=omega(G)=k for each listed group",
+      "status": "EXACT_FINITE_CERTIFICATE",
+      "formal": "UNFORMALIZED",
+      "evidence": "certificates.txt, executed full JSONL checker detailed in README",
+      "dependencies": [
+        "R14-GROUP"
+      ]
+    },
+    {
+      "id": "R14-ALL",
+      "scope": "all faithful rank-five output-rank-three maps",
+      "statement": "a=omega universally",
+      "status": "CONJECTURE",
+      "formal": "UNFORMALIZED",
+      "evidence": "sample does not decide",
+      "dependencies": []
+    },
+    {
+      "id": "R14-HN",
+      "scope": "all groups",
+      "status": "NO_ADVANCE",
+      "statement": "No new universal h(n) bound, constant or threshold proved",
+      "evidence": "No all-group substitution",
+      "dependencies": []
+    }
+  ]
+}

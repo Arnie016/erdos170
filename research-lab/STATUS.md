@@ -34,3 +34,7 @@ Formal layer: UNFORMALIZED, LEAN_PENDING, LEAN_VERIFIED_AT_COMMIT.
 Literature: KNOWN, PRIORITY_UNCHECKED, CANDIDATE_NOVELTY.
 
 A complete finite result is not a solution beyond its quantified domain. Neither a local improvement nor a repository badge proves a new global bound.
+
+## 2026-10-14 bounded three-form sample
+
+One additional EXACT_FINITE_CERTIFICATE for a **nonexhaustive selection of 64 faithful three-coordinate forms on F2^5** is in [the October 14 study](studies/erdos117-2026-10-14/README.md). Each has matching explicit k-clique and proper k-coloring witnesses (k=11, 13, 14, 15 or 17), independently checked in the local source JSONL representation. The compact public table's separate verifier is not yet claimed to have executed in CI. **No universal three-form theorem, new h(n) bound, optimal uniform constant or finite threshold follows.** Active next unit: orbit reduction rather than additional undirected sampling. Literature priority unchecked and Lean status UNFORMALIZED.
