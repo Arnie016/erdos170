@@ -1,3 +1,52 @@
+# Open Mathematics Research Lab
+
+### A public notebook of proofs, counterexamples and open questions
+
+[![Verification](https://github.com/Arnie016/erdos170/actions/workflows/math-research-ci.yml/badge.svg)](https://github.com/Arnie016/erdos170/actions/workflows/math-research-ci.yml)
+[![Original lab material: MIT](https://img.shields.io/badge/original%20lab%20material-MIT-blue)](research-lab/LICENSE)
+[![Formalization: incremental](https://img.shields.io/badge/Lean-incremental-6554C0)](research-lab/lean/README.md)
+
+**Choose a problem, not a date.** Arnav's AI-assisted research is organized by the question being studied, with links to the exact evidence and the next unresolved step.
+
+| Problem | Focus in this project | Start reading |
+|---|---|---|
+| **Erdős #117** | Active: abelian covers and noncommuting sets | [Overview, finite results and next question](research-lab/problems/erdos-117/README.md) |
+| **Erdős #170** | Retained: sparse rulers and difference bases | [Original experiments and evidence boundaries](research-lab/problems/erdos-170/README.md) |
+| **Modular subset sums** | Parked: the distinct-subset-sum branch | [Modulus 69 result and modulus 133 question](research-lab/problems/modular-subset-sums/README.md) |
+
+[**Progress log**](research-lab/PROGRESS.md) · [**Claim status**](research-lab/STATUS.md) · [**Lean**](research-lab/lean/README.md) · [**Reproduce**](research-lab/REPRODUCING.md) · [**Contribute**](research-lab/CONTRIBUTING.md)
+
+> **No headline Erdős solution is claimed.** A finite certificate, an ordinary proof and a Lean-checked theorem are different evidence. CI verifies submitted content; it does not create mathematical discoveries.
+
+## Read the lab in one minute
+
+**New here?** Open a problem page for its plain-language question, existing results and one next test.
+
+**Checking a result?** Follow its proof and code, then inspect the relevant immutable commit and CI receipt. Literature priority is a separate question.
+
+**Continuing research?** Read [the contribution workflow](research-lab/CONTRIBUTING.md). A useful update is one bounded claim with a falsifier, evidence and an honest limit. Old study paths remain stable.
+
+## Verification
+
+```sh
+# Fast metadata and local-link check, with no dependencies or mathematical search
+python3 research-lab/tools/catalog.py --check
+
+# Full existing computational reproduction (Python 3.10+ and C++17)
+python3 research-lab/tools/verify_all.py
+
+# Pinned Lean project; checks only the declared formal layer
+cd research-lab/lean
+lake build
+```
+
+Original additions under `research-lab/` use the [scoped MIT license](research-lab/LICENSE). Pre-existing root files and third-party work are not automatically relicensed. AI assistance is disclosed; automated verification is not independent human peer review.
+
+## Sparse-ruler guide
+
+<details>
+<summary>Original #170 installation, experiment commands and paper workflow</summary>
+
 # Sparse Ruler Rigidity Experiment Suite
 
 This project runs simulated annealing experiments for Erdős Problem #170 (sparse rulers / restricted difference bases). It builds candidate mark sets `A ⊆ {0..N}`, tracks distance multiplicities `W(d)`, and searches for complete rulers with near-optimal energy.
@@ -65,7 +114,7 @@ pytest
 Generate the latest paper bundle locally:
 
 ```bash
-cd /Users/hema/Desktop/erdos170
+cd /path/to/erdos170
 export PYTHONPATH=src
 python3 scripts/generate_research_report_to_date.py
 python3 scripts/build_paper_artifacts.py --repo-root .
@@ -90,7 +139,7 @@ CI workflow: `.github/workflows/paper-automation.yml`
 ## Cycle-3 Tail-Focused Run
 
 ```bash
-cd /Users/hema/Desktop/erdos170
+cd /path/to/erdos170
 source .venv/bin/activate
 export PYTHONPATH=src
 python3 scripts/run_e_hunt_breakthrough_cycle3.py \
@@ -106,7 +155,7 @@ Outputs land under:
 Build DIMACS + attempt direct solve (requires `python-sat`):
 
 ```bash
-cd /Users/hema/Desktop/erdos170
+cd /path/to/erdos170
 source .venv/bin/activate
 pip install "python-sat[pblib,aiger]"
 export PYTHONPATH=src
@@ -123,3 +172,5 @@ DIMACS-only mode (external solver):
 python3 scripts/run_sat_sparse_ruler_feasibility.py \
   --N 500 --m 39 --mode dimacs
 ```
+
+</details>
