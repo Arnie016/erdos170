@@ -2,16 +2,30 @@ name: Math Research Verification
 on:
   push:
     paths:
+      - 'README.md'
       - 'research-lab/**'
       - '.github/workflows/math-research-ci.yml'
   pull_request:
     paths:
+      - 'README.md'
       - 'research-lab/**'
       - '.github/workflows/math-research-ci.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
+  navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Validate catalog and local navigation
+        run: timeout 20s python3 research-lab/tools/catalog.py --check
+      - name: Reject invalid metadata and false verification labels
+        run: timeout 20s python3 -m unittest discover -s research-lab/tools -p test_catalog.py -v
   lean-witnesses:
     runs-on: ubuntu-latest
     timeout-minutes: 10
