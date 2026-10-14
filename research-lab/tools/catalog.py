@@ -81,13 +81,18 @@ def validate(data: dict, root: Path) -> None:
             require(proof.is_file() and proof.suffix == '.md', f'Proof note must be Markdown: {rid}')
             require(r['proof'] not in indexed, f'Proof registered twice: {rid}')
             indexed.add(r['proof'])
-            require(isinstance(r.get('code'),list) and r['code'], f'Missing executable source links: {rid}')
+            require(isinstance(r.get('code'),list), f'Expected source-link list: {rid}')
+            if r['validity'] == 'EXACT_FINITE_CERTIFICATE':
+                require(bool(r['code']), f'Finite certificate needs executable source: {rid}')
             for path in r['code']:
                 require(local_path(root,path).is_file(), f'Source is not a file: {path}')
             require(SHA.fullmatch(r.get('evidence_commit','')) is not None, f'Missing evidence commit: {rid}')
-            run=r.get('evidence_run','')
-            require(re.fullmatch(r'https://github\.com/[^/]+/[^/]+/actions/runs/[0-9]+',run) is not None,
-                    f'Missing run evidence: {rid}')
+            run=r.get('evidence_run')
+            if run is not None:
+                require(isinstance(run,str) and re.fullmatch(r'https://github\.com/[^/]+/[^/]+/actions/runs/[0-9]+',run) is not None,
+                        f'Invalid run evidence: {rid}')
+            if r['validity'] == 'EXACT_FINITE_CERTIFICATE':
+                require(bool(run), f'Finite certificate needs recorded run evidence: {rid}')
             if r['formal_status'] == 'LEAN_VERIFIED_AT_COMMIT':
                 f=r.get('formal_evidence',{})
                 require(SHA.fullmatch(f.get('commit','')) is not None, f'Missing Lean commit: {rid}')
@@ -137,7 +142,7 @@ def render(data: dict) -> dict[str,str]:
             for r in sorted(p['results'],key=lambda r:(r['date'],r['id']),reverse=True):
                 body += [f"### {r['title']}",'',r['scope'],'',
                          f"Formalization: **{r['formal_status']}**. Literature: **{r['literature']}**.",
-                         f"Recorded computational reproduction: [run]({r['evidence_run']}) at `{r['evidence_commit']}`. This is historical evidence, not a claim about today's CI.",'']
+                         (f"Recorded computational reproduction: [run]({r['evidence_run']}) at `{r['evidence_commit']}`. This is historical evidence, not a claim about today's CI." if r.get('evidence_run') else f"Evidence baseline: `{r['evidence_commit']}`. No CI execution is claimed for this entry. Inspect the proof and its assumptions."),'']
             body+=['</details>','']
         else:
             body+=['No numerical result is imported into this catalog for this lane. Original work remains available through the links below.','']

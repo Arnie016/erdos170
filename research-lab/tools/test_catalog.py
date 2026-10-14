@@ -22,6 +22,14 @@ class CatalogTests(unittest.TestCase):
         for m in self.data['maintenance']:
             dest=self.root/m['path'];dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text('maintenance\n')
     def test_valid_catalog(self): catalog.validate(self.data,self.root)
+    def test_pure_proof_without_execution_allowed(self):
+        r=self.data['problems'][0]['results'][0]
+        r['code']=[];r['evidence_run']=None
+        catalog.validate(self.data,self.root)
+        self.assertIn('No CI execution is claimed',catalog.render(self.data)['research-lab/problems/erdos-117/README.md'])
+    def test_finite_certificate_needs_code(self):
+        r=self.data['problems'][0]['results'][-1];r['code']=[]
+        with self.assertRaises(ValueError): catalog.validate(self.data,self.root)
     def test_duplicate_problem_rejected(self):
         self.data['problems'].append(copy.deepcopy(self.data['problems'][0]))
         with self.assertRaises(ValueError): catalog.validate(self.data,self.root)
