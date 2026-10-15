@@ -18,6 +18,7 @@ No solution of the headline problem is claimed here. Finite censuses, ordinary p
 
 | Date | Result | Validity | Proof and code |
 |---|---|---|---|
+| 2026-10-15 | First exact all-group threshold: h(3)=3 | ANALYTICAL_PROOF | [Proof](runs/2026-10-15-omega-three/PROOF.md) · [Code 1](runs/2026-10-15-omega-three/check_small_groups.py) |
 | 2026-10-09 | 174,251 rank-five scalar planes | EXACT_FINITE_CERTIFICATE | [Proof](../../studies/erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md) · [Code 1](../../studies/erdos117-2026-10-09/src/rank5_two_pencils.cpp) · [Code 2](../../studies/erdos117-2026-10-09/src/worker2_iso_cover.cpp) |
 | 2026-10-08 | 2,825 rank-four kernels | EXACT_FINITE_CERTIFICATE | [Proof](../../studies/erdos117-2026-10-08/proofs/all_rank4_pencils_census.md) · [Code 1](../../studies/erdos117-2026-10-08/src/worker1_rref_graph.py) · [Code 2](../../studies/erdos117-2026-10-08/src/worker2_bfs_subspace_cover.py) |
 | 2026-10-07 | 4,096 ordered form pairs | EXACT_FINITE_CERTIFICATE | [Proof](../../studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md) · [Code 1](../../studies/erdos117-2026-10-07/src/worker1_census.py) · [Code 2](../../studies/erdos117-2026-10-07/src/worker2_independent.py) |
@@ -28,6 +29,13 @@ No solution of the headline problem is claimed here. Finite censuses, ordinary p
 
 <details>
 <summary>Exact scope and evidence provenance</summary>
+
+### First exact all-group threshold: h(3)=3
+
+Every group, including infinite groups: omega=3 iff the central quotient is Klein four; then a=3. An elementary proof, not a new global asymptotic bound.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Evidence baseline: `f24d368bb4cdaf397c51df8b0d3a3e4e176b1fd0`. No CI execution is claimed for this entry. Inspect the proof and its assumptions.
 
 ### 174,251 rank-five scalar planes
 
@@ -82,9 +90,9 @@ Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/
 
 ## Next bounded question
 
-Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number?
+Is h(4)=4 for all groups, or does a group with omega(G)<=4 need at least five abelian subgroups?
 
-**Discriminating test:** An independently checked matching cover and clique does not settle the whole class. One certified gap decides existence positively; a complete exclusion needs its own proof or complete domain.
+**Discriminating test:** One certified group with omega(G)<=4 and a(G)>=5 refutes h(4)=4. A matching cover and clique in only one group does not settle all groups.
 
 ## Navigate
 

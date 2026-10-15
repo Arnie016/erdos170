@@ -4,6 +4,7 @@ This is a public research notebook, not a list of solved headline Erdős problem
 
 | Claim | Scope | Evidence | Formal status |
 |---|---|---|---|
+| omega(G) ≤ 3 over all groups | h(1)=h(2)=1, h(3)=3; omega=3 iff G/Z(G) is Klein four | [Self-contained ordinary proof](problems/erdos-117/runs/2026-10-15-omega-three/PROOF.md); finite controls D8, Q8, S3, C4 | UNFORMALIZED |
 | Order-64 examples | Two specified cocycles have a=omega=9 and a=omega=5 | Matching finite clique/cover witnesses; two executable checks | The explicit binary witness predicates are Lean-verified at e4c0bc8ac647538f5dd22c84613b6745446f7bfe; full group reduction not formalized |
 | Binary central quotient dimension <=4 | All groups in that quotient class, including infinite centers | Ordinary reduction plus exhaustive 2,825-kernel certificate | UNFORMALIZED |
 | Quotient dimension <=5, derived dimension <=2 | Exact stated group class | Ordinary reduction plus complete 174,251-plane certificate and lower-dimensional result | UNFORMALIZED |
@@ -21,9 +22,9 @@ The study implementations were replayed from recovered source during publication
 
 ## Active and parked questions
 
-Active: does a three-coordinate alternating map on F2^5 have a cover number larger than its noncommuting clique number? One exact independently checked witness would decide existence positively.
+Active: is h(4)=4 over all groups? A single group with omega<=4 and a>=5 would refute the equality.
 
-Parked: formalize the general clique-lower-bound and group-cover reduction in Lean before attempting full census formalization. Merely storing a theorem statement in a `.lean` file is not a proof.
+Parked: the rank-five, three-coordinate alternating-map clique-versus-cover gap. Do not promote a finite scan into a uniform group theorem.
 
 ## Vocabulary
 

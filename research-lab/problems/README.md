@@ -8,7 +8,7 @@ Project labels describe work in this repository, not externally verified open/so
 
 | Problem | Project focus | Latest registered result | Next question |
 |---|---|---|---|
-| [Erdős #117: Abelian subgroup covers](erdos-117/README.md) | ACTIVE | 2026-10-09 | Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number? |
+| [Erdős #117: Abelian subgroup covers](erdos-117/README.md) | ACTIVE | 2026-10-15 | Is h(4)=4 for all groups, or does a group with omega(G)<=4 need at least five abelian subgroups? |
 | [Erdős #170: Sparse rulers and difference bases](erdos-170/README.md) | RETAINED | No imported result | Audit a saved discrete candidate together with its stated lower bound before promoting it from a search output to an exact result. |
 | [Modular distinct subset sums](modular-subset-sums/README.md) | PARKED | 2026-10-05 | At n=7 and modulus 133, can an admissible set require more than one replacement to reach a signed, unit-scaled powers-of-two set? |
 
