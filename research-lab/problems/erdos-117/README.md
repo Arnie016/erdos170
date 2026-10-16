@@ -91,6 +91,7 @@ Does a three-coordinate alternating map on F2^5 have a cover number strictly lar
 [Claim and formalization status](../../STATUS.md)  
 [Lean witness library](../../lean/README.md)  
 [Public-source ledger](../../SOURCES.md)  
+[2026-10-16: Published source-witness correction (13-point F3)](runs/2026-10-16-lecomte-gram-audit/README.md)  
 
 [Reproduce the existing studies](../../REPRODUCING.md). A new catalog entry does not automatically run a new verifier.
 

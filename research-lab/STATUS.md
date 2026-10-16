@@ -34,3 +34,7 @@ Formal layer: UNFORMALIZED, LEAN_PENDING, LEAN_VERIFIED_AT_COMMIT.
 Literature: KNOWN, PRIORITY_UNCHECKED, CANDIDATE_NOVELTY.
 
 A complete finite result is not a solution beyond its quantified domain. Neither a local improvement nor a repository badge proves a new global bound.
+
+## External source audits (distinct from project theorems)
+
+- **2026-10-16, CORRECTION, literature priority unchecked:** [13-vector F3 clique audit](problems/erdos-117/runs/2026-10-16-lecomte-gram-audit/README.md) of Lecomte arXiv:2608.20507v1, Lemma 4.4. All 78 actual pairings are nonzero, but three printed upper-Gram entries differ from the displayed vectors. The strict source-table test failed as intended; a separate diagnostic records the differences. This does **not** invalidate the nonorthogonality witness or change the global h(n) bound. Not Lean-verified. New audit not included in the historical eight-study CI reproduction.

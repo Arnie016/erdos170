@@ -11,3 +11,5 @@ The imported files are original AI-assisted project work, with literature priori
 - Build action source: https://github.com/leanprover/lean-action
 
 Only links and attributions are published here, not copies of third-party papers. Private correspondence and author-reported unpublished results are excluded from the public evidence chain.
+
+- Public source verification, 2026-10-16: [13-vector source witness and three printed-Gram discrepancies](problems/erdos-117/runs/2026-10-16-lecomte-gram-audit/README.md), arXiv:2608.20507v1 Lemma 4.4, checked against original PDF p.5 and public HTML. The finite pairwise-nonorthogonality statement survives; three table entries disagree. CC BY 4.0 source data are attributed. No complete proof verification or new global bound is asserted.

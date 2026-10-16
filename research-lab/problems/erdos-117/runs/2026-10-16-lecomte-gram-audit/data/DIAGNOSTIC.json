@@ -1,0 +1,98 @@
+{
+  "status": "DIAGNOSTIC_FAIL",
+  "pair_count": 78,
+  "matching_printed_entries": 75,
+  "mismatch_count": 3,
+  "zero_pairings_count": 0,
+  "zero_pairings": [],
+  "all_mismatches": [
+    {
+      "i": 5,
+      "j": 9,
+      "computed": 1,
+      "paper": 2,
+      "block_terms": [
+        2,
+        0,
+        2
+      ],
+      "vectors": [
+        [
+          1,
+          2,
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "i": 9,
+      "j": 12,
+      "computed": 2,
+      "paper": 1,
+      "block_terms": [
+        2,
+        1,
+        2
+      ],
+      "vectors": [
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "i": 10,
+      "j": 13,
+      "computed": 2,
+      "paper": 1,
+      "block_terms": [
+        0,
+        0,
+        2
+      ],
+      "vectors": [
+        [
+          1,
+          2,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      ]
+    }
+  ],
+  "python": "3.13.5"
+}
