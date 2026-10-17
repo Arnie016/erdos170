@@ -72,3 +72,42 @@ jobs:
           path: research-lab/_generated/**
           include-hidden-files: true
           if-no-files-found: error
+
+  modular133-finite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Compute exact subset-sum canonical census
+        run: |
+          mkdir -p research-lab/_generated/modular133
+          timeout --signal=TERM --kill-after=2s 35s python3 research-lab/problems/modular-subset-sums/runs/2026-10-17-mod133-exact/search_mod133.py research-lab/_generated/modular133/search.json
+      - name: Independently reproduce signed-difference census
+        run: |
+          g++ -std=c++20 -O2 -Wall -Wextra research-lab/problems/modular-subset-sums/runs/2026-10-17-mod133-exact/check_mod133.cpp -o /tmp/check_mod133
+          timeout --signal=TERM --kill-after=2s 35s /tmp/check_mod133 research-lab/_generated/modular133/independent.json
+      - name: Cross-check outputs and negative control
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('research-lab/_generated/modular133/search.json').read_text())
+          b=json.loads(Path('research-lab/_generated/modular133/independent.json').read_text())
+          assert a['all_completed'] and b['completed']
+          assert a['N']==b['N']==133 and a['n']==b['n']==7
+          assert a['nodes_by_depth']==b['nodes']==[1,60,1830,36656,490780,3322318,2942381,162]
+          assert a['first_bad'] is None
+          assert len(b['accepted'])==162 and len(set(tuple(row) for row in b['accepted']))==162
+          assert b['overlap_hist']=={'6':108,'7':54}
+          assert [x['count'] for x in b['orbit_classes']]==[54,54,54]
+          assert b['negative_control_distinct_subset_sums']==29
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: modular133-exact-witnesses
+          path: research-lab/_generated/modular133/*.json
+          if-no-files-found: warn
