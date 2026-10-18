@@ -1,0 +1,22 @@
+{
+  "domain": "all two-replacements of the fixed 39-mark A with 0,500 preserved",
+  "target": [
+    7,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499
+  ],
+  "counts": {
+    "removed_pairs": 666,
+    "distinguished_trials": 5328,
+    "second_candidates_tested": 290061,
+    "found": false,
+    "pair_trials_equivalent": 2437560
+  },
+  "found": null,
+  "elapsed": 7.272905266000009
+}

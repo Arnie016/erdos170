@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "claims": [
+    {
+      "id": "R170-20261018-TARGET",
+      "statement": "Any complete 39-mark restricted ruler obtained by two replacements of fixed A must insert a mark from {7,493,...,499}.",
+      "hypotheses": "A has 39 specified marks and misses 493.",
+      "status": "ANALYTICAL_PROOF",
+      "evidence": "proof/PROOF.md"
+    },
+    {
+      "id": "R170-20261018-TWO-MOVE",
+      "statement": "The specified A admits no complete restricted length-500 ruler by at most two mark replacements.",
+      "hypotheses": "A is precisely raw/candidate.json",
+      "dependencies": [
+        "R170-20261018-TARGET",
+        "prior one-move exclusion 2026-10-16"
+      ],
+      "status": "EXACT_FINITE_CERTIFICATE",
+      "formalization": "UNFORMALIZED",
+      "literature": "PRIORITY_UNCHECKED",
+      "evidence": "src/ and raw/ plus proof/PROOF.md"
+    }
+  ],
+  "global_effect": "Unchanged F(500) bounds and Erdős #170 asymptotic statement"
+}

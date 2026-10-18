@@ -65,6 +65,13 @@ jobs:
           python-version: '3.13'
       - name: Reproduce all eight studies with exact acceptance checks
         run: python3 research-lab/tools/verify_all.py
+      - name: Independently check #170 two-mark local exclusion
+        shell: bash
+        run: |
+          set -euo pipefail
+          d=research-lab/problems/erdos-170/runs/2026-10-18-two-mark-exclusion
+          timeout -k 2s 32s python3 "$d/src/independent_exhaustive.py" "$d/raw/candidate.json" "$RUNNER_TEMP/two-mark-check.json"
+          python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r["total_exactly_tested"] == 2437560 and r["complete_replacements"] == [] and r["baseline_missing"] == [493]' "$RUNNER_TEMP/two-mark-check.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -72,3 +79,4 @@ jobs:
           path: research-lab/_generated/**
           include-hidden-files: true
           if-no-files-found: error
+
