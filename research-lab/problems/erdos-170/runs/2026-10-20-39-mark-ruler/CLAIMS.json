@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-20",
+  "id": "ERDOS170-500-39-2026-10-20",
+  "status": "EXACT_FINITE_CERTIFICATE",
+  "literature": "PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "scope": "For integer N=500, there exists an A of 39 marks in [0,500] with each integer d=1..500 realized as b-a for two marks a<b.",
+  "dependencies": [
+    "explicit marks in PROOF.md",
+    "raw_result.json",
+    "500-row witnesses.csv",
+    "independent_verify.py"
+  ],
+  "falsifier": "A missing required positive distance, a witness row with b-a != d, or an endpoint/cardinality violation.",
+  "conclusion": "F(500)<=39; improves recorded project upper witness from 40 to 39, not a demonstrated literature record or equality.",
+  "evidence": {
+    "previous_HEAD": "fb4d9480776b3c517a204b9939c59fdd7162f9d8",
+    "prior_local_branch": "80f148eb1b2d5a92d4e71df7f02a41fb3560f8ea",
+    "local_checker_sha256": "b15a3367c0c3f7e3309b0062dc8241da30c92a9770089c7c1798f3e4ce8176e5",
+    "witness_sha256": "d77200b644c1c9ccbf2d206d8b8f02b5ef9233dc281da238d849a8886606e0a1"
+  }
+}

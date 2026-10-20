@@ -1,0 +1,12 @@
+BEST 41 r=4 kind=one-gap trials=1
+BEST 37 r=4 kind=one-gap trials=17
+BEST 29 r=4 kind=one-gap trials=18
+BEST 24 r=4 kind=one-gap trials=19
+BEST 23 r=4 kind=one-gap trials=20
+BEST 21 r=4 kind=two-gap trials=8863
+BEST 20 r=4 kind=two-gap trials=10014
+BEST 16 r=4 kind=two-gap trials=10058
+BEST 15 r=4 kind=two-gap trials=10455
+BEST 12 r=4 kind=two-gap trials=10499
+BEST 6 r=5 kind=one-gap trials=30349
+BEST 0 r=5 kind=one-gap trials=30350

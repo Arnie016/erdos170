@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-20",
+  "N": 500,
+  "marks": 39,
+  "all_500_distances": true,
+  "min_distance": 1,
+  "max_distance": 500,
+  "distinct_pair_distances": 500,
+  "pairs_total": 741,
+  "prior_39_missing": [
+    493
+  ],
+  "prior_40_complete": true,
+  "negative_delete_262_missing": [
+    207,
+    218,
+    229,
+    234,
+    235,
+    236,
+    237,
+    238,
+    240,
+    251,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262
+  ],
+  "witnesses_sha256": "d77200b644c1c9ccbf2d206d8b8f02b5ef9233dc281da238d849a8886606e0a1",
+  "elapsed_seconds": 0.001198
+}

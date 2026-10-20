@@ -1,0 +1,3 @@
+exit_code=0
+wall_seconds=1.562
+command=timeout -k 1s 33s bash -c 'g++ -O3 -std=c++17 -Wall template_search.cpp -o template_search && exec ./template_search'
