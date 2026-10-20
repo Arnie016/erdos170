@@ -1,0 +1,84 @@
+{
+  "basis": "integer arithmetic; trial-division prime factorization",
+  "cases": [
+    {
+      "integer_identity_passed": true,
+      "n": 49,
+      "primes_t": [7],
+      "primes_x0": [13],
+      "t": 7,
+      "witness": {"x": 14, "y": 99, "z": 9702},
+      "x0_excluded": 13,
+      "x1_attained": 14
+    },
+    {
+      "integer_identity_passed": true,
+      "n": 2401,
+      "primes_t": [7],
+      "primes_x0": [601],
+      "t": 49,
+      "witness": {"x": 602, "y": 206487, "z": 42636674682},
+      "x0_excluded": 601,
+      "x1_attained": 602
+    },
+    {
+      "integer_identity_passed": true,
+      "n": 117649,
+      "primes_t": [7],
+      "primes_x0": [67, 439],
+      "t": 343,
+      "witness": {"x": 29414, "y": 494361099, "z": 244392895710126702},
+      "x0_excluded": 29413,
+      "x1_attained": 29414
+    },
+    {
+      "integer_identity_passed": true,
+      "n": 5764801,
+      "primes_t": [7],
+      "primes_x0": [1441201],
+      "t": 2401,
+      "witness": {"x": 1441202, "y": 1186891818687, "z": 1408712189264947590585282},
+      "x0_excluded": 1441201,
+      "x1_attained": 1441202
+    },
+    {
+      "integer_identity_passed": true,
+      "n": 282475249,
+      "primes_t": [7],
+      "primes_x0": [73, 97, 9973],
+      "t": 16807,
+      "witness": {"x": 70618814, "y": 2849723866962099, "z": 8120926117933416070711235523702},
+      "x0_excluded": 70618813,
+      "x1_attained": 70618814
+    },
+    {
+      "integer_identity_passed": true,
+      "n": 13841287201,
+      "primes_t": [7],
+      "primes_x0": [1531, 2260171],
+      "t": 117649,
+      "witness": {"x": 3460321802, "y": 6842186838480550887, "z": 46815520732676476145429992928515935882},
+      "x0_excluded": 3460321801,
+      "x1_attained": 3460321802
+    },
+    {
+      "integer_identity_passed": true,
+      "n": 8281,
+      "primes_t": [7, 13],
+      "primes_x0": [19, 109],
+      "t": 91,
+      "witness": {"x": 2072, "y": 2451177, "z": 6008266234152},
+      "x0_excluded": 2071,
+      "x1_attained": 2072
+    }
+  ],
+  "domain": "exactly t=7^j for j=1..6, plus t=91; negative control n=25",
+  "negative_control": {
+    "identity_passed": true,
+    "n": 25,
+    "witness": {"x": 7, "y": 60, "z": 2100},
+    "x0": 7
+  },
+  "seed": null,
+  "wall_time_seconds": 0.00028
+}

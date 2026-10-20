@@ -1,0 +1,35 @@
+{
+  "run_date": "2026-10-20",
+  "problem_id": "erdos-242",
+  "claims": [
+    {
+      "id": "P242-KNOWN-2TERM-2013",
+      "statement": "Chen and Koo's 2013 Theorem 10(i) gives a prime-factor criterion for splitting 3/m into two distinct positive unit fractions, gcd(m,3)=1.",
+      "status": "KNOWN",
+      "audit": "Theorem statement read; full proof not audited."
+    },
+    {
+      "id": "P242-CYCLO-20261020",
+      "statement": "All prime factors of ((t-1)/2)^2+((t-1)/2)+1 are 1 modulo 3 for any integer t≡1 modulo 6.",
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "proof": "PROOF.md"
+    },
+    {
+      "id": "P242-FIRST-20261020",
+      "statement": "For every positive t divisible by 7 with each prime divisor 1 modulo 3, letting n=t², the least x in a strict unit-fraction triple for 4/n is D(n)=(n+7)/4.",
+      "depends_on": [
+        "P242-CYCLO-20261020",
+        "integer factorization and residue obstruction",
+        "explicit ordered construction"
+      ],
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "proof": "PROOF.md",
+      "regression": "raw_checks.json"
+    }
+  ],
+  "global_erdos_straus_claimed": false
+}

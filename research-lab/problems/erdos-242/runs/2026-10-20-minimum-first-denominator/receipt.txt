@@ -1,0 +1,5 @@
+exit/wall: 0 / 1.89 seconds
+exit_code=0
+command=timeout --signal=TERM --kill-after=1s 35s python3 -B verify.py
+script_sha256=81b94535513f97da3dcc21919bfa5cbd4d5d62b8b753de6e1f457aa346023119
+raw_sha256=f053b12ead89be9317bc1070eac6cd8b7f66e6a6c4b04d4f80bc5cdfebb818e3

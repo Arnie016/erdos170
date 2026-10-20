@@ -8,10 +8,11 @@ Project labels describe work in this repository, not externally verified open/so
 
 | Problem | Project focus | Latest registered result | Next question |
 |---|---|---|---|
-| [Erdős #117: Abelian subgroup covers](erdos-117/README.md) | ACTIVE | 2026-10-09 | Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number? |
+| [Erdős #117: Abelian subgroup covers](erdos-117/README.md) | RETAINED | 2026-10-09 | Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number? |
 | [Erdős #170: Sparse rulers and difference bases](erdos-170/README.md) | RETAINED | No imported result | Audit a saved discrete candidate together with its stated lower bound before promoting it from a search output to an exact result. |
 | [Modular distinct subset sums](modular-subset-sums/README.md) | PARKED | 2026-10-05 | At n=7 and modulus 133, can an admissible set require more than one replacement to reach a signed, unit-scaled powers-of-two set? |
+| [Erdős #242: Three unit fractions / Erdős–Straus](erdos-242/README.md) | ACTIVE | 2026-10-20 | For prime n congruent to 1 modulo 24, can one prove an explicit residue subclass where the smallest allowed x is excluded and the next x has a symbolic positive ordered construction? |
 
 [Edit the catalog](catalog.json) and regenerate with `python3 research-lab/tools/catalog.py --write`.
 
-Navigation updated: 2026-10-14. This date is not a mathematical discovery date.
+Navigation updated: 2026-10-20. This date is not a mathematical discovery date.

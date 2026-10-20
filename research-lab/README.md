@@ -9,6 +9,7 @@
 |---|---|
 | [Erdős #117](problems/erdos-117/README.md) | Active group-cover research; finite results and the next unresolved case |
 | [Erdős #170](problems/erdos-170/README.md) | Original sparse-ruler suite, retained as a separate lane |
+| [Erdős #242](problems/erdos-242/README.md) | Exact minimum first denominator for an infinite composite family; not the global conjecture |
 | [Modular subset sums](problems/modular-subset-sums/README.md) | Certified modulus-69 case and the parked modulus-133 question |
 | [Progress log](PROGRESS.md) | Dated mathematical entries, with infrastructure updates separated |
 | [Verification guide](REPRODUCING.md) | Exact checkers, CI receipts and Lean scope |
