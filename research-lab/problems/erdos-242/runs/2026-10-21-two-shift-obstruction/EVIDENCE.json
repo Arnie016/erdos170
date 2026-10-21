@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-21",
+  "prime": 2521,
+  "prime_mod840": 1,
+  "domain": "ascending primes 1mod840 through 2e6, stop at first failure",
+  "primes_examined": 1,
+  "worker1": {
+    "sha256": "c7af59e1985c3ad57887b5668583af40b24ba14fa43a5e5442bd8e1ff85dbc68",
+    "exit": 0,
+    "wall_seconds": 1.76,
+    "hard_timeout": 35,
+    "template_c3": "NO_SOLUTION",
+    "template_c7": "NO_SOLUTION",
+    "factor_A3": {
+      "631": 1,
+      "2521": 1
+    },
+    "factor_A7": {
+      "2": 3,
+      "79": 1,
+      "2521": 1
+    }
+  },
+  "worker2": {
+    "sha256": "800463e91af671eb1907c1f8a809f2fcbd315e02e5fe71a80774227e46ca0833",
+    "exit": 0,
+    "wall_seconds": 0.81,
+    "hard_timeout": 35,
+    "first_solution": [
+      636,
+      70588,
+      5611746
+    ],
+    "exact_residual": "0",
+    "negative_control_rejected": true
+  },
+  "ci": "NOT_OBSERVED_FOR_THIS_RESULT"
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-21",
+  "baseline_commit": "b7d02f5ff6ec8b5e898610af5c47adc95928627d",
+  "claims": [
+    {
+      "id": "E242-CHAR-01",
+      "statement": "Character obstruction lemma for denominator template x=(n+c)/4 under gcd(nx,c)=1.",
+      "validity": "ANALYTICAL_PROOF",
+      "formal": "UNFORMALIZED",
+      "literature": "PRIORITY_UNCHECKED",
+      "evidence": "PROOF.md"
+    },
+    {
+      "id": "E242-2521-02",
+      "statement": "At p=2521 the first denominator x=631 or 632 has no positive completion.",
+      "validity": "COUNTEREXAMPLE",
+      "depends_on": [
+        "E242-CHAR-01"
+      ],
+      "formal": "UNFORMALIZED",
+      "literature": "PRIORITY_UNCHECKED",
+      "evidence": "PROOF.md"
+    },
+    {
+      "id": "E242-2521-03",
+      "statement": "The first valid ordered x for this prime is 636; one witness is (636,70588,5611746).",
+      "validity": "EXACT_FINITE_CERTIFICATE",
+      "formal": "UNFORMALIZED",
+      "literature": "PRIORITY_UNCHECKED",
+      "evidence": "EVIDENCE.json"
+    }
+  ],
+  "worker_count": 2,
+  "no_global_solution": true
+}

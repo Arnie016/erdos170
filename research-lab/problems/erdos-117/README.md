@@ -4,7 +4,7 @@
 
 [All problems](../README.md) · [Lab](../../README.md) · [Progress](../../PROGRESS.md) · [Contribute](../../CONTRIBUTING.md)
 
-**Project focus: ACTIVE.** How many abelian subgroups are needed to cover a group with a bounded pairwise-noncommuting set?
+**Project focus: RETAINED.** How many abelian subgroups are needed to cover a group with a bounded pairwise-noncommuting set?
 
 ## The question
 
