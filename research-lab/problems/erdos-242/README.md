@@ -18,10 +18,18 @@ A failed first-denominator formula is not an Erdős–Straus counterexample. Cha
 
 | Date | Result | Validity | Proof and code |
 |---|---|---|---|
+| 2026-10-22 | Exact leading constant for the coprime sieve mass | ANALYTICAL_PROOF | [Proof](runs/2026-10-22-sharp-sieve-mass/PROOF.md) · [Code 1](runs/2026-10-22-sharp-sieve-mass/check_w.py) |
 | 2026-10-21 | Character obstruction to two first-denominator shifts | COUNTEREXAMPLE | [Proof](runs/2026-10-21-two-shift-obstruction/PROOF.md) |
 
 <details>
 <summary>Exact scope and evidence provenance</summary>
+
+### Exact leading constant for the coprime sieve mass
+
+For Dahan's W(J)=sum_{u,a<=J,gcd(u,a)=1}1/phi(4ua), ordinary proof of W(J)=9/(2*pi^2)*(log J)^2+O(log J). This sharpens an auxiliary sieve coefficient only; no all-n Erdős–Straus result or downstream exponent is claimed.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Evidence baseline: `3ebda32a8c19a5b4fccbe7dc9c95bf2aee08b665`. No CI execution is claimed for this entry. Inspect the proof and its assumptions.
 
 ### Character obstruction to two first-denominator shifts
 
@@ -34,9 +42,9 @@ Evidence baseline: `b7d02f5ff6ec8b5e898610af5c47adc95928627d`. No CI execution i
 
 ## Next bounded question
 
-Can both shifts c=3 and c=7 be proved to fail for infinitely many primes p≡1 (mod 840), after comparing with Dahan's 2026 work?
+Audit the transfer of the proved 9/(2*pi^2) sieve coefficient through Dahan's Lemma 4.23 and Corollary 4.31, including each admissibility condition.
 
-**Discriminating test:** A candidate infinite prime family fails if one required member has a successful c=3 or c=7 template; finite samples do not prove infinitude.
+**Discriminating test:** An unchecked downstream inequality or changing admissibility condition prevents claiming the anticipated improved exceptional-set exponent; isolate the precise step.
 
 ## Navigate
 

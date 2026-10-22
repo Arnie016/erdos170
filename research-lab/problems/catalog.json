@@ -1,1 +1,282 @@
-{"schema_version":1,"repository":"Arnie016/erdos170","snapshot_commit":"7d407bb58a793edcfc59fc01932248c11b99a17c","navigation_updated":"2026-10-21","problems":[{"id":"erdos-117","kind":"erdos","number":117,"title":"Abelian subgroup covers","status":"RETAINED","summary":"How many abelian subgroups are needed to cover a group with a bounded pairwise-noncommuting set?","question":"Write a(G) for the minimum abelian-subgroup cover size and omega(G) for the maximum pairwise-noncommuting set size. The global function h(n) takes the supremum over ALL groups with omega(G) <= n.","boundary":"No solution of the headline problem is claimed here. Finite censuses, ordinary proofs and Lean-checked witnesses have different scopes. External open/solved status is not inferred from repository labels.","next_question":"Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number?","falsifier":"An independently checked matching cover and clique does not settle the whole class. One certified gap decides existence positively; a complete exclusion needs its own proof or complete domain.","resources":[{"label":"Claim and formalization status","path":"research-lab/STATUS.md"},{"label":"Lean witness library","path":"research-lab/lean/README.md"},{"label":"Public-source ledger","path":"research-lab/SOURCES.md"}],"results":[{"id":"erdos117-2026-10-03","date":"2026-10-03","title":"Coupled-padding rank budget","scope":"Two restriction-rank inequalities; regression is finite, not a global cover theorem.","validity":"ANALYTICAL_PROOF","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-03/proofs/coupled_padding_rank_budget.md","code":["research-lab/studies/erdos117-2026-10-03/src/verify_coupling_rank_budget.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"},{"id":"erdos117-2026-10-04","date":"2026-10-04","title":"Central-basis shear counterexample","scope":"A named scalar rank can change without changing commutation.","validity":"COUNTEREXAMPLE","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-04/proofs/central_basis_shear_counterexample.md","code":["research-lab/studies/erdos117-2026-10-04/src/check_coordinate_shear.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"},{"id":"erdos117-2026-10-05","date":"2026-10-05","title":"Basis-invariant cross-radical bound","scope":"A clique lower bound over the scalar-form space; no new global h(n) bound.","validity":"ANALYTICAL_PROOF","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-05/proofs/basis_invariant_crossradical_envelope.md","code":["research-lab/studies/erdos117-2026-10-05/src/verify_pencil_crossrank_envelope.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"},{"id":"erdos117-2026-10-06","date":"2026-10-06","title":"Two groups of order 64","scope":"Matching clique and cover witnesses of sizes 9 and 5. The associated small Lean predicates are separate from this group-level proof.","validity":"EXACT_FINITE_CERTIFICATE","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-06/proofs/order64_exact_cover_clique.md","code":["research-lab/studies/erdos117-2026-10-06/src/worker1_graph_exact.py","research-lab/studies/erdos117-2026-10-06/src/worker2_certificate_check.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"},{"id":"erdos117-2026-10-07","date":"2026-10-07","title":"4,096 ordered form pairs","scope":"Complete stated two-coordinate family on F2^4; not all groups of order 64.","validity":"EXACT_FINITE_CERTIFICATE","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md","code":["research-lab/studies/erdos117-2026-10-07/src/worker1_census.py","research-lab/studies/erdos117-2026-10-07/src/worker2_independent.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"},{"id":"erdos117-2026-10-08","date":"2026-10-08","title":"2,825 rank-four kernels","scope":"All alternating commutation geometries on F2^4; equality of clique and isotropic-cover numbers in that domain.","validity":"EXACT_FINITE_CERTIFICATE","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-08/proofs/all_rank4_pencils_census.md","code":["research-lab/studies/erdos117-2026-10-08/src/worker1_rref_graph.py","research-lab/studies/erdos117-2026-10-08/src/worker2_bfs_subspace_cover.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"},{"id":"erdos117-2026-10-09","date":"2026-10-09","title":"174,251 rank-five scalar planes","scope":"The two-coordinate F2^5 class; three-coordinate cases are outside this census.","validity":"EXACT_FINITE_CERTIFICATE","formal_status":"UNFORMALIZED","proof":"research-lab/studies/erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md","code":["research-lab/studies/erdos117-2026-10-09/src/rank5_two_pencils.cpp","research-lab/studies/erdos117-2026-10-09/src/worker2_iso_cover.cpp"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"}]},{"id":"erdos-170","kind":"erdos","number":170,"title":"Sparse rulers and difference bases","status":"RETAINED","summary":"Find small sets of marks whose differences cover every required distance.","question":"For a ruler on {0,...,N}, every distance 1,...,N must occur as a difference of two marks. The original experiment suite remains in the repository root.","boundary":"Heuristic candidates are not optimality certificates. The continuous autocorrelation parameter tau is not the discrete sparse-ruler limit. No new #170 numerical or asymptotic result is added by this navigation release.","next_question":"Audit a saved discrete candidate together with its stated lower bound before promoting it from a search output to an exact result.","falsifier":"A missing distance invalidates a complete-ruler claim. A candidate without a matching lower bound is not an optimum.","resources":[{"label":"Original installation and experiment guide","path":"README.md#sparse-ruler-guide"},{"label":"Source code","path":"src"},{"label":"Experiment configurations","path":"configs"},{"label":"Saved results","path":"results"},{"label":"Paper artifacts","path":"paper"}],"results":[]},{"id":"modular-subset-sums","kind":"related","number":null,"title":"Modular distinct subset sums","status":"PARKED","summary":"Understand the structure of n-element sets with all subset sums distinct modulo 2^n+5.","question":"Compare admissible sets with signed unit dilations of {1,2,4,...,2^(n-1)}. This is a separately tracked research branch; no unverified Erdős problem number is assigned.","boundary":"The certified n=6 result is not a proof for every n. Sign reduction, completeness and the independent checker are part of the finite claim.","next_question":"At n=7 and modulus 133, can an admissible set require more than one replacement to reach a signed, unit-scaled powers-of-two set?","falsifier":"One fully verified set at replacement distance at least two refutes the proposed all-n pattern. An incomplete search with no counterexample does not prove it.","resources":[{"label":"Reproduction instructions","path":"research-lab/REPRODUCING.md"},{"label":"Claim status","path":"research-lab/STATUS.md"}],"results":[{"id":"modular69","date":"2026-10-05","title":"Modulus 69: complete n=6 case","scope":"4,224 admissible sets; each is within one replacement of signed unit-scaled powers of two. No all-n theorem.","validity":"EXACT_FINITE_CERTIFICATE","formal_status":"UNFORMALIZED","proof":"research-lab/studies/modular69/proofs/modular69_finite_theorem.md","code":["research-lab/studies/modular69/src/generate.py","research-lab/studies/modular69/src/verify.py"],"evidence_commit":"e60ae6036099df9e2dd8df289d5876c3b98361fa","evidence_run":"https://github.com/Arnie016/erdos170/actions/runs/37907771671","literature":"PRIORITY_UNCHECKED"}]},{"id":"erdos-242","kind":"erdos","number":242,"title":"Erdős–Straus three unit fractions","status":"ACTIVE","summary":"Study exact obstructions to bounded first-denominator templates for 4/n as three unit fractions.","question":"For every integer n>2, do positive integers x<y<z exist with 4/n=1/x+1/y+1/z? This lane checks scoped denominator formulas, not counterexamples to the conjecture.","boundary":"A failed first-denominator formula is not an Erdős–Straus counterexample. Character obstructions here are necessary conditions, with literature priority unchecked; no global theorem is claimed.","next_question":"Can both shifts c=3 and c=7 be proved to fail for infinitely many primes p≡1 (mod 840), after comparing with Dahan's 2026 work?","falsifier":"A candidate infinite prime family fails if one required member has a successful c=3 or c=7 template; finite samples do not prove infinitude.","resources":[{"label":"Inspectable proof","path":"research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/PROOF.md"},{"label":"Reading-depth ledger","path":"research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/SOURCES.md"},{"label":"Next test","path":"research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/CHECKPOINT.md"}],"results":[{"id":"erdos242-2026-10-21","date":"2026-10-21","title":"Character obstruction to two first-denominator shifts","scope":"Prime p=2521≡1 mod840 defeats both x=(p+3)/4 and x=(p+7)/4, but admits an exact triple with a different x. This is a restricted ansatz counterexample only.","validity":"COUNTEREXAMPLE","formal_status":"UNFORMALIZED","literature":"PRIORITY_UNCHECKED","proof":"research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/PROOF.md","code":[],"evidence_commit":"b7d02f5ff6ec8b5e898610af5c47adc95928627d"}]}],"maintenance":[{"date":"2026-10-14","kind":"INFRASTRUCTURE","summary":"Added problem-first navigation, a reproducible progress index and navigation validation. No new mathematical theorem.","path":"research-lab/maintenance/2026-10-14-navigation.md"}]}
+{
+  "schema_version": 1,
+  "repository": "Arnie016/erdos170",
+  "snapshot_commit": "7d407bb58a793edcfc59fc01932248c11b99a17c",
+  "navigation_updated": "2026-10-22",
+  "problems": [
+    {
+      "id": "erdos-117",
+      "kind": "erdos",
+      "number": 117,
+      "title": "Abelian subgroup covers",
+      "status": "RETAINED",
+      "summary": "How many abelian subgroups are needed to cover a group with a bounded pairwise-noncommuting set?",
+      "question": "Write a(G) for the minimum abelian-subgroup cover size and omega(G) for the maximum pairwise-noncommuting set size. The global function h(n) takes the supremum over ALL groups with omega(G) <= n.",
+      "boundary": "No solution of the headline problem is claimed here. Finite censuses, ordinary proofs and Lean-checked witnesses have different scopes. External open/solved status is not inferred from repository labels.",
+      "next_question": "Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number?",
+      "falsifier": "An independently checked matching cover and clique does not settle the whole class. One certified gap decides existence positively; a complete exclusion needs its own proof or complete domain.",
+      "resources": [
+        {
+          "label": "Claim and formalization status",
+          "path": "research-lab/STATUS.md"
+        },
+        {
+          "label": "Lean witness library",
+          "path": "research-lab/lean/README.md"
+        },
+        {
+          "label": "Public-source ledger",
+          "path": "research-lab/SOURCES.md"
+        }
+      ],
+      "results": [
+        {
+          "id": "erdos117-2026-10-03",
+          "date": "2026-10-03",
+          "title": "Coupled-padding rank budget",
+          "scope": "Two restriction-rank inequalities; regression is finite, not a global cover theorem.",
+          "validity": "ANALYTICAL_PROOF",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-03/proofs/coupled_padding_rank_budget.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-03/src/verify_coupling_rank_budget.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        },
+        {
+          "id": "erdos117-2026-10-04",
+          "date": "2026-10-04",
+          "title": "Central-basis shear counterexample",
+          "scope": "A named scalar rank can change without changing commutation.",
+          "validity": "COUNTEREXAMPLE",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-04/proofs/central_basis_shear_counterexample.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-04/src/check_coordinate_shear.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        },
+        {
+          "id": "erdos117-2026-10-05",
+          "date": "2026-10-05",
+          "title": "Basis-invariant cross-radical bound",
+          "scope": "A clique lower bound over the scalar-form space; no new global h(n) bound.",
+          "validity": "ANALYTICAL_PROOF",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-05/proofs/basis_invariant_crossradical_envelope.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-05/src/verify_pencil_crossrank_envelope.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        },
+        {
+          "id": "erdos117-2026-10-06",
+          "date": "2026-10-06",
+          "title": "Two groups of order 64",
+          "scope": "Matching clique and cover witnesses of sizes 9 and 5. The associated small Lean predicates are separate from this group-level proof.",
+          "validity": "EXACT_FINITE_CERTIFICATE",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-06/proofs/order64_exact_cover_clique.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-06/src/worker1_graph_exact.py",
+            "research-lab/studies/erdos117-2026-10-06/src/worker2_certificate_check.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        },
+        {
+          "id": "erdos117-2026-10-07",
+          "date": "2026-10-07",
+          "title": "4,096 ordered form pairs",
+          "scope": "Complete stated two-coordinate family on F2^4; not all groups of order 64.",
+          "validity": "EXACT_FINITE_CERTIFICATE",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-07/src/worker1_census.py",
+            "research-lab/studies/erdos117-2026-10-07/src/worker2_independent.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        },
+        {
+          "id": "erdos117-2026-10-08",
+          "date": "2026-10-08",
+          "title": "2,825 rank-four kernels",
+          "scope": "All alternating commutation geometries on F2^4; equality of clique and isotropic-cover numbers in that domain.",
+          "validity": "EXACT_FINITE_CERTIFICATE",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-08/proofs/all_rank4_pencils_census.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-08/src/worker1_rref_graph.py",
+            "research-lab/studies/erdos117-2026-10-08/src/worker2_bfs_subspace_cover.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        },
+        {
+          "id": "erdos117-2026-10-09",
+          "date": "2026-10-09",
+          "title": "174,251 rank-five scalar planes",
+          "scope": "The two-coordinate F2^5 class; three-coordinate cases are outside this census.",
+          "validity": "EXACT_FINITE_CERTIFICATE",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md",
+          "code": [
+            "research-lab/studies/erdos117-2026-10-09/src/rank5_two_pencils.cpp",
+            "research-lab/studies/erdos117-2026-10-09/src/worker2_iso_cover.cpp"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "id": "erdos-170",
+      "kind": "erdos",
+      "number": 170,
+      "title": "Sparse rulers and difference bases",
+      "status": "RETAINED",
+      "summary": "Find small sets of marks whose differences cover every required distance.",
+      "question": "For a ruler on {0,...,N}, every distance 1,...,N must occur as a difference of two marks. The original experiment suite remains in the repository root.",
+      "boundary": "Heuristic candidates are not optimality certificates. The continuous autocorrelation parameter tau is not the discrete sparse-ruler limit. No new #170 numerical or asymptotic result is added by this navigation release.",
+      "next_question": "Audit a saved discrete candidate together with its stated lower bound before promoting it from a search output to an exact result.",
+      "falsifier": "A missing distance invalidates a complete-ruler claim. A candidate without a matching lower bound is not an optimum.",
+      "resources": [
+        {
+          "label": "Original installation and experiment guide",
+          "path": "README.md#sparse-ruler-guide"
+        },
+        {
+          "label": "Source code",
+          "path": "src"
+        },
+        {
+          "label": "Experiment configurations",
+          "path": "configs"
+        },
+        {
+          "label": "Saved results",
+          "path": "results"
+        },
+        {
+          "label": "Paper artifacts",
+          "path": "paper"
+        }
+      ],
+      "results": []
+    },
+    {
+      "id": "modular-subset-sums",
+      "kind": "related",
+      "number": null,
+      "title": "Modular distinct subset sums",
+      "status": "PARKED",
+      "summary": "Understand the structure of n-element sets with all subset sums distinct modulo 2^n+5.",
+      "question": "Compare admissible sets with signed unit dilations of {1,2,4,...,2^(n-1)}. This is a separately tracked research branch; no unverified Erdős problem number is assigned.",
+      "boundary": "The certified n=6 result is not a proof for every n. Sign reduction, completeness and the independent checker are part of the finite claim.",
+      "next_question": "At n=7 and modulus 133, can an admissible set require more than one replacement to reach a signed, unit-scaled powers-of-two set?",
+      "falsifier": "One fully verified set at replacement distance at least two refutes the proposed all-n pattern. An incomplete search with no counterexample does not prove it.",
+      "resources": [
+        {
+          "label": "Reproduction instructions",
+          "path": "research-lab/REPRODUCING.md"
+        },
+        {
+          "label": "Claim status",
+          "path": "research-lab/STATUS.md"
+        }
+      ],
+      "results": [
+        {
+          "id": "modular69",
+          "date": "2026-10-05",
+          "title": "Modulus 69: complete n=6 case",
+          "scope": "4,224 admissible sets; each is within one replacement of signed unit-scaled powers of two. No all-n theorem.",
+          "validity": "EXACT_FINITE_CERTIFICATE",
+          "formal_status": "UNFORMALIZED",
+          "proof": "research-lab/studies/modular69/proofs/modular69_finite_theorem.md",
+          "code": [
+            "research-lab/studies/modular69/src/generate.py",
+            "research-lab/studies/modular69/src/verify.py"
+          ],
+          "evidence_commit": "e60ae6036099df9e2dd8df289d5876c3b98361fa",
+          "evidence_run": "https://github.com/Arnie016/erdos170/actions/runs/37907771671",
+          "literature": "PRIORITY_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "id": "erdos-242",
+      "kind": "erdos",
+      "number": 242,
+      "title": "Erdős–Straus three unit fractions",
+      "status": "ACTIVE",
+      "summary": "Study exact obstructions to bounded first-denominator templates for 4/n as three unit fractions.",
+      "question": "For every integer n>2, do positive integers x<y<z exist with 4/n=1/x+1/y+1/z? This lane checks scoped denominator formulas, not counterexamples to the conjecture.",
+      "boundary": "A failed first-denominator formula is not an Erdős–Straus counterexample. Character obstructions here are necessary conditions, with literature priority unchecked; no global theorem is claimed.",
+      "next_question": "Audit the transfer of the proved 9/(2*pi^2) sieve coefficient through Dahan's Lemma 4.23 and Corollary 4.31, including each admissibility condition.",
+      "falsifier": "An unchecked downstream inequality or changing admissibility condition prevents claiming the anticipated improved exceptional-set exponent; isolate the precise step.",
+      "resources": [
+        {
+          "label": "Inspectable proof",
+          "path": "research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/PROOF.md"
+        },
+        {
+          "label": "Reading-depth ledger",
+          "path": "research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/SOURCES.md"
+        },
+        {
+          "label": "Next test",
+          "path": "research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/CHECKPOINT.md"
+        }
+      ],
+      "results": [
+        {
+          "id": "erdos242-2026-10-21",
+          "date": "2026-10-21",
+          "title": "Character obstruction to two first-denominator shifts",
+          "scope": "Prime p=2521≡1 mod840 defeats both x=(p+3)/4 and x=(p+7)/4, but admits an exact triple with a different x. This is a restricted ansatz counterexample only.",
+          "validity": "COUNTEREXAMPLE",
+          "formal_status": "UNFORMALIZED",
+          "literature": "PRIORITY_UNCHECKED",
+          "proof": "research-lab/problems/erdos-242/runs/2026-10-21-two-shift-obstruction/PROOF.md",
+          "code": [],
+          "evidence_commit": "b7d02f5ff6ec8b5e898610af5c47adc95928627d"
+        },
+        {
+          "id": "erdos242-2026-10-22",
+          "date": "2026-10-22",
+          "title": "Exact leading constant for the coprime sieve mass",
+          "scope": "For Dahan's W(J)=sum_{u,a<=J,gcd(u,a)=1}1/phi(4ua), ordinary proof of W(J)=9/(2*pi^2)*(log J)^2+O(log J). This sharpens an auxiliary sieve coefficient only; no all-n Erdős–Straus result or downstream exponent is claimed.",
+          "validity": "ANALYTICAL_PROOF",
+          "formal_status": "UNFORMALIZED",
+          "literature": "PRIORITY_UNCHECKED",
+          "proof": "research-lab/problems/erdos-242/runs/2026-10-22-sharp-sieve-mass/PROOF.md",
+          "code": [
+            "research-lab/problems/erdos-242/runs/2026-10-22-sharp-sieve-mass/check_w.py"
+          ],
+          "evidence_commit": "3ebda32a8c19a5b4fccbe7dc9c95bf2aee08b665"
+        }
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "date": "2026-10-14",
+      "kind": "INFRASTRUCTURE",
+      "summary": "Added problem-first navigation, a reproducible progress index and navigation validation. No new mathematical theorem.",
+      "path": "research-lab/maintenance/2026-10-14-navigation.md"
+    }
+  ]
+}

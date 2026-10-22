@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-22",
+  "selected_lane": "erdos-242",
+  "claims": [
+    {
+      "id": "E242-W-LEADING-20261022",
+      "statement": "For integer J→∞, W(J)=sum_{u,a<=J; gcd(u,a)=1}1/phi(4ua) = 9/(2*pi^2)*(log J)^2+O(log J).",
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "proof": "PROOF.md",
+      "dependencies": [
+        "Euler products and totient factors",
+        "absolute two-variable convolution",
+        "harmonic number estimate"
+      ]
+    },
+    {
+      "id": "E242-SIEVE-TRANSFER-20261022",
+      "statement": "Replacing the original sieve input by kappa=9/(2*pi^2) may improve the author's subsequent exceptional-set exponent, conditional on checking every downstream lemma.",
+      "validity": "CONDITIONAL_DERIVATION",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "dependencies": [
+        "E242-W-LEADING-20261022",
+        "unverified downstream sieve transfer"
+      ]
+    }
+  ],
+  "global_erdos_straus_solution": false,
+  "execution_workers": 1,
+  "outreach_sends": 0
+}
