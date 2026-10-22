@@ -1,0 +1,20 @@
+{
+  "claim_id": "erdos170-2026-10-22-two-replacement",
+  "date": "2026-10-22",
+  "validity": "EXACT_FINITE_CERTIFICATE",
+  "literature": "PRIORITY_UNCHECKED",
+  "formal_status": "UNFORMALIZED",
+  "scope": "One specified 39-mark ruler, N=500, replacement distance <=2",
+  "two_edit_candidates": 2437560,
+  "one_edit_candidates": 17094,
+  "two_edit_complete": 0,
+  "minimum_missing_exactly_two": 2,
+  "inputs": "candidate.json and hardcoded 39-mark literals in each worker",
+  "proof": "PROOF.md",
+  "workers": [
+    "src/worker_a.cpp",
+    "src/worker_b.cpp"
+  ],
+  "github_new_commit_ci": "PENDING",
+  "catalog_registration": "WITHHELD_UNTIL_NEW_STUDY_EVIDENCE_RUN"
+}
