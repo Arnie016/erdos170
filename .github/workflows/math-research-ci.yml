@@ -111,3 +111,54 @@ jobs:
           name: modular133-exact-witnesses
           path: research-lab/_generated/modular133/*.json
           if-no-files-found: warn
+
+  modular261-finite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Full unit-normalized subset-sum census
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p research-lab/_generated/modular261
+          timeout --signal=KILL 35s bash -c 'g++ -std=c++20 -O3 -Wall -Wextra research-lab/problems/modular-subset-sums/runs/2026-10-23-mod261-exact/src/search_a.cpp -o /tmp/mod261-a && exec /tmp/mod261-a research-lab/_generated/modular261'
+      - name: Independent signed-difference census and direct witnesses
+        shell: bash
+        run: |
+          set -euo pipefail
+          timeout --signal=KILL 35s bash -c 'g++ -std=c++20 -O3 -Wall -Wextra research-lab/problems/modular-subset-sums/runs/2026-10-23-mod261-exact/src/check_b.cpp -o /tmp/mod261-b && exec /tmp/mod261-b research-lab/_generated/modular261'
+      - name: Check exact domain, orbits, overlaps and controls
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('research-lab/_generated/modular261')
+          a=json.loads((root/'worker_a.json').read_text())
+          b=json.loads((root/'worker_b.json').read_text())
+          assert a['completed'] and b['completed'] and b['full_lists_agree']
+          assert a['N']==b['N']==261 and a['n']==b['n']==8
+          assert a['nodes']==b['nodes']==[0,1,106,5230,151955,2675386,17477423,5418406,22]
+          assert a['contains_one_count']==b['contains_one_count']==22
+          assert b['canonical_count']==252 and b['signed_set_count']==64512
+          assert [x['canonical_size'] for x in b['orbit_classes']]==[84,84,84]
+          assert b['overlap_histogram']=={'7':168,'8':84}
+          assert b['nonunit_count_histogram']=={'0':84,'1':168}
+          assert b['outside_published_templates']==[]
+          assert b['negative_control_subset_sums']==37 and b['removed_leaf_rejected']
+          actual=(root/'worker_a_sets.txt').read_text()
+          expected=Path('research-lab/problems/modular-subset-sums/runs/2026-10-23-mod261-exact/results/worker_a_sets.txt').read_text()
+          assert actual==expected
+          full=[tuple(map(int,s.split())) for s in (root/'full_sign_normalized_sets.txt').read_text().splitlines()]
+          assert len(full)==len(set(full))==252
+          print('PASS: complete n=8, N=261 classification, exact witnesses and controls')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: modular261-exact-witnesses
+          path: research-lab/_generated/modular261/*
+          if-no-files-found: warn
