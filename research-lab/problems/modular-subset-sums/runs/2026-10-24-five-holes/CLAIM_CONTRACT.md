@@ -1,0 +1,5 @@
+# Frozen contract, 24 October 2026
+
+Selected the modular t=5 lane over a possible #242 sieve-coefficient transfer, since the 9/(2π²) coefficient had been independently reported by 20 October 2026. Domain: all n>=2, N=2^n+5, injective labelled subset-sum map A→Z/NZ. Four IDs are MOD5-FIBER-20261024, MOD5-UNIT-20261024, MOD5-CENTER-20261024, MOD5-MOD3-20261024.
+
+Dependencies: FIBER→UNIT; UNIT+CENTER+group-ring identity→MOD3. Strongest competing explanation: the n8 nonunit observation could be exceptional. Explicit falsifier: any admissible set with disallowed gcd/more than one nonunit, missing center, or wrong mod3 missing-fiber counts. Acceptance: complete ordinary proof plus one bounded deterministic, independently coded checker over all admissible n2,n3,n4 sets and explicit valid n2..n10 witnesses. Stop after proof and first check, with no attempted all-n three-orbit classification.
