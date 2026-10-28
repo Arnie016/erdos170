@@ -1,0 +1,21 @@
+{
+  "claim_id": "E60-INCIDENT-2ADD-20261028",
+  "date": "2026-10-28",
+  "validity": "ANALYTICAL_PROOF",
+  "literature": "PRIORITY_UNCHECKED",
+  "formal_status": "UNFORMALIZED",
+  "domain": "all odd prime powers q>=3, two incident nonedges added and one H-edge deleted from orthogonal polarity H",
+  "result": "at least 2q-3 unoriented noninduced C4, attainable; 2q-4 equality in general two-add class requires disjoint added edges joining absolute vertices with deleted edge on a length-three path for each",
+  "depend_on": [
+    "HMY-1912.00986v4-Lemma2.7",
+    "HMY-1912.00986v4-Lemma2.8",
+    "conic noncollinearity"
+  ],
+  "finite_checks": {
+    "q3": 288,
+    "q5": 5400,
+    "checkerA": "codegrees",
+    "checkerB": "four-sets"
+  },
+  "global_Erdos_60": "NOT_SOLVED"
+}
