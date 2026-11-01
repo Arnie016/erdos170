@@ -1,0 +1,22 @@
+{
+  "id": "MOD5-R4-230-20261101",
+  "date": "2026-11-01",
+  "validity": [
+    "EXACT_FINITE_CERTIFICATE",
+    "ANALYTICAL_PROOF"
+  ],
+  "literature": "PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "domain": "n=9+230k for integers k>=0, N=2^n+5, five holes {c,c±1,c±4}",
+  "conclusion": "No admissible n-set of distinct subset sums with that hole pattern",
+  "exact_resultant": "4493599431468313730139668192986121524839260273570500546030600490466361",
+  "dependencies": [
+    "MOD-NORM-20261031",
+    "worker1.py",
+    "worker2.py"
+  ],
+  "prior_result": "MOD5-R4-517-20261030",
+  "worker1_sha256": "e153fb00325fb4465925893d82152591cb49c034bd1c67d14db4b662e555cdf0",
+  "worker2_sha256": "96fa8b8b49b3fc80dbb56d615a6e33be37c302268c6a28f9f937363996cf59a7",
+  "github_ci_new_study": "NOT_YET_REPRODUCED"
+}
