@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-02",
+  "claims": [
+    {
+      "id": "MOD-NORM-20261031",
+      "statement": "For odd N with distinct labelled subset sums and missing-residue polynomial H, Res(F_N,H)=2^sum(gcd(a,N)-1).",
+      "validity": "ANALYTICAL_PROOF",
+      "formalization": "UNFORMALIZED"
+    },
+    {
+      "id": "MOD5-DIV47-20261102",
+      "statement": "For all k>=0, n=9+23k, N=2^n+5, centered radius-(1,4) five-hole configurations are impossible.",
+      "depends_on": [
+        "MOD-NORM-20261031",
+        "Res(F_47,P)=1129^2"
+      ],
+      "validity": "ANALYTICAL_PROOF + EXACT_FINITE_CERTIFICATE",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED"
+    },
+    {
+      "id": "MOD5-DIV11-20261102",
+      "statement": "Res(F_11,P)=1, providing no obstruction by itself.",
+      "validity": "EXACT_FINITE_CERTIFICATE",
+      "formalization": "UNFORMALIZED"
+    }
+  ],
+  "previous": "The n≡9 mod230 result remains true but is subsumed by n≡9 mod23."
+}
