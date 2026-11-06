@@ -72,3 +72,21 @@ jobs:
           path: research-lab/_generated/**
           include-hidden-files: true
           if-no-files-found: error
+  focused-certificates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify registered field certificate and write exact receipt
+        run: timeout --signal=KILL 35s python3 research-lab/harness/verify.py --only mod5-field47
+      - name: Reject corrupted certificates and unsafe registry entries
+        run: timeout --signal=KILL 35s python3 -m unittest discover -s research-lab/harness -p 'test_*.py' -v
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: focused-certificate-receipts
+          path: research-lab/_generated/focused/SUMMARY.json
+          if-no-files-found: error
