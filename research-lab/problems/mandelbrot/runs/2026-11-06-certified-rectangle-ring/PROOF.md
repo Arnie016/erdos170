@@ -1,0 +1,13 @@
+# MAND-RECT-2026-11-06-A | An exact certified annular region
+
+**Claim.** For the quadratic critical orbit z₀(c)=0 and zₙ₊₁(c)=zₙ(c)²+c, let M be the bounded-orbit parameter set. Let c₀=−3/4+i/2. For integers −10≤i,j≤9, define the closed square Q(i,j)=c₀+([i,i+1]+i[j,j+1])/1000. Put u(k)=0 if k≤0≤k+1 and min(|k|,|k+1|) otherwise; v(k)=max(|k|,|k+1|). Freeze D={(i,j):u(i)²+u(j)²≥16, v(i)²+v(j)²≤100}. This has **216 squares**, each fully contained in the annulus 0.004≤|c−c₀|≤0.010.
+
+**Theorem (finite-grid scope).** Every parameter in each of the **207 closed squares** listed under accepted in CERTIFIED_CELLS.json lies outside M. Nine eligible squares are **not certified**, not inside M. Together with the separately proved 5 November closed radius-1/250 exterior disk, this gives a rigorous excluded area of at least π/62500+207/1000000, or a factor 1+207/(16π)≈5.118134 larger than the prior disk.
+
+**Proof.** Polynomial P₀(t)=0, Pₙ₊₁(t)=Pₙ(t)²+c₀+t gives exact Gaussian-rational coefficients for P₆(t)=z₆(c₀+t), degree 32. Worker 1 evaluates it via complex interval Horner arithmetic on each Q(i,j): interval addition and multiplication use endpoint minima/maxima, so induction encloses all real and imaginary values. If the real and imaginary enclosures are R and I, set d([a,b])=0 if 0∈[a,b], otherwise min(|a|,|b|). The exact rational inequality d(R)²+d(I)²>4 implies |z₆(c)|>2 for every c in the square.
+
+**Independent reconstruction.** Worker 2 generates Z₆(c) directly in the integer polynomial ring Z[c]. For the center γ of each square, it obtains the exact translated coefficients bₖ from the binomial theorem, Z₆(γ+u)=Σbₖuᵏ. Every point in the square has |u|≤√2/2000<1/1400=:q. Set E=Σₖ≥₁(|Re bₖ|+|Im bₖ|)qᵏ. The exact rational inequality |b₀|²>(2+E)² independently implies |z₆(c)|>2 for that square. Both procedures selected the same 207 cells out of all 216. Their worker exit codes were 0. Numerical image pixels were not used for proof.
+
+For all these c, |c|<1.26<2. Once |z₆(c)|>2, the reverse triangle inequality |zₙ₊₁|≥|zₙ|²−|c| forces escape. Thus all certified squares lie outside M. The cell interiors do not overlap and the u condition keeps them outside the prior disk interior, proving the stated area lower bound. QED.
+
+**Scope and competing explanation.** The nine orange cells are uncertified; cells crossing an annulus boundary were outside the frozen domain. A stronger disk estimate or enclosure method might already prove the same exclusion. This is no global Mandelbrot-boundary, optimal-area, dimension or literature-novelty theorem. The SVG is a certificate visualization, not a Mandelbrot image. Formalization UNFORMALIZED; method KNOWN; exact local-priority UNCHECKED.
