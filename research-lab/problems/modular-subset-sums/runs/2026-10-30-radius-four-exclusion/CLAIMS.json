@@ -1,0 +1,21 @@
+{
+  "id": "MOD5-R4-517-20261030",
+  "date": "2026-10-30",
+  "validity": "EXACT_FINITE_CERTIFICATE",
+  "formalization": "UNFORMALIZED",
+  "literature": "PRIORITY_UNCHECKED",
+  "domain": "all 460 invertible residues mod 517 and their exact pairwise translations",
+  "conclusion": "No admissible 9-element set mod 517 has five missing sums {c,c±1,c±4}",
+  "graph": {
+    "vertices": 132,
+    "edges": 40,
+    "clique": 2,
+    "bipartite": true
+  },
+  "control": {
+    "vertices": 156,
+    "edges": 308,
+    "clique": 9
+  },
+  "github_new_study_ci": "PENDING"
+}
