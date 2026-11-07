@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+<title id="title">Fourfold enlargement of a certified Mandelbrot exterior disk</title>
+<desc id="desc">A to-scale comparison of concentric disks with radii one thousandth and one two-hundred-fiftieth, both centered at minus three quarters plus one half i. An exact Taylor coefficient inequality certifies both exterior to the Mandelbrot set. The set boundary is not drawn.</desc>
+<defs>
+ <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 H 0 V 24" fill="none" stroke="#dfe5e4" stroke-width=".8"/></pattern>
+ <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="#1b666a"/></marker>
+</defs>
+<rect width="1100" height="520" rx="24" fill="#f9f8f4"/>
+<text x="52" y="59" fill="#143336" font-family="Georgia,serif" font-size="31">A larger proven exterior neighborhood</text>
+<text x="52" y="89" fill="#567072" font-family="Arial,sans-serif" font-size="15">The parameter plane near c₀ = −¾ + ½i · diagram drawn to relative scale</text>
+<rect x="50" y="112" width="532" height="353" rx="15" fill="url(#grid)" stroke="#d2ddda"/>
+<g transform="translate(311,290)">
+ <path d="M-228 0H227 M0 149V-150" stroke="#9eafab" stroke-width="1.5"/>
+ <circle r="124" fill="#addbd0" fill-opacity=".63" stroke="#16746a" stroke-width="2.5"/>
+ <circle r="31" fill="#f1b675" fill-opacity=".8" stroke="#a45a2c" stroke-width="2.5"/>
+ <circle r="4" fill="#15383b"/>
+ <path d="M0 0L124 0" stroke="#16746a" stroke-width="2" marker-end="url(#arrow)"/>
+ <path d="M0 0L-18 -25" stroke="#a45a2c" stroke-width="1.9"/>
+ <text x="12" y="-4" font-family="Arial,sans-serif" font-size="14" fill="#173e40">c₀</text>
+ <text x="128" y="-14" font-family="Arial,sans-serif" font-size="15" fill="#12675f">r = 1/250</text>
+ <text x="-182" y="-37" font-family="Arial,sans-serif" font-size="14" fill="#945124">r = 1/1000</text>
+ <text x="164" y="22" font-family="Arial,sans-serif" font-size="12" fill="#657a77">Re(c)</text>
+ <text x="9" y="-131" font-family="Arial,sans-serif" font-size="12" fill="#657a77">Im(c)</text>
+</g>
+<text x="66" y="448" fill="#667574" font-size="12" font-family="Arial,sans-serif">Relative radii exact · Mandelbrot boundary deliberately omitted</text>
+<line x1="614" y1="120" x2="614" y2="464" stroke="#d8e1df" stroke-width="1.5"/>
+<text x="646" y="152" font-family="Georgia,serif" font-size="24" fill="#143336">What the algebra proves</text>
+<text x="646" y="187" font-family="Arial,sans-serif" font-size="17" fill="#214a4c">z₆(c₀ + δ) = a₀ + Σ aₖδᵏ</text>
+<text x="646" y="224" font-family="Arial,sans-serif" font-size="16" fill="#315b58">For |δ| ≤ 1/250:</text>
+<text x="646" y="254" font-family="Arial,sans-serif" font-size="16" fill="#315b58">|z₆ − a₀| ≤ Σ |aₖ|rᵏ</text>
+<rect x="641" y="276" width="408" height="79" rx="12" fill="#e3efe8" stroke="#b8d6cb"/>
+<text x="662" y="310" font-family="Georgia,serif" font-size="22" fill="#15534d">|a₀| &gt; 2 + error bound</text>
+<text x="662" y="334" font-family="Arial,sans-serif" font-size="13" fill="#366460">exact rational certificate at iteration 6</text>
+<text x="646" y="393" font-family="Arial,sans-serif" font-size="17" fill="#243f41">4× radius · 16× certified area</text>
+<text x="646" y="426" font-family="Arial,sans-serif" font-size="13" fill="#6b7776">KNOWN METHOD · finite explicit certificate</text>
+<text x="646" y="449" font-family="Arial,sans-serif" font-size="13" fill="#6b7776">Not a global Mandelbrot boundary theorem</text>
+</svg>
+
