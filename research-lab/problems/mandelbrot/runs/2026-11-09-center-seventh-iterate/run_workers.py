@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Two sequential workers, each bounded by 35 seconds, with recorded outputs."""
+"""Run exactly two frozen experimental workers sequentially, each <=35 sec."""
 import hashlib,json,subprocess,sys,time,os,signal
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent

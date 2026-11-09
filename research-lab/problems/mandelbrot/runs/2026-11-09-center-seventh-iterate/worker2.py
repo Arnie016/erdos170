@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent homogeneous Gaussian integer recurrence, checked against worker1."""
+"""Independent Gaussian integer homogeneous rational evaluation, no Fraction iteration."""
 import json,math
 from pathlib import Path
 PARENTS=[(3,-9,0xCEFF),(4,-8,0xEFFF),(5,-8,0x008C),(5,-7,0xEFFF),(6,-7,0x008C),(6,-6,0xEFFF),(7,-6,0x08CE),(7,-5,0xFFFF),(8,-4,0xFFFF)]

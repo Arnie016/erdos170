@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Exact Fraction-pair seventh-iterate audit of 22 delayed centers."""
+"""Exact Gaussian-rational recurrence for the 22 sixth-iterate nonescaping centers.
+Frozen domain reconstructed from 7 Nov parent masks at PR #8 dd482e9.
+"""
 import json
 from fractions import Fraction as Q
+from pathlib import Path
 PARENTS=[(3,-9,'CEFF'),(4,-8,'EFFF'),(5,-8,'008C'),(5,-7,'EFFF'),(6,-7,'008C'),(6,-6,'EFFF'),(7,-6,'08CE'),(7,-5,'FFFF'),(8,-4,'FFFF')]
 def z_iter(c,n):
     x=y=Q(0)
