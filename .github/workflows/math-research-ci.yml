@@ -72,3 +72,26 @@ jobs:
           path: research-lab/_generated/**
           include-hidden-files: true
           if-no-files-found: error
+
+  endpoint-tiling-q6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Reproduce exact two-tail q6 certificate
+        run: |
+          cd research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling
+          python3 run_workers.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: erdos170-endpoint-tiling-q6
+          path: |
+            research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling/RUN_RECEIPTS.json
+            research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling/worker_*.json
+            research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling/worker_*.stdout
+            research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling/worker_*.stderr
+          if-no-files-found: error
