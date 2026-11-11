@@ -95,3 +95,26 @@ jobs:
             research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling/worker_*.stdout
             research-lab/problems/erdos-170/runs/2026-11-10-endpoint-tiling/worker_*.stderr
           if-no-files-found: error
+
+
+  endpoint-multimark-r3q6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify all 49504 tight three-mark endpoint profiles with two exact methods
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research-lab/problems/erdos-170/runs/2026-11-11-multimark-tail
+          timeout -s KILL 35s python3 worker_bits.py | tee worker_bits.reproduced.json
+          timeout -s KILL 35s python3 worker_differences.py | tee worker_differences.reproduced.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: erdos170-multimark-r3q6
+          path: research-lab/problems/erdos-170/runs/2026-11-11-multimark-tail/*.reproduced.json
+          if-no-files-found: warn

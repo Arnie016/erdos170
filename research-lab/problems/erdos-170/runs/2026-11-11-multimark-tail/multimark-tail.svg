@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="680" viewBox="0 0 1080 680" role="img" aria-labelledby="title description">
+<title id="title">Tight three-mark sparse-ruler endpoint tiling</title><desc id="description">The feasible a=3 and q=6 profiles cover all eighteen long-distance offsets exactly once. An illustrative a=4 tail repeats four offsets and misses four. The general impossibility of a=4 follows from the proved divisibility obstruction.</desc>
+<rect x="0" y="0" width="1080" height="680" rx="0" fill="#0D1824" stroke="none"/>
+<rect x="30" y="28" width="1020" height="624" rx="22" fill="#142436" stroke="#375064"/>
+<rect x="60" y="61" width="117" height="30" rx="15" fill="#284D4A" stroke="none"/>
+<text x="119" y="82" fill="#9EE5D6" font-size="13" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">ERDŐS 170</text>
+<text x="60" y="132" fill="#F7F6EE" font-size="32" font-weight="750" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">When a sparse tail tiles perfectly</text>
+<text x="60" y="164" fill="#BFCED4" font-size="17" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">Longest distances become an exact sumset:  3 left marks × 6 right marks</text>
+<line x1="60" y1="189" x2="1020" y2="189" stroke="#375064"/>
+<rect x="60" y="213" width="12" height="12" rx="3" fill="#69DACB" stroke="none"/>
+<text x="82" y="224" fill="#7AE5D2" font-size="13" font-weight="700" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">FEASIBLE</text>
+<text x="60" y="252" fill="#F0F2EB" font-size="19" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">a = 3  •  L = {0,3,6}  •  R = {0,1,2,9,10,11}</text>
+<text x="60" y="278" fill="#AFC1CB" font-size="15" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">Each cell denotes one of the 18 required long-distance offsets.</text>
+<rect x="95" y="294" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="119.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">0</text>
+<rect x="148" y="294" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="172.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">1</text>
+<rect x="201" y="294" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="225.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">2</text>
+<rect x="254" y="294" width="49" height="54" rx="7" fill="#3E7F9B" stroke="none"/>
+<text x="278.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">3</text>
+<rect x="307" y="294" width="49" height="54" rx="7" fill="#3E7F9B" stroke="none"/>
+<text x="331.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">4</text>
+<rect x="360" y="294" width="49" height="54" rx="7" fill="#3E7F9B" stroke="none"/>
+<text x="384.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">5</text>
+<rect x="413" y="294" width="49" height="54" rx="7" fill="#5E70A7" stroke="none"/>
+<text x="437.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">6</text>
+<rect x="466" y="294" width="49" height="54" rx="7" fill="#5E70A7" stroke="none"/>
+<text x="490.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">7</text>
+<rect x="519" y="294" width="49" height="54" rx="7" fill="#5E70A7" stroke="none"/>
+<text x="543.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">8</text>
+<rect x="572" y="294" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="596.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">9</text>
+<rect x="625" y="294" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="649.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">10</text>
+<rect x="678" y="294" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="702.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">11</text>
+<rect x="731" y="294" width="49" height="54" rx="7" fill="#3E7F9B" stroke="none"/>
+<text x="755.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">12</text>
+<rect x="784" y="294" width="49" height="54" rx="7" fill="#3E7F9B" stroke="none"/>
+<text x="808.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">13</text>
+<rect x="837" y="294" width="49" height="54" rx="7" fill="#3E7F9B" stroke="none"/>
+<text x="861.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">14</text>
+<rect x="890" y="294" width="49" height="54" rx="7" fill="#5E70A7" stroke="none"/>
+<text x="914.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">15</text>
+<rect x="943" y="294" width="49" height="54" rx="7" fill="#5E70A7" stroke="none"/>
+<text x="967.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">16</text>
+<rect x="996" y="294" width="49" height="54" rx="7" fill="#5E70A7" stroke="none"/>
+<text x="1020.5" y="327" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">17</text>
+<text x="60" y="375" fill="#9AE6D5" font-size="17" font-weight="650" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">Every offset 0–17 appears exactly once</text>
+<line x1="60" y1="397" x2="1020" y2="397" stroke="#375064"/>
+<rect x="60" y="416" width="12" height="12" rx="3" fill="#F2A375" stroke="none"/>
+<text x="82" y="427" fill="#F9B18A" font-size="13" font-weight="700" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">IMPOSSIBLE AT EQUALITY</text>
+<text x="60" y="455" fill="#F0F2EB" font-size="19" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">a = 4  •  q = 6  •  a does not divide q</text>
+<text x="60" y="481" fill="#AFC1CB" font-size="15" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">Illustrative tail R={0,1,2,3,4,5}: collisions and missing offsets.</text>
+<rect x="95" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="119.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">0</text>
+<rect x="148" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="172.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">1</text>
+<rect x="201" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="225.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">2</text>
+<rect x="254" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="278.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">3</text>
+<rect x="307" y="500" width="49" height="54" rx="7" fill="#C56A63" stroke="none"/>
+<text x="331.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">4</text>
+<rect x="360" y="500" width="49" height="54" rx="7" fill="#C56A63" stroke="none"/>
+<text x="384.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">5</text>
+<rect x="413" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="437.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">6</text>
+<rect x="466" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="490.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">7</text>
+<rect x="519" y="500" width="49" height="54" rx="7" fill="#C56A63" stroke="none"/>
+<text x="543.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">8</text>
+<rect x="572" y="500" width="49" height="54" rx="7" fill="#C56A63" stroke="none"/>
+<text x="596.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">9</text>
+<rect x="625" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="649.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">10</text>
+<rect x="678" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="702.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">11</text>
+<rect x="731" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="755.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">12</text>
+<rect x="784" y="500" width="49" height="54" rx="7" fill="#2D897E" stroke="none"/>
+<text x="808.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">13</text>
+<rect x="837" y="500" width="49" height="54" rx="7" fill="#343D50" stroke="none"/>
+<text x="861.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">14</text>
+<rect x="890" y="500" width="49" height="54" rx="7" fill="#343D50" stroke="none"/>
+<text x="914.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">15</text>
+<rect x="943" y="500" width="49" height="54" rx="7" fill="#343D50" stroke="none"/>
+<text x="967.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">16</text>
+<rect x="996" y="500" width="49" height="54" rx="7" fill="#343D50" stroke="none"/>
+<text x="1020.5" y="532" fill="#FFF" font-size="17" font-weight="700" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif">17</text>
+<rect x="75" y="572" width="12" height="12" rx="3" fill="#2D897E" stroke="none"/>
+<text x="95" y="584" fill="#BED0D4" font-size="14" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">once</text>
+<rect x="220" y="572" width="12" height="12" rx="3" fill="#C56A63" stroke="none"/>
+<text x="240" y="584" fill="#BED0D4" font-size="14" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">twice</text>
+<rect x="360" y="572" width="12" height="12" rx="3" fill="#343D50" stroke="none"/>
+<text x="380" y="584" fill="#BED0D4" font-size="14" font-weight="400" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">missing</text>
+<text x="60" y="620" fill="#F5E1A9" font-size="16" font-weight="550" text-anchor="start" font-family="Inter,Segoe UI,Arial,sans-serif">THEOREM  •  r·a divides r·q, so a divides q. No 6-mark right tail can rescue a=4.</text>
+</svg>

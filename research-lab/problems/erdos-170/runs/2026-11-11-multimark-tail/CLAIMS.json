@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-11",
+  "claims": [
+    {
+      "id": "R170-TAIL-AP-2026-11-11",
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "PRIORITY_UNCHECKED",
+      "method_status": "KNOWN",
+      "formalization": "UNFORMALIZED",
+      "hypotheses": "r>=2,q>=1,a>=1,t=rq,N>=2t-1, complete restricted ruler, left window exactly {0,a,...,(r-1)a}, right reflected window has q marks",
+      "conclusion": "a|q and R={r*a*j+k:0<=j<q/a,0<=k<a}",
+      "parent_implication": "conditional exact endpoint-density cut; no F(500) or global asymptotic bound",
+      "proof": "PROOF.md"
+    },
+    {
+      "id": "R170-TAIL-AP-Q6-2026-11-11",
+      "validity": "EXACT_FINITE_CERTIFICATE",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "hypotheses": "r=3,q=6,N=35,a=1,...,8, all 6-subsets R in 0..17 containing 0",
+      "domain_size": 49504,
+      "conclusion": "exactly four feasible long-distance tail profiles with a in {1,2,3,6}",
+      "checkers": [
+        "worker_bits.py",
+        "worker_differences.py"
+      ]
+    }
+  ]
+}
