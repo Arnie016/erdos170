@@ -1,0 +1,27 @@
+{
+  "claim_id": "MAND-CENTER7-2026-11-09-A",
+  "environment": "Linux sandbox Python 3",
+  "experimental_workers": [
+    {
+      "name": "worker1",
+      "exit_code": 0,
+      "timeout": false,
+      "wall_seconds": 0.76044,
+      "source_sha256": "8bb8cfa877960c5544fee56178f82a9cf03c166ec65280eaa8b3481171e8630a"
+    },
+    {
+      "name": "worker2",
+      "exit_code": 0,
+      "timeout": false,
+      "wall_seconds": 0.64851,
+      "source_sha256": "f272643ca34aefadbef561b41824ef0273ca7f240942f435455c7fc980ac625c"
+    }
+  ],
+  "result": {
+    "domain": 22,
+    "exterior_center_points_by_step7": 22,
+    "whole_cells_certified": 0
+  },
+  "ci": "NOT_EXECUTED_FOR_THIS_STUDY",
+  "note": "Full raw fractions and stderr retained in local downloadable research archive. This is not an additional computational experiment."
+}
