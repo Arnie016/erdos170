@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "R170-TAIL-TILING-2026-11-10",
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "KNOWN_METHOD_PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "domain": "q>=1,N>=4q-1,complete restricted ruler A with first 2q marks L={0,a} and reflected last 2q marks |R|=q",
+      "statement": "a divides q and R is the uniquely forced alternating-block complement",
+      "falsifier": "A counterexample complete ruler in the exact quantified class",
+      "evidence": [
+        "PROOF.md"
+      ]
+    },
+    {
+      "id": "R170-TAIL-ENUM-12",
+      "validity": "EXACT_FINITE_CERTIFICATE",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "domain": "All 5082 t=12,N=23,|L|=2,|R|=6 endpoint profiles",
+      "statement": "Exactly four high-distance-complete profiles, with offsets 1,2,3,6",
+      "falsifier": "Any mismatching exact enumeration or profile",
+      "evidence": [
+        "worker_pairs.py",
+        "worker_masks.py",
+        "RUN_REPORT.md"
+      ]
+    }
+  ],
+  "parent_problem_implication": "Only local pruning, no new global lower bound",
+  "originality": "NOT_CLAIMED"
+}

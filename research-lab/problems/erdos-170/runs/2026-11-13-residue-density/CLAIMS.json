@@ -1,0 +1,42 @@
+{
+  "claim_id": "R170-AP-TAIL-DENSITY-2026-11-12",
+  "verification_date": "2026-11-13",
+  "validity": "ANALYTICAL_PROOF",
+  "supplemental_evidence": "EXACT_FINITE_CERTIFICATE",
+  "literature": "PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "domain": "r>=2,a>=1,t>=1,N>=2t-1,(r-1)a<t; exact left t-window AP; longest t distances",
+  "conclusion": "|R| >= sum_{s=0}^{a-1} ceil(m_s/r), sharp for longest t distances alone",
+  "finite_domain": {
+    "r": 3,
+    "t": 30,
+    "a_min": 1,
+    "a_max": 14,
+    "small_t": 12,
+    "small_a_min": 1,
+    "small_a_max": 5
+  },
+  "expected": [
+    10,
+    10,
+    12,
+    12,
+    10,
+    12,
+    14,
+    14,
+    12,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "limits": [
+    "not a full restricted ruler construction",
+    "no F(500) optimality result",
+    "no asymptotic improvement",
+    "no Lean proof"
+  ],
+  "dependency": "ordinary residue-chain proof; one prior negative-control correction"
+}
