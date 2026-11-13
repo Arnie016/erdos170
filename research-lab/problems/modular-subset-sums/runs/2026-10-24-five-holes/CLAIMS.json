@@ -1,0 +1,42 @@
+{
+  "run_date": "2026-10-24",
+  "lane": "modular-subset-sums",
+  "scope": "all n>=2, N=2^n+5; injective labelled subset sums",
+  "validity": "ANALYTICAL_PROOF",
+  "literature": "PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "claims": [
+    {
+      "id": "MOD5-FIBER-20261024",
+      "depends_on": [],
+      "statement": "All missing-fiber counts mod d ≡ N/d (mod 2^k) for k marks divisible by d"
+    },
+    {
+      "id": "MOD5-UNIT-20261024",
+      "depends_on": [
+        "MOD5-FIBER-20261024"
+      ],
+      "statement": "All marks units for odd n, at most one gcd3 nonunit for even n"
+    },
+    {
+      "id": "MOD5-CENTER-20261024",
+      "depends_on": [],
+      "statement": "Missing residues are {c,c±r,c±s}, c=sum(A)/2"
+    },
+    {
+      "id": "MOD5-MOD3-20261024",
+      "depends_on": [
+        "MOD5-UNIT-20261024",
+        "MOD5-CENTER-20261024"
+      ],
+      "statement": "For even n, missing fiber counts at c,c±1 are (1+2t,2-t,2-t) where t=#nonunits"
+    }
+  ],
+  "not_claimed": [
+    "all-n three-orbit classification",
+    "all-n one-replacement theorem",
+    "unrestricted integer distinct subset sums conjecture",
+    "literature novelty",
+    "Lean formalization"
+  ]
+}
