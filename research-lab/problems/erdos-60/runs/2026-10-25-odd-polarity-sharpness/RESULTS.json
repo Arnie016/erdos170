@@ -1,0 +1,46 @@
+{
+  "domain": [
+    3,
+    5,
+    7,
+    11,
+    13,
+    17
+  ],
+  "complete": true,
+  "worker1": {
+    "q_complete": [
+      3
+    ],
+    "candidate_pairs": 15,
+    "relevant_deletions": 150,
+    "min_c4": 2,
+    "stopped_on_falsifier": true,
+    "exit_code": 0,
+    "wrapper_wall_seconds": 1.07
+  },
+  "worker2": {
+    "q_complete": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17
+    ],
+    "cycle_counts": [
+      2,
+      6,
+      10,
+      18,
+      22,
+      30
+    ],
+    "expected_rule": "2*q-4",
+    "negative_controls_passed": true,
+    "exit_code": 0,
+    "wrapper_wall_seconds": 0.81
+  },
+  "current_new_study_ci": "NOT_RUN",
+  "lean": "NOT_RUN"
+}

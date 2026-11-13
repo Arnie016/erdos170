@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "selected_problem": "erdos-60",
+  "claims": [
+    {
+      "id": "E60-ODD-2SWITCH-2026-10-25",
+      "statement": "For every odd prime power q>=3, the explicit odd-orthogonal-polarity graph H with one removal and two additions has exactly q(q+1)^2/2+1 edges and 2q-4 noninduced four-cycles.",
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "evidence": [
+        "PROOF.md",
+        "check_odd_q.py",
+        "RESULTS.json"
+      ],
+      "dependencies": [
+        "HMY-LEMMA-2.8-KNOWN"
+      ],
+      "limitation": "Local sharpness, no unrestricted supersaturation lower bound."
+    },
+    {
+      "id": "E60-PLUS-ONE-FAIL-2026-10-25",
+      "statement": "All such two-addition/one-deletion edits have at least 2q-3 C4.",
+      "validity": "COUNTEREXAMPLE",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "evidence": [
+        "PROOF.md",
+        "RESULTS.json"
+      ],
+      "limitation": "False for every odd prime power; q=3 gives 2 rather than 3."
+    },
+    {
+      "id": "HMY-LEMMA-2.8-KNOWN",
+      "statement": "Adding a nonedge to a polarity graph produces q-1/q/q+1 C4; q-1 exactly for degree-q endpoints.",
+      "validity": "ANALYTICAL_PROOF",
+      "literature": "KNOWN",
+      "formalization": "UNFORMALIZED",
+      "evidence": [
+        "SOURCES.md"
+      ]
+    }
+  ]
+}
