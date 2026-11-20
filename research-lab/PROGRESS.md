@@ -8,6 +8,7 @@ Mathematical entries below are existing registered studies, not newly rediscover
 
 | Date | Problem | Contribution | Validity |
 |---|---|---|---|
+| 2026-11-20 | [erdos-30](problems/erdos-30/README.md) | [Exact full scalar-three-bin separation](problems/erdos-30/runs/2026-11-20-fullscalar-separation/PROOF.md) | ANALYTICAL_PROOF |
 | 2026-10-09 | [erdos-117](problems/erdos-117/README.md) | [174,251 rank-five scalar planes](studies/erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md) | EXACT_FINITE_CERTIFICATE |
 | 2026-10-08 | [erdos-117](problems/erdos-117/README.md) | [2,825 rank-four kernels](studies/erdos117-2026-10-08/proofs/all_rank4_pencils_census.md) | EXACT_FINITE_CERTIFICATE |
 | 2026-10-07 | [erdos-117](problems/erdos-117/README.md) | [4,096 ordered form pairs](studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md) | EXACT_FINITE_CERTIFICATE |

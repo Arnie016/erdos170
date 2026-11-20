@@ -11,7 +11,8 @@ Project labels describe work in this repository, not externally verified open/so
 | [Erdős #117: Abelian subgroup covers](erdos-117/README.md) | ACTIVE | 2026-10-09 | Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number? |
 | [Erdős #170: Sparse rulers and difference bases](erdos-170/README.md) | RETAINED | No imported result | Audit a saved discrete candidate together with its stated lower bound before promoting it from a search output to an exact result. |
 | [Modular distinct subset sums](modular-subset-sums/README.md) | PARKED | 2026-10-05 | At n=7 and modulus 133, can an admissible set require more than one replacement to reach a signed, unit-scaled powers-of-two set? |
+| [Erdős #30: Finite Sidon sets and smoothing](erdos-30/README.md) | RETAINED | 2026-11-20 | For two symmetric three-bin kernels, can a sharp continuous lower bound be proved when the mixing weight is free, rather than fixed at 1/2? |
 
 [Edit the catalog](catalog.json) and regenerate with `python3 research-lab/tools/catalog.py --write`.
 
-Navigation updated: 2026-10-14. This date is not a mathematical discovery date.
+Navigation updated: 2026-11-20. This date is not a mathematical discovery date.

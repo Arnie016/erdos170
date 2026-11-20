@@ -62,7 +62,11 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaises(ValueError): catalog.validate(self.data,self.root)
     def test_generated_pages_deterministic(self):
         self.assertEqual(catalog.render(self.data),catalog.render(copy.deepcopy(self.data)))
-        self.assertEqual(len(catalog.render(self.data)),5)
+        pages=catalog.render(self.data)
+        expected={'research-lab/problems/README.md','research-lab/PROGRESS.md'}
+        expected.update(f"research-lab/problems/{p['id']}/README.md" for p in self.data['problems'])
+        self.assertEqual(set(pages),expected)
+        self.assertEqual(len(pages),len(self.data['problems'])+2)
     def test_missing_relative_link_rejected(self):
         with self.assertRaises(ValueError): catalog.check_links(self.root,{'README.md':'[Broken](missing.md)'})
     def test_external_links_not_fetched(self):
