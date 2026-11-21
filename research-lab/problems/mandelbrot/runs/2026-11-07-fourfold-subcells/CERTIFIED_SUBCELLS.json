@@ -1,0 +1,69 @@
+{
+  "claim_id": "MAND-SUBGRID-2026-11-07-A",
+  "parent_commit": "762c3437602572eaca346d2dae70d37c1586058d",
+  "parent_claim_id": "MAND-RECT-2026-11-06-A",
+  "parent_masks_hex_4a_plus_b": [
+    [
+      3,
+      -9,
+      "CEFF",
+      13
+    ],
+    [
+      4,
+      -8,
+      "EFFF",
+      15
+    ],
+    [
+      5,
+      -8,
+      "008C",
+      3
+    ],
+    [
+      5,
+      -7,
+      "EFFF",
+      15
+    ],
+    [
+      6,
+      -7,
+      "008C",
+      3
+    ],
+    [
+      6,
+      -6,
+      "EFFF",
+      15
+    ],
+    [
+      7,
+      -6,
+      "08CE",
+      6
+    ],
+    [
+      7,
+      -5,
+      "FFFF",
+      16
+    ],
+    [
+      8,
+      -4,
+      "FFFF",
+      16
+    ]
+  ],
+  "subdivision": 4,
+  "side": "1/4000",
+  "jointly_accepted": 102,
+  "worker1": 105,
+  "worker2": 102,
+  "uncertified": 42,
+  "incremental_area": "51/8000000",
+  "meaning": "Set bits correspond to child C(i,j,a,b), bit 4a+b, accepted by BOTH independent exact rational criteria. Zero bits mean uncertified, not membership."
+}

@@ -1,0 +1,22 @@
+{
+  "claim_id": "MAND-EXTERIOR-2026-11-05-A",
+  "statement": "For every complex c with |c-(-3/4+i/2)| <= 1/250, the critical orbit z0=0,z_(j+1)=z_j^2+c has |z6|>2 and hence diverges.",
+  "validity": "ANALYTICAL_PROOF + EXACT_FINITE_CERTIFICATE",
+  "literature": "KNOWN METHOD; PRIORITY_UNCHECKED for exact illustrative disk",
+  "formalization": "UNFORMALIZED",
+  "dependencies": [
+    "exact polynomial recursion",
+    "triangle inequality",
+    "rational strict sixth-iterate bound",
+    "radius-two escape"
+  ],
+  "falsifier": "A c in the closed disk with |z6(c)|<=2",
+  "parent_implication": "certified excluded radius 4x and area 16x previous disk at same center",
+  "evidence": [
+    "PROOF.md",
+    "worker1.py",
+    "worker2.py",
+    "RUN_REPORT.md"
+  ],
+  "stop_condition": "independently reconstruct coefficients and certify radius 1/250 with exact controls"
+}

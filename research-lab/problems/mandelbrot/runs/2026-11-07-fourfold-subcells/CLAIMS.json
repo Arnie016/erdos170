@@ -1,0 +1,26 @@
+{
+  "claims": [
+    {
+      "id": "MAND-SUBGRID-2026-11-07-A",
+      "scope": "102 specified closed 1/4000 subcells independently certified exterior at sixth iterate",
+      "validity": [
+        "ANALYTICAL_PROOF",
+        "EXACT_FINITE_CERTIFICATE"
+      ],
+      "literature": "KNOWN_METHOD/PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED",
+      "dependencies": [
+        "MAND-RECT-2026-11-06-A",
+        "escape-radius criterion"
+      ],
+      "evidence": [
+        "PROOF.md",
+        "CERTIFIED_SUBCELLS.json",
+        "RUN_REPORT.md",
+        "worker1.py",
+        "worker2.py"
+      ],
+      "status": "LOCAL_VERIFIED_DEDICATED_REMOTE_CI_PENDING"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "claim_id": "MAND-RECT-2026-11-06-A",
+  "validity": "ANALYTICAL_PROOF + EXACT_FINITE_CERTIFICATE",
+  "literature": "KNOWN METHOD, exact local configuration PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "domain": "216 whole-annulus squares; index set as in PROOF.md",
+  "certificate": "207 cells agreed on by two rational methods; full indices in CERTIFIED_CELLS.json",
+  "falsifier": "one c in any accepted square with |z6(c)|<=2",
+  "dependencies": [
+    "exact degree-32 polynomial recurrence",
+    "two independent rational enclosure methods",
+    "radius-two escape criterion",
+    "previous 5 Nov certified disk for combined-area claim"
+  ],
+  "parent_implication": "at least 207/1000000 additional excluded parameter area",
+  "stop_condition": "complete frozen domain, identical 207 indices, both exits 0",
+  "next_test": "subdivide the 9 uncertified cells"
+}

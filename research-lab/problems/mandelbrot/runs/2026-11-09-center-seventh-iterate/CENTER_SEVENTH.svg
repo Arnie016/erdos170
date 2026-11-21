@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="1060" viewBox="0 0 1100 1060" role="img" aria-labelledby="title desc">
+<title id="title">Mandelbrot: whole-cell certificates distinguished from center escape time</title>
+<desc id="desc">Nine four by four parent grids, 102 teal whole squares certified exterior before today, 20 blue points at centers that escape at iteration six, and 22 amber points at centers that escape at iteration seven. Blue and amber do not certify whole cells.</desc>
+<style>.bg{fill:#0b1221}.panel{fill:#151f32;stroke:#27364d;stroke-width:1.2}.title{font:700 29px system-ui,Arial,sans-serif;fill:#f5f8fc}.sub{font:15px system-ui,Arial,sans-serif;fill:#9badc5}.pt{font:600 14px system-ui,Arial,sans-serif;fill:#e9f0fb}.lg{font:14px system-ui,Arial,sans-serif;fill:#cfdeec}.foot{font:13px system-ui,Arial,sans-serif;fill:#aebdd0}</style>
+<rect width="1100" height="1060" rx="20" class="bg"/>
+<text x="46" y="68" class="title">From six iterates to seven</text>
+<text x="46" y="101" class="sub">Mandelbrot parameter plane • 9 parent squares / 144 child squares • certified statements, not a boundary rendering</text>
+<rect x="46" y="145" width="324" height="230" rx="14" class="panel"/><text x="65" y="173" class="pt">Parent (3, -9)</text>
+<rect x="100" y="308" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="308" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="308" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="200" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="250" y="308" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="250" y="268" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="250" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="250" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<text x="64" y="364" class="foot">13 cells • 3 sixth-step points • 0 seventh-step points</text>
+<rect x="388" y="145" width="324" height="230" rx="14" class="panel"/><text x="407" y="173" class="pt">Parent (4, -8)</text>
+<rect x="442" y="308" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="308" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="308" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="308" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="592" y="268" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<text x="406" y="364" class="foot">15 cells • 1 sixth-step points • 0 seventh-step points</text>
+<rect x="730" y="145" width="324" height="230" rx="14" class="panel"/><text x="749" y="173" class="pt">Parent (5, -8)</text>
+<rect x="784" y="308" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="784" y="268" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="784" y="228" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="308" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="834" y="268" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="834" y="228" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="834" y="188" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="308" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="884" y="268" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="884" y="228" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="884" y="188" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="934" y="308" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="934" y="268" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="934" y="228" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="934" y="188" width="47" height="37" rx="3" fill="#f3af67"/>
+<text x="748" y="364" class="foot">3 cells • 3 sixth-step points • 10 seventh-step points</text>
+<rect x="46" y="395" width="324" height="230" rx="14" class="panel"/><text x="65" y="423" class="pt">Parent (5, -7)</text>
+<rect x="100" y="558" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="558" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="558" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="250" y="558" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="250" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="250" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="250" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<text x="64" y="614" class="foot">15 cells • 1 sixth-step points • 0 seventh-step points</text>
+<rect x="388" y="395" width="324" height="230" rx="14" class="panel"/><text x="407" y="423" class="pt">Parent (6, -7)</text>
+<rect x="442" y="558" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="442" y="518" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="442" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="558" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="492" y="518" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="492" y="478" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="492" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="558" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="542" y="518" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="542" y="478" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="542" y="438" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="592" y="558" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="592" y="518" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="592" y="478" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="592" y="438" width="47" height="37" rx="3" fill="#6a9fea"/>
+<text x="406" y="614" class="foot">3 cells • 7 sixth-step points • 6 seventh-step points</text>
+<rect x="730" y="395" width="324" height="230" rx="14" class="panel"/><text x="749" y="423" class="pt">Parent (6, -6)</text>
+<rect x="784" y="558" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="558" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="558" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="558" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="934" y="518" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="478" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="438" width="47" height="37" rx="3" fill="#46af9a"/>
+<text x="748" y="614" class="foot">15 cells • 1 sixth-step points • 0 seventh-step points</text>
+<rect x="46" y="645" width="324" height="230" rx="14" class="panel"/><text x="65" y="673" class="pt">Parent (7, -6)</text>
+<rect x="100" y="808" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="100" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="100" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="808" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="150" y="768" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="150" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="150" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="200" y="808" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="200" y="768" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="200" y="728" width="47" height="37" rx="3" fill="#6a9fea"/>
+<rect x="200" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="250" y="808" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="250" y="768" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="250" y="728" width="47" height="37" rx="3" fill="#f3af67"/>
+<rect x="250" y="688" width="47" height="37" rx="3" fill="#6a9fea"/>
+<text x="64" y="864" class="foot">6 cells • 4 sixth-step points • 6 seventh-step points</text>
+<rect x="388" y="645" width="324" height="230" rx="14" class="panel"/><text x="407" y="673" class="pt">Parent (7, -5)</text>
+<rect x="442" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="442" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="492" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="542" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="592" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<text x="406" y="864" class="foot">16 cells • 0 sixth-step points • 0 seventh-step points</text>
+<rect x="730" y="645" width="324" height="230" rx="14" class="panel"/><text x="749" y="673" class="pt">Parent (8, -4)</text>
+<rect x="784" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="784" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="834" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="884" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="808" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="768" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="728" width="47" height="37" rx="3" fill="#46af9a"/>
+<rect x="934" y="688" width="47" height="37" rx="3" fill="#46af9a"/>
+<text x="748" y="864" class="foot">16 cells • 0 sixth-step points • 0 seventh-step points</text>
+<rect x="50" y="902" width="19" height="19" rx="4" fill="#46af9a"/><text x="80" y="917" class="lg">102 certified entire squares</text>
+<rect x="565" y="902" width="19" height="19" rx="4" fill="#6a9fea"/><text x="595" y="917" class="lg">20 exterior centers at iteration 6</text>
+<rect x="50" y="940" width="19" height="19" rx="4" fill="#f3af67"/><text x="80" y="955" class="lg">22 exterior centers at iteration 7</text>
+<text x="50" y="1011" class="foot">Blue and orange certify one point at each cell center, not its full square. No new exterior area is claimed.</text></svg>
