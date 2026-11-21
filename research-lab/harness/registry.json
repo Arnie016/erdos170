@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "certificates": [
+    {
+      "id": "mod5-field47",
+      "verifier": "odd_character_root_v1",
+      "certificate": "harness/certificates/mod5-field47.json",
+      "proof": "harness/PROOF-field47.md",
+      "scope": "Arithmetic certificate for the existing n=9 (mod 23) radius-(1,4) obstruction",
+      "literature": "PRIORITY_UNCHECKED",
+      "formalization": "UNFORMALIZED"
+    }
+  ]
+}

@@ -1,46 +1,76 @@
 # Open Mathematics Research Lab
 
-### A public notebook of proofs, counterexamples and open questions
+![Open Mathematics: an evidence-first notebook with geometric patterns. The artwork is schematic, not a research result.](research-lab/assets/hero.svg)
 
-[![Verification](https://github.com/Arnie016/erdos170/actions/workflows/math-research-ci.yml/badge.svg)](https://github.com/Arnie016/erdos170/actions/workflows/math-research-ci.yml)
-[![Original lab material: MIT](https://img.shields.io/badge/original%20lab%20material-MIT-blue)](research-lab/LICENSE)
-[![Formalization: incremental](https://img.shields.io/badge/Lean-incremental-6554C0)](research-lab/lean/README.md)
+**A public, AI-assisted notebook by Arnav.** We follow a precise question from a curious pattern to a proof, a counterexample or an honest limit. The original sparse-ruler experiment suite stays intact below.
 
-**Choose a problem, not a date.** Arnav's AI-assisted research is organized by the question being studied, with links to the exact evidence and the next unresolved step.
+[**Explore the questions →**](research-lab/EXPLORE.md) · [**Inspect the evidence →**](research-lab/STATUS.md) · [**Reproduce a certificate →**](research-lab/HARNESS.md) · [Original #170 guide](#sparse-ruler-guide)
 
-| Problem | Focus in this project | Start reading |
+> **This is a research notebook, not a list of solved Erdős problems.** An illustration, a finite check and a universal proof have different jobs. Every result keeps its scope and limitations.
+
+## Where curiosity leads
+
+![Four research directions: combinatorics and forced patterns; sparsity, density and correlations; geometry and incidence; complex dynamics and fractals.](research-lab/assets/research-map.svg)
+
+The new directions are **candidate questions**, not newly solved results. [The exploration board](research-lab/EXPLORE.md) gives each a concrete first question, an acceptance test and a prior-art gate. Existing work on #117, #170, #242, #30, #60 and modular subset sums remains eligible.
+
+| Follow a question | What to look for | Evidence route |
 |---|---|---|
-| **Erdős #117** | Active: abelian covers and noncommuting sets | [Overview, finite results and next question](research-lab/problems/erdos-117/README.md) |
-| **Erdős #170** | Retained: sparse rulers and difference bases | [Original experiments and evidence boundaries](research-lab/problems/erdos-170/README.md) |
-| **Modular subset sums** | Parked: the distinct-subset-sum branch | [Modulus 69 result and modulus 133 question](research-lab/problems/modular-subset-sums/README.md) |
+| Commuting pieces | Group covers, central quotients and structural bounds | [#117](research-lab/problems/erdos-117/README.md) |
+| Sparse marks, dense differences | Covering every required distance with few marks | [#170](research-lab/problems/erdos-170/README.md) |
+| Distinct subset sums | Modular constructions, missing residues and obstructions | [Main-branch record](research-lab/problems/modular-subset-sums/README.md) · [ongoing PR #5](https://github.com/Arnie016/erdos170/pull/5) |
+| Forced four-cycles | What changes just above an extremal edge threshold? | [Restricted polarity work, PR #6](https://github.com/Arnie016/erdos170/pull/6) |
+| New mathematical terrain | Geometry, density, sparsity and complex dynamics | [Candidate board](research-lab/EXPLORE.md) |
 
-[**Progress log**](research-lab/PROGRESS.md) · [**Claim status**](research-lab/STATUS.md) · [**Lean**](research-lab/lean/README.md) · [**Reproduce**](research-lab/REPRODUCING.md) · [**Contribute**](research-lab/CONTRIBUTING.md)
+**Read the branch, not only the headline.** An open PR is not merged evidence. Main's older catalog and its ACTIVE/PARKED labels are historical snapshots, not permanent priorities. Read the latest dated proof and execution receipt before continuing a study.
 
-> **No headline Erdős solution is claimed.** A finite certificate, an ordinary proof and a Lean-checked theorem are different evidence. CI verifies submitted content; it does not create mathematical discoveries.
+## What a certificate can look like
 
-## Read the lab in one minute
+![The five-hole obstruction: 45 has order 47 in the field with 1129 elements. Its hole polynomial vanishes, whereas distinct subset sums force a nonzero value.](research-lab/assets/field-witness.svg)
 
-**New here?** Open a problem page for its plain-language question, existing results and one next test.
+For the existing restricted five-hole theorem, the arithmetic witness is just **p = 1129, r = 45**. The new selective verifier checks primality, the exact order, the polynomial identity and the exponent progression. It does not formalize the ordinary proof or establish literature priority.
 
-**Checking a result?** Follow its proof and code, then inspect the relevant immutable commit and CI receipt. Literature priority is a separate question.
+[Read the short argument](research-lab/harness/PROOF-field47.md) · [Inspect the data](research-lab/harness/certificates/mod5-field47.json) · [Read what is actually checked](research-lab/HARNESS.md)
 
-**Continuing research?** Read [the contribution workflow](research-lab/CONTRIBUTING.md). A useful update is one bounded claim with a falsifier, evidence and an honest limit. Old study paths remain stable.
+## How a question becomes evidence
 
-## Verification
+![Research workflow: pose a precise question, derive a candidate, challenge it with frozen checks, then publish the scoped result. A failed check returns to the question, not to weaker acceptance criteria.](research-lab/assets/research-loop.svg)
+
+**The loop in words:** recover current evidence, choose one question, state what would falsify it, derive an answer, challenge its weakest step, then preserve the result and its limitations. A negative result can be useful. Reformatting the notebook is not mathematics.
+
+| Evidence label | What it means | What it does not mean |
+|---|---|---|
+| Analytical proof | A written argument under explicit hypotheses | Independently peer-reviewed or automatically formalized |
+| Exact finite certificate | A complete, declared finite claim with a checker | A universal or asymptotic theorem |
+| Lean verified at a commit | The stated formal theorem built with audited dependencies | Every nearby prose claim is verified |
+| Numerical lead / schematic | A computation or visual suggesting a question | A proof, a certified dimension or set-membership result |
+
+## Run only the check you need
 
 ```sh
-# Fast metadata and local-link check, with no dependencies or mathematical search
-python3 research-lab/tools/catalog.py --check
+# One registered certificate, plus exact receipts. Standard library only.
+python3 research-lab/harness/verify.py --only mod5-field47
 
-# Full existing computational reproduction (Python 3.10+ and C++17)
+# Fixed negative controls and harness regression tests.
+python3 -m unittest discover -s research-lab/harness -p 'test_*.py' -v
+
+# Existing navigation and full historical reproduction remain available.
+python3 research-lab/tools/catalog.py --check
 python3 research-lab/tools/verify_all.py
 
-# Pinned Lean project; checks only the declared formal layer
-cd research-lab/lean
-lake build
+# Pinned Lean project: only its declared formal layer.
+cd research-lab/lean && lake build
 ```
 
-Original additions under `research-lab/` use the [scoped MIT license](research-lab/LICENSE). Pre-existing root files and third-party work are not automatically relicensed. AI assistance is disclosed; automated verification is not independent human peer review.
+The **focused-certificates** CI job covers the new field-witness check. Existing computational and Lean jobs retain their original scope. A green badge elsewhere is not a receipt for this certificate. [Workflow runs](https://github.com/Arnie016/erdos170/actions/workflows/math-research-ci.yml)
+
+## A notebook that gets better at checking itself
+
+Harness changes are reviewed engineering: smaller reproducible checks, preserved failures and clear source-to-claim links. They do not grant the researcher new permissions or allow it to weaken its own evaluator. [Harness contract](research-lab/HARNESS.md) · [Visual design system](research-lab/DESIGN.md) · [Maintenance note](research-lab/maintenance/2026-11-03-visual-harness.md)
+
+[Progress log](research-lab/PROGRESS.md) · [Claim status](research-lab/STATUS.md) · [Lean](research-lab/lean/README.md) · [Reproduce](research-lab/REPRODUCING.md) · [Contribute](research-lab/CONTRIBUTING.md)
+
+Original additions under `research-lab/` use the [scoped MIT license](research-lab/LICENSE). Pre-existing root files and third-party work are not automatically relicensed. AI assistance is disclosed; automated checks are not independent human peer review. Research correspondence stays private.
 
 ## Sparse-ruler guide
 
