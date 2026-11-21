@@ -1,0 +1,7 @@
+# Daily mathematics report | 2026-10-24
+
+**Selected:** modular t=5 over #242 downstream coefficient transfer; the latter has an existing external precedence collision. **Result:** all-n structural lemma, ANALYTICAL_PROOF, PRIORITY_UNCHECKED, UNFORMALIZED. Four fully stated claims and proof in PROOF.md. Existing prior n8 unit lemma explicitly acknowledged.
+
+**Local verification:** One deterministic Python 3.13.5 experimental worker with hard command timeout --signal=TERM --kill-after=2s 35s python3 check_boundary.py. Exit=0; elapsed=1.11 seconds; max RSS 95764 KB. Exhaustive candidate domains n2,N9: 28 candidate sets, 24 admissible; n3,N13: 220 candidates, 96 admissible; n4,N21: 4845 candidates, 288 admissible. All admissible sets satisfy claims. Nineteen explicit construction cases n2..n10 satisfy claims, with one deliberate colliding control rejected. Full source, raw outputs, checksum and timeout receipt preserved in the dated conversation attachment; this repository's ordinary proof is not dependent on the finite check.
+
+**Source boundaries:** Cambie–Gao–Kim–Liu parity and t5 templates already known. New theorem claims only project-relative generalization and fingerprint; no universal classification or formally verified Lean claim. No email, GPU, paid API, Mac execution, or schedule edits. New-commit CI must be checked separately; historic CI does not prove new math.

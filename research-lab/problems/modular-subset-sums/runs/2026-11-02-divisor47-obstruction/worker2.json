@@ -1,0 +1,14 @@
+{
+  "method": "direct Sylvester integer determinant",
+  "resultants": {
+    "11": "1",
+    "47": "1274641"
+  },
+  "controls": {
+    "positive_11": "1",
+    "positive_47": "1",
+    "zero_11": "0"
+  },
+  "internal_wall_seconds": 0.0105385009999992,
+  "code_sha256": "6a2d5780f40072be133cf514f5fe8d0729b166fddda544856a6c742270f53af1"
+}
