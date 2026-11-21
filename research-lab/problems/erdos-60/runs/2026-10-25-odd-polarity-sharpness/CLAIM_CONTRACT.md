@@ -1,0 +1,3 @@
+# Frozen acceptance criteria
+
+First claim: every two-absolute-edge addition/one-old-edge deletion to odd-q polarity H has >=2q-3 noninduced C4; falsifier graph with 2q-4. First worker (<=35s), q=3,5,7,11,13,17, stops on first exact witness. After failure, candidate follow-on: explicit universal odd-prime-power equality 2q-4. Second worker (<=35s), independent codegree method for finite primes q=3,5,7,11,13,17; expects H no C4, H+one edge q-1, H+two edges 2(q-1), final 2q-4. Universal assertion must have ordinary algebraic proof and is not certified by finite checks alone. No randomness. No third process.
