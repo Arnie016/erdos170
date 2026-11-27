@@ -1,0 +1,21 @@
+{
+  "N": 517,
+  "target": "X^8+X^5+X^4+X^3+1",
+  "determinant": "22467997157341568650698340964930607624196301367852502730153002452331805",
+  "resultant": "4493599431468313730139668192986121524839260273570500546030600490466361",
+  "control_P3": "1",
+  "control_Phi11": "0",
+  "local_exit_codes": [
+    0,
+    0
+  ],
+  "local_external_wall_seconds": [
+    1.15,
+    0.77
+  ],
+  "local_sha256": [
+    "e153fb00325fb4465925893d82152591cb49c034bd1c67d14db4b662e555cdf0",
+    "96fa8b8b49b3fc80dbb56d615a6e33be37c302268c6a28f9f937363996cf59a7"
+  ],
+  "github_ci_this_study": "UNVERIFIED"
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-26",
+  "lane": "modular-subset-sums",
+  "validity": "ANALYTICAL_PROOF",
+  "literature": "PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "claims": [
+    {
+      "id": "MOD5-INV-20261026",
+      "statement": "For odd N≥3, nonzero a, and holes H, S=Z_N\\H decomposes uniquely as B disjoint-union (B+a) iff each +a cycle has holes and all cyclic hole gaps are odd.",
+      "depends_on": [],
+      "evidence": "PROOF.md"
+    },
+    {
+      "id": "MOD5-GENERATOR-20261026",
+      "statement": "Any genuine mark of a t=5 modular distinct-subset-sum set passes the inverse-hole criterion; its unique B contains zero and equals the subset sums of the other marks.",
+      "depends_on": [
+        "MOD5-INV-20261026",
+        "MOD5-CENTER-20261024"
+      ],
+      "evidence": "PROOF.md"
+    }
+  ],
+  "not_claimed": [
+    "literature originality",
+    "single-mark criterion sufficiency",
+    "general one-replacement theorem",
+    "general integer Erdős distinct-sums solution",
+    "Lean verification"
+  ]
+}

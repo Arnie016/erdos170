@@ -1,0 +1,14 @@
+{
+  "method": "companion power and Bareiss",
+  "resultants": {
+    "11": "1",
+    "47": "1274641"
+  },
+  "controls": {
+    "positive_11": "1",
+    "positive_47": "1",
+    "zero_11": "0"
+  },
+  "internal_wall_seconds": 0.0004161020000026383,
+  "code_sha256": "a8b6f28df1e48dc2b6468943be7be3b835d28fec7d46a0b1fbd52ffcb6764779"
+}
