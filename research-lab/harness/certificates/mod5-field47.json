@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "p": 1129,
+  "r": 45,
+  "order": 47,
+  "exponents": [
+    0,
+    3,
+    4,
+    5,
+    8
+  ],
+  "base": 2,
+  "offset": 5,
+  "n0": 9,
+  "period": 23
+}
