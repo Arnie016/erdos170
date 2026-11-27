@@ -1,0 +1,31 @@
+{
+  "checkpoint": "2026-10-13",
+  "literature_status": "PRIORITY_UNCHECKED",
+  "formal_status": "UNFORMALIZED",
+  "repo_ci_reproduction": false,
+  "claims": [
+    {
+      "id": "E117-P-255-20261013",
+      "status": "EXACT_FINITE_CERTIFICATE",
+      "scope": "255 scalar spans S with fixed faithful two-plane P <= S <= Alt(F2^5)",
+      "evidence": "local two-worker execution and chat ZIP; per-pencil values and hashes in STUDY.md",
+      "dependencies": []
+    },
+    {
+      "id": "E117-P-GROUP-20261013",
+      "status": "ANALYTICAL_PROOF",
+      "scope": "G/Z(G) elementary F2^5, dim G' 3, scalar-span contains GL(V)-conjugate of P",
+      "dependencies": [
+        "E117-P-255-20261013"
+      ],
+      "evidence": "STUDY.md ordinary reduction"
+    },
+    {
+      "id": "E117-GLOBAL",
+      "status": "NO_ADVANCE",
+      "scope": "all groups with omega(G)<=n",
+      "dependencies": [],
+      "evidence": "nothing established beyond the restricted family"
+    }
+  ]
+}
