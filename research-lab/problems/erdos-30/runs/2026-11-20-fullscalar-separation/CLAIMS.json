@@ -1,0 +1,29 @@
+{
+  "claim_id": "SIDON-3BIN-FULLSCALAR-2026-11-20",
+  "date": "2026-11-20",
+  "validity": "ANALYTICAL_PROOF",
+  "auxiliary_validity": "EXACT_FINITE_CERTIFICATE",
+  "auxiliary_domain": "190 rational kernel pairs 1<=k<=l<=19, t=k/60, equal mixing",
+  "literature": "PRIORITY_UNCHECKED",
+  "method_known": true,
+  "formal_status": "UNFORMALIZED",
+  "scalar_domain": "all real t in [0,1/2] and real feasible boundary weights",
+  "scalar_lower_bound_ab": "1201/1250",
+  "inequality": "strictly_greater",
+  "mixed_ab": "1150153/1253320",
+  "workers": [
+    {
+      "kind": "symbolic",
+      "exit_code": 0,
+      "wall_seconds": 1.96
+    },
+    {
+      "kind": "independent_fraction",
+      "exit_code": 0,
+      "wall_seconds": 1.05
+    }
+  ],
+  "grid_sha256": "199215f53ae24a71df8820cc226d597d5a6b6c1a9c26b1083ac68cf7904726a1",
+  "lean_verified": false,
+  "global_erdos30_solution": false
+}

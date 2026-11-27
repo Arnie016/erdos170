@@ -13,6 +13,7 @@
 | **Erdős #117** | Active: abelian covers and noncommuting sets | [Overview, finite results and next question](research-lab/problems/erdos-117/README.md) |
 | **Erdős #170** | Retained: sparse rulers and difference bases | [Original experiments and evidence boundaries](research-lab/problems/erdos-170/README.md) |
 | **Modular subset sums** | Parked: the distinct-subset-sum branch | [Modulus 69 result and modulus 133 question](research-lab/problems/modular-subset-sums/README.md) |
+| **Erdős #30** | Retained: exact finite Sidon-set smoothing | [Full three-bin scalar separation and visual](research-lab/problems/erdos-30/README.md) |
 
 [**Progress log**](research-lab/PROGRESS.md) · [**Claim status**](research-lab/STATUS.md) · [**Lean**](research-lab/lean/README.md) · [**Reproduce**](research-lab/REPRODUCING.md) · [**Contribute**](research-lab/CONTRIBUTING.md)
 
