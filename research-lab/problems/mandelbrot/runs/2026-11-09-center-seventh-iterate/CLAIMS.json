@@ -1,0 +1,14 @@
+{
+  "claim_id": "MAND-CENTER7-2026-11-09-A",
+  "validity": "EXACT_FINITE_CERTIFICATE",
+  "analytical_proof": true,
+  "literature": "KNOWN_METHOD_PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "domain": "22 rational centers of 7 Nov zero-bit child squares whose 8 Nov sixth squared norm is below 4",
+  "escape_by_seventh": 22,
+  "remain_not_escaped": 0,
+  "all_prior_unproven_centers_exterior_by_step7": 42,
+  "new_whole_cell_certificates": 0,
+  "new_exterior_area": 0,
+  "source_commit": "dd482e9e27cba1406fa83cfd981ece5fb7cc2c32"
+}

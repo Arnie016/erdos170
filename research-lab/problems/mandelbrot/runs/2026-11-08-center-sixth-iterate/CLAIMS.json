@@ -1,0 +1,23 @@
+{
+  "claim_id": "MAND-CENTER-2026-11-08-A",
+  "domain": "42 zero-bit child centers from MAND-SUBGRID-2026-11-07-A",
+  "outcome": {
+    "escaped_centers": 20,
+    "not_escaped_by_six": 22,
+    "equalities": 0
+  },
+  "obstruction": "22 original whole cells cannot satisfy all-points sixth-iterate strict escape",
+  "validity": [
+    "ANALYTICAL_PROOF",
+    "EXACT_FINITE_CERTIFICATE"
+  ],
+  "literature": "KNOWN_METHOD/PRIORITY_UNCHECKED",
+  "formalization": "UNFORMALIZED",
+  "no_new_area_certified": true,
+  "dependency": "MAND-SUBGRID-2026-11-07-A",
+  "source_sha256": {
+    "worker1": "ad3858494efa7d696e2f91e72b8ca60a28e2742c5ea4cc99e6ec1185245d216d",
+    "worker2": "80abd23d305b5eb30bac093ff58eb353ab2ca8adea39c588c0a3a19615359bbe"
+  },
+  "remote_ci": "NOT_OBSERVED"
+}
