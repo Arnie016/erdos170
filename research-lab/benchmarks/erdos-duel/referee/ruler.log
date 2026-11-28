@@ -1,0 +1,18 @@
+PASS full repair, broken repair, and missing endpoint controls
+r=1 pairs=36 fresh insertion trials=756
+r=2 pairs=105 fresh insertion trials=6825
+r=3 pairs=210 fresh insertion trials=27930
+r=4 pairs=351 fresh insertion trials=78975
+r=5 pairs=528 fresh insertion trials=180048
+r=6 pairs=741 fresh insertion trials=356421
+r=7 pairs=990 fresh insertion trials=638550
+r=8 pairs=1275 fresh insertion trials=1062075
+r=9 pairs=1596 fresh insertion trials=1667820
+r=10 pairs=1953 fresh insertion trials=2501793
+r=11 pairs=2346 fresh insertion trials=3615186
+r=12 pairs=2775 fresh insertion trials=5064375
+r=13 pairs=3240 fresh insertion trials=6910920
+r=14 pairs=3741 fresh insertion trials=9221565
+r=15 pairs=4278 fresh insertion trials=12068238
+r=16 pairs=4851 fresh insertion trials=15528051
+PASS all distinct original-mark pairs, 1<=r<=16, pairs=29016, insertions=58929528

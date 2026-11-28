@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erdős proof duel</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f6f4ec;
+    --white: #fffef8;
+    --ink: #162c2b;
+    --muted: #4e615d;
+    --line: #cad1c5;
+    --teal: #185c50;
+    --teal-pale: #e4efe7;
+    --rust: #8d3a28;
+    --rust-pale: #f4e7dd;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.55 var(--sans); }
+  a { color: var(--teal); text-underline-offset: .19em; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--rust); outline-offset: 4px; }
+  .skip { position: absolute; top: .75rem; left: .75rem; transform: translateY(-200%); background: var(--white); padding: .5rem .8rem; }
+  .skip:focus { transform: none; }
+  .shell { width: min(1180px, calc(100% - 4rem)); margin-inline: auto; }
+  .masthead { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: end; padding: 3rem 0 2rem; border-bottom: 1px solid var(--ink); }
+  h1, h2, h3, p { margin: 0; }
+  h1, h2 { font-family: var(--serif); font-weight: 400; line-height: 1.04; }
+  h1 { font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -.065em; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.7rem); letter-spacing: -.04em; }
+  h3 { font-size: 1.02rem; }
+  .intro { max-width: 46ch; color: var(--muted); margin-top: .9rem; }
+  .masthead a { white-space: nowrap; }
+  .outcome { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; margin: 1.55rem 0 .7rem; gap: .25rem 1rem; }
+  .outcome strong { font-size: 1.1rem; }
+  .outcome p, .muted { color: var(--muted); }
+  .scores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .card { min-width: 0; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--desk); padding: clamp(.95rem, 3.4vw, 1.6rem); }
+  .card:nth-child(odd) { --desk: var(--teal); }
+  .card:nth-child(even) { --desk: var(--rust); }
+  .card header { display: flex; justify-content: space-between; gap: .65rem; align-items: start; }
+  .card .desk-id { color: var(--desk); font-weight: 700; }
+  .card h3 { font-size: clamp(1.12rem, 3.5vw, 1.4rem); }
+  .score { display: flex; align-items: baseline; flex-wrap: wrap; gap: .25rem; line-height: 1; color: var(--desk); margin-bottom: .15rem; }
+  .score strong { font: 400 clamp(2.5rem, 7vw, 4.45rem)/.95 var(--serif); font-variant-numeric: lining-nums tabular-nums; }
+  .score span { font: .79rem var(--mono); }
+  .track { display: flex; height: .42rem; margin: .9rem 0 .78rem; background: var(--paper); border: 1px solid var(--line); }
+  .fill { background: var(--desk); height: 100%; }
+  .card details { margin-top: .75rem; }
+  summary { cursor: pointer; font-weight: 650; }
+  .breakdown { display: grid; gap: .2rem .5rem; grid-template-columns: minmax(0, 1fr) auto; margin: .65rem 0 0; }
+  .breakdown dd { font: .9rem var(--mono); margin: 0; align-self: center; }
+  .board { display: grid; grid-template-columns: minmax(210px, 1fr) minmax(0, 2fr); grid-template-areas: "timeline current"; gap: 1rem; align-items: start; padding: 1.5rem 0; }
+  .timeline, .current { background: var(--white); border: 1px solid var(--line); min-width: 0; }
+  .timeline { grid-area: timeline; }
+  .timeline h2 { font: 700 1rem/1.2 var(--sans); padding: 1.05rem 1rem .85rem; letter-spacing: normal; }
+  .timeline ol { list-style: none; margin: 0; padding: 0; }
+  button { font: inherit; color: inherit; }
+  .stage-button { width: 100%; min-height: 44px; padding: .6rem .7rem; border: 0; border-top: 1px solid var(--line); background: var(--white); text-align: left; display: grid; grid-template-columns: 2ch minmax(0, 1fr); gap: .6rem; cursor: pointer; }
+  .stage-button:hover, .stage-button[aria-current="step"] { background: var(--teal-pale); }
+  .stage-button[aria-current="step"] { box-shadow: inset 3px 0 var(--teal); font-weight: 700; }
+  .stage-button span:first-child { font: .8rem/1.9 var(--mono); text-align: right; }
+  .stage-button:focus-visible { z-index: 1; position: relative; outline-offset: -3px; }
+  .current { grid-area: current; padding: clamp(1rem, 3vw, 1.65rem); }
+  .stage-header { display: flex; align-items: center; justify-content: space-between; gap: .5rem; border-bottom: 1px solid var(--line); padding-bottom: .8rem; margin-bottom: 1rem; }
+  .stage-counter { color: var(--muted); font: .82rem var(--mono); }
+  .controls { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .control { padding: .35rem .7rem; min-height: 44px; background: var(--white); border: 1px solid var(--line); cursor: pointer; }
+  .control[data-action="next"]:enabled { color: var(--white); background: var(--teal); border-color: var(--teal); }
+  .control:disabled { opacity: .55; cursor: default; }
+  .control:enabled:hover { border-color: var(--ink); }
+  .event-kind { display: block; color: var(--teal); font-size: .86rem; font-weight: 650; margin-bottom: .42rem; }
+  .event-summary { margin-top: .7rem; max-width: 66ch; white-space: pre-line; overflow-wrap: anywhere; }
+  .evidence { border-top: 1px solid var(--line); padding-top: 1.05rem; margin-top: 1.15rem; }
+  .receipts { padding: 0; margin: .65rem 0 0; list-style: none; display: grid; gap: .5rem; }
+  .receipts li { padding: .65rem .75rem; border: 1px solid var(--line); background: var(--paper); overflow-wrap: anywhere; }
+  .receipts a { font-weight: 700; }
+  .receipts p { color: var(--muted); font-size: .9rem; }
+  .baseline-list { display: grid; gap: .9rem; padding-left: 1.25rem; }
+  .baseline-list li p + p { margin-top: .42rem; }
+  footer { color: var(--muted); display: flex; flex-wrap: wrap; gap: .25rem 1rem; border-top: 1px solid var(--line); padding: 1rem 0 2.25rem; font-size: .86rem; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  [hidden] { display: none; }
+  @media (max-width: 730px) {
+    .shell { width: calc(100% - 1.5rem); }
+    .masthead { grid-template-columns: 1fr; gap: .6rem; padding: 1.6rem 0 1.1rem; }
+    .board { grid-template-columns: minmax(0, 1fr); grid-template-areas: "current" "timeline"; }
+  }
+  @media (max-width: 430px) {
+    .scores { gap: .55rem; }
+    .card { padding: .68rem; }
+    .card header, .stage-header { display: grid; }
+    .score span { font-size: .68rem; }
+    .card details, .muted { font-size: .9rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#stage-heading">Skip to replay</a>
+<div class="shell">
+  <header class="masthead">
+    <div>
+      <h1 id="title">Erdős proof duel</h1>
+      <p class="intro">Two mathematical targets, one referee. Examine the proof attempts, challenges and awarded evidence.</p>
+    </div>
+    <a href="PROJECT_BRIEF.md">Frozen targets and rules</a>
+  </header>
+  <noscript><p>Enable JavaScript to replay the match, or read the <a href="match.json">event log</a>.</p></noscript>
+  <p id="load-error" role="alert" hidden>The match data could not be read. Open the <a href="match.json">recorded event log</a>.</p>
+  <main id="match" hidden>
+    <section aria-labelledby="score-heading">
+      <div class="outcome">
+        <h2 id="score-heading" class="sr-only">Score</h2>
+        <strong id="outcome" role="status"></strong>
+        <p>Points from referee decisions</p>
+      </div>
+      <div class="scores" id="scores"></div>
+    </section>
+    <div class="board">
+      <section class="current" aria-labelledby="stage-heading">
+        <header class="stage-header">
+          <span class="stage-counter" id="counter" aria-live="polite"></span>
+          <div class="controls" aria-label="Replay controls">
+            <button type="button" class="control" id="reset">Start replay</button>
+            <button type="button" class="control" id="previous">Previous</button>
+            <button type="button" class="control" id="next" data-action="next">Next</button>
+          </div>
+        </header>
+        <div id="event"></div>
+      </section>
+      <nav class="timeline" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">Match timeline</h2>
+        <ol id="stages"></ol>
+      </nav>
+    </div>
+  </main>
+  <footer>
+    <a href="README.md">Replay and verification instructions</a>
+    <a href="match.json">Recorded event log</a>
+  </footer>
+</div>
+<script id="match-data" type="application/json">
+{"maximum":13,"book":{"version":1,"title":"Erd\u0151s proof duel","baseline":"81ef55af285a4ea7db72a11e2a0b2a128be394fb","desks":[{"id":"ruler","label":"Ruler desk","problem":"Erd\u0151s #170","target":"Decide whether two exterior marks of the canonical Wichmann ruler can be replaced by one fresh mark while every original length remains measurable.","extension":"Allow both deleted marks to be anywhere in the original ruler, including both middle junctions.","prior":"The strict-middle cases and a Lean counting lemma were already known at the start of the match."},{"id":"group","label":"Group desk","problem":"Erd\u0151s #117","target":"For every finite simple graph over the binary field, decide whether the nonorthogonal clique number and isotropic cover number both count dominating vertex subsets.","extension":"Give and check a weighted count over dominating supports over every finite field.","prior":"Four binary three-edge cases and a finite rank-five census preceded the match. Lecomte's preprint concerns the global abelian-cover profile."}],"events":[{"id":"group-opening","type":"submission","actor":"group","title":"Group proposes the dominating-support formula","summary":"On a dominating support, orthogonality forces one scalar on each induced connected component. The opening argument counts projective profiles, uses them for a clique, and proposes extending any support by independent undominated vertices for the cover. The predicted weight over a field of size q is (q\u22121) raised to |S|\u2212c(H[S]).","evidence":[]},{"id":"ruler-opening","type":"submission","actor":"ruler","title":"Ruler proposes a residue bound","summary":"Two exterior deletions lose two columns of unique differences to the strict middle block. Each column has a single residue modulo the middle step. The proposed bound allows at most 16 restoration pairs with exterior partners and 2r+1 with middle partners. It excludes r\u226510 if the residue and uniqueness arguments hold.","evidence":[]},{"id":"ruler-challenge","type":"challenge","actor":"referee","desk":"ruler","reply_to":"ruler-opening","title":"Referee asks for the finite boundary","summary":"Check each block's residue injection using coprimality. Explain why coincident column residues cannot invalidate the upper bound. Deal with endpoint deletion and give a complete replay for 1\u2264r\u22649, including freshness, the fixed interval, and deliberately broken controls.","evidence":[]},{"id":"group-challenge","type":"challenge","actor":"referee","desk":"group","reply_to":"group-opening","title":"Referee challenges the cover at isolated vertices","summary":"Prove both support containments when dominating vectors are orthogonal. Check that each centralizer is totally isotropic and that the extension handles empty supports, disconnected induced graphs, and mandatory isolated vertices. Test the determinant in odd characteristic and match the literal binary theorem to Lean.","evidence":[]},{"id":"group-response","type":"submission","actor":"group","reply_to":"group-challenge","title":"Group supplies the cover and a binary Lean proof","summary":"A pair of orthogonal dominating vectors has the same support by containment in both directions. The cover adds an independent set in the undominated induced graph, and its new vertices become singleton components. The proof treats zero and isolated vertices explicitly. The submitted Lean theorem checks the binary optimum. A separate F\u2083 fixture tests two disjoint edges and an isolate.","evidence":[{"kind":"base","label":"Graph-coordinate proof","href":"../../problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md","domain":"Every finite simple graph and finite field","method":"Support classification, clique and explicit cover"},{"kind":"extension","label":"Two-edge F\u2083 check","href":"../../problems/erdos-117/runs/2026-11-28-graph-covers/check_two_edges_f3.py","domain":"Two disjoint edges and an isolated vertex, 243 vectors","method":"Determinants and covering spans with controls"},{"kind":"lean","label":"Pinned replay instructions","href":"../../problems/erdos-117/runs/2026-11-28-graph-covers/REPLAY.md","domain":"Full binary target","method":"Lean 4.19.0 build and axiom audit"}]},{"id":"group-decision","type":"decision","actor":"referee","desk":"group","reply_to":"group-response","title":"Referee accepts the graph-coordinate theorem","summary":"The clique and cover have matching sizes for every graph over every finite field. The pinned Lean theorem checks the binary result and both optimality directions. An independent F\u2083 check derives ten clique vectors and ten covering spaces for a path and an isolate, and rejects defective witnesses. The result concerns graph-coordinate alternating maps. Rossmann and Qiao establish related structure and counting results. Literature priority for the cover formula remains unverified.","grade":{"base":8,"extension":true,"lean":2,"independent":true},"evidence":[{"kind":"base","label":"Proof reviewed by the referee","href":"../../problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md","domain":"All finite simple graphs, with isolates allowed","method":"Matching clique and cover in the binary case"},{"kind":"extension","label":"Weighted formula and odd-field replay","href":"../../problems/erdos-117/runs/2026-11-28-graph-covers/REPLAY.md","domain":"Arbitrary finite fields plus a five-coordinate F\u2083 test","method":"Component lines with a direct signed-determinant control"},{"kind":"lean","label":"Full binary Lean theorem","href":"../../lean/OpenMath/GraphCovers.lean","domain":"Any simple graph on a finite vertex type","method":"Duplicate-free support enumeration and universal optimality"},{"kind":"lean","label":"Referee's pinned build","href":"referee/group-lean.log","domain":"Lean 4.19.0 on a fresh copy of the pinned project","method":"Successful Lake build and theorem-specific axiom output"},{"kind":"independent","label":"Referee's literal F\u2083 checker","href":"referee/check_odd_cover.py","domain":"Three-vertex path and an isolated vertex, 81 vectors","method":"Clique search, span enumeration and broken certificates"},{"kind":"independent","label":"Independent replay result","href":"referee/odd_cover.log","domain":"Three-vertex path and an isolated vertex over F\u2083","method":"Matching clique and cover of size ten"},{"kind":"context","label":"Rossmann's centralizer calculation","href":"https://arxiv.org/abs/2107.05564v3","domain":"Graphical groups over finite fields","method":"Lemma 3.2 identifies the same support-component structure"},{"kind":"context","label":"Qiao's related enumeration","href":"https://arxiv.org/html/2408.09963v2","domain":"Graphical alternating matrix spaces","method":"Counts isotropic subspaces by dimension"}]},{"id":"ruler-response","type":"submission","actor":"ruler","reply_to":"ruler-challenge","title":"Ruler tests small cases and handles the junctions","summary":"Coprimality gives a uniform bound of two partners per block and missing residue, which also covers coincident columns. The finite replay tests the original interval for every deletion pair through r=16. For r\u226517, losses to the opposite progression localize the possible insertion near a deleted junction. A congruence rules out middle-block restoration of losses caused by a cap deletion. Progression capacity and incompatible insertion intervals close the other junction cases.","evidence":[{"kind":"base","label":"Submitted finite checker","href":"../../problems/erdos-170/runs/2026-11-28-exterior-repair/check_repair.py","domain":"All exterior and all original-mark deletion pairs, 1\u2264r\u226425","method":"Exact retained differences and a missing-length sieve"},{"kind":"base","label":"Submitted finite replay","href":"../../problems/erdos-170/runs/2026-11-28-exterior-repair/finite-check.txt","domain":"Every r from 1 through 25","method":"Separate totals for exterior and unrestricted deletion pairs"},{"kind":"lean","label":"Submitted residue lemmas","href":"../../lean/OpenMath/ExteriorRepair.lean","domain":"Integer residue capacity and cap congruence","method":"Lean 4.19.0 formalizes the modular bridge"}]},{"id":"ruler-decision","type":"decision","actor":"referee","desk":"ruler","reply_to":"ruler-response","title":"Referee accepts the all-pair repair obstruction","summary":"The exterior residue bound handles r\u226510. For the full extension, a junction's unique losses force a short insertion interval for r\u226517. The progression and cap cases exhaust the possible second deletion. The direct finite replay checked 58,929,528 fresh insertions for all pairs through r=16, and the ordinary argument extends the result to every positive r. Lean checks the modular bridge. The theorem concerns single-insertion repair of this canonical family at its original length.","grade":{"base":8,"extension":true,"lean":1,"independent":true},"evidence":[{"kind":"base","label":"Exterior deletion proof","href":"../../problems/erdos-170/runs/2026-11-28-exterior-repair/PROOF.md#two-exterior-deletions","domain":"All exterior pairs, including endpoints","method":"Two unique-loss columns, residue capacity and exact finite boundary"},{"kind":"extension","label":"Junction cases and full theorem","href":"../../problems/erdos-170/runs/2026-11-28-exterior-repair/PROOF.md#when-a-junction-is-deleted","domain":"Every distinct pair of original marks and every admissible insertion","method":"Progression localization and incompatible residues or insertion intervals"},{"kind":"lean","label":"Lean residue lemmas","href":"../../lean/OpenMath/ExteriorRepair.lean","domain":"Signed absolute differences and residue-injective partner blocks","method":"Two-partner bound and cap-congruence impossibility"},{"kind":"lean","label":"Referee's pinned build","href":"referee/ruler-lean.log","domain":"Lean 4.19.0 on a fresh copy of the pinned project","method":"Successful Lake build and theorem-specific axiom output"},{"kind":"independent","label":"Referee's direct finite check","href":"referee/check_ruler.py","domain":"Every original-mark pair and fresh insertion for 1\u2264r\u226416","method":"Direct residual difference masks, with full and broken repair controls"},{"kind":"independent","label":"Independent replay result","href":"referee/ruler.log","domain":"29,016 deletion pairs and 58,929,528 fresh insertions","method":"Zero repairs throughout the exact finite boundary"}]}]},"stages":[{"event":null,"scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null}},"leaders":["ruler","group"],"status":"unscored"},{"event":"group-opening","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null}},"leaders":["ruler","group"],"status":"unscored"},{"event":"ruler-opening","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null}},"leaders":["ruler","group"],"status":"unscored"},{"event":"ruler-challenge","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null}},"leaders":["ruler","group"],"status":"unscored"},{"event":"group-challenge","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null}},"leaders":["ruler","group"],"status":"unscored"},{"event":"group-response","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null}},"leaders":["ruler","group"],"status":"unscored"},{"event":"group-decision","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":13,"points":{"base":8,"extension":2,"lean":2,"independent":1},"base_label":"Frozen target settled","decision":"group-decision"}},"leaders":["group"],"status":"leader"},{"event":"ruler-response","scores":{"ruler":{"total":0,"points":{"base":0,"extension":0,"lean":0,"independent":0},"base_label":"No advance","decision":null},"group":{"total":13,"points":{"base":8,"extension":2,"lean":2,"independent":1},"base_label":"Frozen target settled","decision":"group-decision"}},"leaders":["group"],"status":"leader"},{"event":"ruler-decision","scores":{"ruler":{"total":12,"points":{"base":8,"extension":2,"lean":1,"independent":1},"base_label":"Frozen target settled","decision":"ruler-decision"},"group":{"total":13,"points":{"base":8,"extension":2,"lean":2,"independent":1},"base_label":"Frozen target settled","decision":"group-decision"}},"leaders":["group"],"status":"leader"}]}
+</script>
+<script>
+  "use strict";
+  const element = (tag, text, className) => {
+    const node = document.createElement(tag);
+    if (text !== undefined) node.textContent = text;
+    if (className) node.className = className;
+    return node;
+  };
+  const byId = id => document.getElementById(id);
+
+  function start(data) {
+    const {book, stages, maximum} = data;
+    const desks = new Map(book.desks.map(desk => [desk.id, desk]));
+    const eventByID = new Map(book.events.map(event => [event.id, event]));
+    const latestByDesk = new Map(book.events.map(event => [event.desk || event.actor, event.type]));
+    const settled = book.desks.every(desk => latestByDesk.get(desk.id) === "decision");
+    const scoreCards = new Map();
+    const timeline = [];
+    let current = stages.length - 1;
+    byId("title").textContent = book.title;
+    document.title = book.title;
+
+    for (const desk of book.desks) {
+      const card = element("article", undefined, "card");
+      const heading = element("header");
+      const names = element("div");
+      names.append(element("p", desk.problem, "desk-id"), element("h3", desk.label));
+      const score = element("p", undefined, "score");
+      const value = element("strong");
+      score.append(value, element("span", " / " + maximum));
+      heading.append(names, score);
+      const track = element("div", undefined, "track");
+      track.setAttribute("aria-hidden", "true");
+      const fill = element("div", undefined, "fill");
+      track.append(fill);
+      const status = element("p", undefined, "muted");
+      const detail = element("details");
+      detail.append(element("summary", "Point breakdown"));
+      const list = element("dl", undefined, "breakdown");
+      const fields = {};
+      for (const [key, label] of [
+        ["base", "Base result"], ["extension", "Extension"],
+        ["lean", "Lean verification"], ["independent", "Independent check"],
+      ]) {
+        const points = element("dd");
+        list.append(element("dt", label), points);
+        fields[key] = points;
+      }
+      detail.append(list);
+      card.append(heading, track, status, detail);
+      byId("scores").append(card);
+      scoreCards.set(desk.id, {value, fill, status, fields});
+    }
+
+    for (const [index, stage] of stages.entries()) {
+      const event = eventByID.get(stage.event);
+      const row = element("li");
+      const button = element("button", undefined, "stage-button");
+      button.type = "button";
+      button.append(element("span", String(index)), element("span", event ? event.title : "Frozen baseline"));
+      button.addEventListener("click", () => render(index));
+      row.append(button);
+      byId("stages").append(row);
+      timeline.push(button);
+    }
+
+    function renderBaseline(panel) {
+      const title = element("h2", "Frozen baseline");
+      title.id = "stage-heading";
+      title.tabIndex = -1;
+      const groups = element("ul", undefined, "baseline-list");
+      for (const desk of book.desks) {
+        const item = element("li");
+        item.append(element("h3", desk.label + " · " + desk.problem));
+        item.append(element("p", desk.target));
+        item.append(element("p", "Extension. " + desk.extension));
+        item.append(element("p", "Prior work. " + desk.prior, "muted"));
+        groups.append(item);
+      }
+      panel.append(title, groups, element("p", "Opening commit " + book.baseline.slice(0, 12), "muted"));
+    }
+
+    function renderEvent(panel, event) {
+      const desk = desks.get(event.desk || event.actor);
+      const label = {submission: "Submission", challenge: "Referee challenge", decision: "Referee decision"}[event.type];
+      const title = element("h2", event.title);
+      title.id = "stage-heading";
+      title.tabIndex = -1;
+      panel.append(element("span", desk.label + " · " + label, "event-kind"), title);
+      panel.append(element("p", event.summary, "event-summary"));
+      if (!event.evidence.length) return;
+      const evidence = element("section", undefined, "evidence");
+      evidence.setAttribute("aria-label", "Evidence for this stage");
+      evidence.append(element("h3", "Evidence"));
+      const links = element("ul", undefined, "receipts");
+      for (const receipt of event.evidence) {
+        const row = element("li");
+        const link = element("a", receipt.label);
+        link.href = receipt.href;
+        row.append(link, element("p", receipt.domain + " · " + receipt.method));
+        links.append(row);
+      }
+      evidence.append(links);
+      panel.append(evidence);
+    }
+
+    function render(index) {
+      if (index < 0 || index >= stages.length) return;
+      current = index;
+      const stage = stages[index];
+      for (const [id, score] of Object.entries(stage.scores)) {
+        const {value, fill, status, fields} = scoreCards.get(id);
+        value.textContent = score.total;
+        fill.style.width = (100 * score.total / maximum) + "%";
+        status.textContent = score.decision ? score.base_label : "Awaiting a decision";
+        for (const [key, points] of Object.entries(score.points)) fields[key].textContent = points;
+      }
+      const named = stage.leaders.map(id => desks.get(id).label);
+      const finalStage = settled && index === stages.length - 1;
+      byId("outcome").textContent = stage.status === "unscored" ? "Awaiting a referee decision" :
+        stage.status === "tie" ? named.join(" and ") + " tied" : named[0] + (finalStage ? " wins" : " leads");
+      byId("counter").textContent = "Stage " + index + " / " + (stages.length - 1);
+      for (const [i, button] of timeline.entries()) {
+        if (i === index) button.setAttribute("aria-current", "step");
+        else button.removeAttribute("aria-current");
+      }
+      byId("reset").disabled = index === 0;
+      byId("previous").disabled = index === 0;
+      byId("next").disabled = index === stages.length - 1;
+      const panel = byId("event");
+      panel.replaceChildren();
+      const event = eventByID.get(stage.event);
+      if (event) renderEvent(panel, event);
+      else renderBaseline(panel);
+    }
+
+    byId("reset").addEventListener("click", () => {
+      render(0);
+      byId("stage-heading").focus();
+    });
+    byId("previous").addEventListener("click", () => {
+      render(current - 1);
+      if (byId("previous").disabled) byId("next").focus();
+    });
+    byId("next").addEventListener("click", () => {
+      render(current + 1);
+      if (byId("next").disabled) byId("previous").focus();
+    });
+    render(current);
+    byId("match").hidden = false;
+  }
+
+  try {
+    start(JSON.parse(byId("match-data").textContent));
+  } catch (error) {
+    byId("load-error").hidden = false;
+  }
+</script>
+</body>
+</html>

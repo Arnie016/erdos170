@@ -1,0 +1,6 @@
+F3; edges=((0, 1), (1, 2)); isolated vertex=3
+Projective points=40; isotropic spaces=64; maximal spaces=10
+Exact clique and cover size=10
+Clique=((0, 0, 1, 0), (0, 1, 0, 0), (0, 1, 1, 0), (0, 1, 2, 0), (1, 1, 0, 0), (1, 1, 1, 0), (1, 1, 2, 0), (1, 2, 0, 0), (1, 2, 1, 0), (1, 2, 2, 0))
+Cover bases=(((1, 0, 2, 2), (0, 0, 1, 2), (0, 0, 0, 1)), ((0, 1, 0, 2), (0, 0, 0, 1)), ((0, 1, 1, 2), (0, 0, 0, 1)), ((0, 1, 2, 2), (0, 0, 0, 1)), ((1, 1, 0, 2), (0, 0, 0, 1)), ((1, 1, 1, 2), (0, 0, 0, 1)), ((1, 1, 2, 2), (0, 0, 0, 1)), ((1, 2, 0, 2), (0, 0, 0, 1)), ((1, 2, 1, 2), (0, 0, 0, 1)), ((1, 2, 2, 2), (0, 0, 0, 1)))
+PASS literal certificate and deliberately broken clique and cover controls

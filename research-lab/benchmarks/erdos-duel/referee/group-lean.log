@@ -1,0 +1,25 @@
+Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)
+ℹ [2/5] Built OpenMath.GraphCovers
+info: ././././OpenMath/GraphCovers.lean:328:0: 'OpenMath.GraphCovers.dominating_orthogonal_eq' depends on axioms: [propext, Quot.sound]
+info: ././././OpenMath/GraphCovers.lean:329:0: 'OpenMath.GraphCovers.dominating_orthogonal_isotropic' depends on axioms: [propext]
+info: ././././OpenMath/GraphCovers.lean:330:0: 'OpenMath.GraphCovers.exists_dominating_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ././././OpenMath/GraphCovers.lean:331:0: 'OpenMath.GraphCovers.binary_clique_cover_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3/5] Built OpenMath.Certificates
+info: ././././OpenMath/Certificates.lean:74:0: 'OpenMath.cliqueA_distinct' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:75:0: 'OpenMath.cliqueB_distinct' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:76:0: 'OpenMath.cliqueA_size' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:77:0: 'OpenMath.cliqueB_size' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:78:0: 'OpenMath.cliqueA_checked' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:79:0: 'OpenMath.cliqueB_checked' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:80:0: 'OpenMath.coverA_size' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:81:0: 'OpenMath.coverB_size' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:82:0: 'OpenMath.coverA_checked' depends on axioms: [propext]
+info: ././././OpenMath/Certificates.lean:83:0: 'OpenMath.coverB_checked' depends on axioms: [propext]
+info: ././././OpenMath/Certificates.lean:84:0: 'OpenMath.product_noncommutes_left' does not depend on any axioms
+info: ././././OpenMath/Certificates.lean:85:0: 'OpenMath.product_noncommutes_right' does not depend on any axioms
+✔ [4/5] Built OpenMath
+Build completed successfully.
+'OpenMath.GraphCovers.dominating_orthogonal_eq' depends on axioms: [propext, Quot.sound]
+'OpenMath.GraphCovers.dominating_orthogonal_isotropic' depends on axioms: [propext]
+'OpenMath.GraphCovers.exists_dominating_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'OpenMath.GraphCovers.binary_clique_cover_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
