@@ -44,11 +44,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          lake env lean OpenMath/Certificates.lean | tee axioms.log
-          if grep -E 'sorryAx|Lean\.ofReduceBool|Lean\.trustCompiler' axioms.log; then
-            echo 'Unapproved theorem dependency detected'
-            exit 1
-          fi
+          python3 audit_axioms.py | tee axioms.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -71,4 +67,54 @@ jobs:
           name: mathematical-certificates-and-receipts
           path: research-lab/_generated/**
           include-hidden-files: true
+          if-no-files-found: error
+  proof-duel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Replay the scores, negative controls and independent referee
+        working-directory: research-lab/benchmarks/erdos-duel
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B scoreboard.py --check-evidence --check-html
+          python3 -B -m unittest discover -p test_scoreboard.py -v
+          python3 -B referee/check_odd_cover.py > "$RUNNER_TEMP/odd.txt"
+          diff -u referee/odd_cover.log "$RUNNER_TEMP/odd.txt"
+          python3 -B referee/check_ruler.py --max-r 16 --any-pair > "$RUNNER_TEMP/ruler.txt"
+          diff -u referee/ruler.log "$RUNNER_TEMP/ruler.txt"
+      - name: Check the two solvers' certificates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -B research-lab/problems/erdos-117/runs/2026-11-28-graph-covers/check_two_edges_f3.py
+          run=research-lab/problems/erdos-170/runs/2026-11-28-exterior-repair
+          mixed=research-lab/problems/erdos-170/runs/2026-11-28-mixed-repair
+          python3 -B "$mixed/verify_edges.py"
+          python3 -B "$mixed/verify_mixed.py" --max-r 24
+          python3 -B "$run/check_repair.py" --max-r 25 > "$RUNNER_TEMP/pairs.txt"
+          diff -u "$run/finite-check.txt" "$RUNNER_TEMP/pairs.txt"
+      - name: Reproduce the entire Metal result table with portable C++
+        working-directory: research-lab/problems/erdos-170/runs/2026-11-28-exterior-repair/gpu
+        shell: bash
+        run: |
+          set -euo pipefail
+          c++ -std=c++17 -O3 -Wall -Wextra -pedantic verify_cpu.cpp -o "$RUNNER_TEMP/ruler-cpu"
+          "$RUNNER_TEMP/ruler-cpu" 32 > "$RUNNER_TEMP/cpu.csv"
+          diff -u results.csv "$RUNNER_TEMP/cpu.csv"
+          python3 -B check_results.py
+          python3 -B check_template.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: erdos-proof-duel
+          path: |
+            research-lab/benchmarks/erdos-duel
+            research-lab/lean/OpenMath/*.lean
+            research-lab/problems/erdos-117/runs/2026-11-28-graph-covers
+            research-lab/problems/erdos-170/runs/2026-11-28-exterior-repair
+            research-lab/problems/erdos-170/runs/2026-11-28-mixed-repair
           if-no-files-found: error

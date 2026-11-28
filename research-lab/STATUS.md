@@ -10,8 +10,16 @@ This is a public research notebook, not a list of solved headline Erdős problem
 | Modular n=6, N=69 | Complete signed unit-dyadic replacement-distance census | Two independent implementations, 66 canonical sets, 4,224 sign lifts | UNFORMALIZED |
 | Basis-independent cross-radical bound | Exact hypotheses in October 5 note | Ordinary proof and finite matrix regression | UNFORMALIZED |
 | General Erdős #117 | h(n)=sup a(G) over all groups with omega(G)<=n | No solution claimed by this project | OPEN IN THIS PROJECT |
-| General Erdős #170 | Restricted difference bases and sparse-ruler asymptotics | Original suite outside this subtree retained; no solution claimed | OPEN IN THIS PROJECT |
+| General Erdős #170 | Restricted difference bases and sparse-ruler asymptotics | Local stability theorem for the canonical family at fixed length | OPEN IN THIS PROJECT |
 | Earlier claimed recurrence improvements | Historical local/asymptotic calculations not imported here | Dependency audit needed before acceptance | NOT ACCEPTED AS GLOBAL THEOREMS |
+
+## November 28 proof duel
+
+| Result | Evidence and scope |
+| --- | --- |
+| Graphical commutator maps | An ordinary proof gives the exact clique and isotropic-cover numbers over every finite field and their group interpretation. Lean proves both optima for the binary map. [Proof](problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md) · [Formal statement](lean/OpenMath/GraphCovers.lean) |
+| Canonical Wichmann rulers | Any two original marks removed and one fresh coordinate inserted leave at least one gap in coverage. The best possible deficit divided by the radius tends to one. The bounds have an ordinary proof with verified components. [Proof](problems/erdos-170/runs/2026-11-28-exterior-repair/DEFICIT-BOUNDS.md) |
+| Sharp deficit | Metal and independent portable C++ agree for all edits through radius 32. The predicted equality at every larger radius is open. [Data and replay](problems/erdos-170/runs/2026-11-28-exterior-repair/gpu/README.md) |
 
 ## Verified versus reproduced
 

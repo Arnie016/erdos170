@@ -18,6 +18,8 @@
 
 > **No headline Erdős solution is claimed.** A finite certificate, an ordinary proof and a Lean-checked theorem are different evidence. CI verifies submitted content; it does not create mathematical discoveries.
 
+The November 28 proof duel produced a graphical group-cover formula and a stability theorem for a canonical sparse ruler. The replay records two agents’ attempts and the referee’s scoring. [Open the match](research-lab/benchmarks/erdos-duel/README.md) · [Read the ruler theorem](research-lab/problems/erdos-170/runs/2026-11-28-exterior-repair/DEFICIT-BOUNDS.md)
+
 ## Read the lab in one minute
 
 **New here?** Open a problem page for its plain-language question, existing results and one next test.

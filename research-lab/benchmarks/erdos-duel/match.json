@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "title": "Erdős proof duel",
+  "baseline": "81ef55af285a4ea7db72a11e2a0b2a128be394fb",
+  "desks": [
+    {
+      "id": "ruler",
+      "label": "Ruler desk",
+      "problem": "Erdős #170",
+      "target": "Decide whether two exterior marks of the canonical Wichmann ruler can be replaced by one fresh mark while every original length remains measurable.",
+      "extension": "Allow both deleted marks to be anywhere in the original ruler, including both middle junctions.",
+      "prior": "The strict-middle cases and a Lean counting lemma were already known at the start of the match."
+    },
+    {
+      "id": "group",
+      "label": "Group desk",
+      "problem": "Erdős #117",
+      "target": "For every finite simple graph over the binary field, decide whether the nonorthogonal clique number and isotropic cover number both count dominating vertex subsets.",
+      "extension": "Give and check a weighted count over dominating supports over every finite field.",
+      "prior": "Four binary three-edge cases and a finite rank-five census preceded the match. Lecomte's preprint concerns the global abelian-cover profile."
+    }
+  ],
+  "events": [
+    {
+      "id": "group-opening",
+      "type": "submission",
+      "actor": "group",
+      "title": "Group proposes the dominating-support formula",
+      "summary": "On a dominating support, orthogonality forces one scalar on each induced connected component. The opening argument counts projective profiles, uses them for a clique, and proposes extending any support by independent undominated vertices for the cover. The predicted weight over a field of size q is (q−1) raised to |S|−c(H[S]).",
+      "evidence": []
+    },
+    {
+      "id": "ruler-opening",
+      "type": "submission",
+      "actor": "ruler",
+      "title": "Ruler proposes a residue bound",
+      "summary": "Two exterior deletions lose two columns of unique differences to the strict middle block. Each column has a single residue modulo the middle step. The proposed bound allows at most 16 restoration pairs with exterior partners and 2r+1 with middle partners. It excludes r≥10 if the residue and uniqueness arguments hold.",
+      "evidence": []
+    },
+    {
+      "id": "ruler-challenge",
+      "type": "challenge",
+      "actor": "referee",
+      "desk": "ruler",
+      "reply_to": "ruler-opening",
+      "title": "Referee asks for the finite boundary",
+      "summary": "Check each block's residue injection using coprimality. Explain why coincident column residues cannot invalidate the upper bound. Deal with endpoint deletion and give a complete replay for 1≤r≤9, including freshness, the fixed interval, and deliberately broken controls.",
+      "evidence": []
+    },
+    {
+      "id": "group-challenge",
+      "type": "challenge",
+      "actor": "referee",
+      "desk": "group",
+      "reply_to": "group-opening",
+      "title": "Referee challenges the cover at isolated vertices",
+      "summary": "Prove both support containments when dominating vectors are orthogonal. Check that each centralizer is totally isotropic and that the extension handles empty supports, disconnected induced graphs, and mandatory isolated vertices. Test the determinant in odd characteristic and match the literal binary theorem to Lean.",
+      "evidence": []
+    },
+    {
+      "id": "group-response",
+      "type": "submission",
+      "actor": "group",
+      "reply_to": "group-challenge",
+      "title": "Group supplies the cover and a binary Lean proof",
+      "summary": "A pair of orthogonal dominating vectors has the same support by containment in both directions. The cover adds an independent set in the undominated induced graph, and its new vertices become singleton components. The proof treats zero and isolated vertices explicitly. The submitted Lean theorem checks the binary optimum. A separate F₃ fixture tests two disjoint edges and an isolate.",
+      "evidence": [
+        {
+          "kind": "base",
+          "label": "Graph-coordinate proof",
+          "href": "../../problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md",
+          "domain": "Every finite simple graph and finite field",
+          "method": "Support classification, clique and explicit cover"
+        },
+        {
+          "kind": "extension",
+          "label": "Two-edge F₃ check",
+          "href": "../../problems/erdos-117/runs/2026-11-28-graph-covers/check_two_edges_f3.py",
+          "domain": "Two disjoint edges and an isolated vertex, 243 vectors",
+          "method": "Determinants and covering spans with controls"
+        },
+        {
+          "kind": "lean",
+          "label": "Pinned replay instructions",
+          "href": "../../problems/erdos-117/runs/2026-11-28-graph-covers/REPLAY.md",
+          "domain": "Full binary target",
+          "method": "Lean 4.19.0 build and axiom audit"
+        }
+      ]
+    },
+    {
+      "id": "group-decision",
+      "type": "decision",
+      "actor": "referee",
+      "desk": "group",
+      "reply_to": "group-response",
+      "title": "Referee accepts the graph-coordinate theorem",
+      "summary": "The clique and cover have matching sizes for every graph over every finite field. The pinned Lean theorem checks the binary result and both optimality directions. An independent F₃ check derives ten clique vectors and ten covering spaces for a path and an isolate, and rejects defective witnesses. The result concerns graph-coordinate alternating maps. Rossmann and Qiao establish related structure and counting results. Literature priority for the cover formula remains unverified.",
+      "grade": {
+        "base": 8,
+        "extension": true,
+        "lean": 2,
+        "independent": true
+      },
+      "evidence": [
+        {
+          "kind": "base",
+          "label": "Proof reviewed by the referee",
+          "href": "../../problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md",
+          "domain": "All finite simple graphs, with isolates allowed",
+          "method": "Matching clique and cover in the binary case"
+        },
+        {
+          "kind": "extension",
+          "label": "Weighted formula and odd-field replay",
+          "href": "../../problems/erdos-117/runs/2026-11-28-graph-covers/REPLAY.md",
+          "domain": "Arbitrary finite fields plus a five-coordinate F₃ test",
+          "method": "Component lines with a direct signed-determinant control"
+        },
+        {
+          "kind": "lean",
+          "label": "Full binary Lean theorem",
+          "href": "../../lean/OpenMath/GraphCovers.lean",
+          "domain": "Any simple graph on a finite vertex type",
+          "method": "Duplicate-free support enumeration and universal optimality"
+        },
+        {
+          "kind": "lean",
+          "label": "Referee's pinned build",
+          "href": "referee/group-lean.log",
+          "domain": "Lean 4.19.0 on a fresh copy of the pinned project",
+          "method": "Successful Lake build and theorem-specific axiom output"
+        },
+        {
+          "kind": "independent",
+          "label": "Referee's literal F₃ checker",
+          "href": "referee/check_odd_cover.py",
+          "domain": "Three-vertex path and an isolated vertex, 81 vectors",
+          "method": "Clique search, span enumeration and broken certificates"
+        },
+        {
+          "kind": "independent",
+          "label": "Independent replay result",
+          "href": "referee/odd_cover.log",
+          "domain": "Three-vertex path and an isolated vertex over F₃",
+          "method": "Matching clique and cover of size ten"
+        },
+        {
+          "kind": "context",
+          "label": "Rossmann's centralizer calculation",
+          "href": "https://arxiv.org/abs/2107.05564v3",
+          "domain": "Graphical groups over finite fields",
+          "method": "Lemma 3.2 identifies the same support-component structure"
+        },
+        {
+          "kind": "context",
+          "label": "Qiao's related enumeration",
+          "href": "https://arxiv.org/html/2408.09963v2",
+          "domain": "Graphical alternating matrix spaces",
+          "method": "Counts isotropic subspaces by dimension"
+        }
+      ]
+    },
+    {
+      "id": "ruler-response",
+      "type": "submission",
+      "actor": "ruler",
+      "reply_to": "ruler-challenge",
+      "title": "Ruler tests small cases and handles the junctions",
+      "summary": "Coprimality gives a uniform bound of two partners per block and missing residue, which also covers coincident columns. The finite replay tests the original interval for every deletion pair through r=16. For r≥17, losses to the opposite progression localize the possible insertion near a deleted junction. A congruence rules out middle-block restoration of losses caused by a cap deletion. Progression capacity and incompatible insertion intervals close the other junction cases.",
+      "evidence": [
+        {
+          "kind": "base",
+          "label": "Submitted finite checker",
+          "href": "../../problems/erdos-170/runs/2026-11-28-exterior-repair/check_repair.py",
+          "domain": "All exterior and all original-mark deletion pairs, 1≤r≤25",
+          "method": "Exact retained differences and a missing-length sieve"
+        },
+        {
+          "kind": "base",
+          "label": "Submitted finite replay",
+          "href": "../../problems/erdos-170/runs/2026-11-28-exterior-repair/finite-check.txt",
+          "domain": "Every r from 1 through 25",
+          "method": "Separate totals for exterior and unrestricted deletion pairs"
+        },
+        {
+          "kind": "lean",
+          "label": "Submitted residue lemmas",
+          "href": "../../lean/OpenMath/ExteriorRepair.lean",
+          "domain": "Integer residue capacity and cap congruence",
+          "method": "Lean 4.19.0 formalizes the modular bridge"
+        }
+      ]
+    },
+    {
+      "id": "ruler-decision",
+      "type": "decision",
+      "actor": "referee",
+      "desk": "ruler",
+      "reply_to": "ruler-response",
+      "title": "Referee accepts the all-pair repair obstruction",
+      "summary": "The exterior residue bound handles r≥10. For the full extension, a junction's unique losses force a short insertion interval for r≥17. The progression and cap cases exhaust the possible second deletion. The direct finite replay checked 58,929,528 fresh insertions for all pairs through r=16, and the ordinary argument extends the result to every positive r. Lean checks the modular bridge. The theorem concerns single-insertion repair of this canonical family at its original length.",
+      "grade": {
+        "base": 8,
+        "extension": true,
+        "lean": 1,
+        "independent": true
+      },
+      "evidence": [
+        {
+          "kind": "base",
+          "label": "Exterior deletion proof",
+          "href": "../../problems/erdos-170/runs/2026-11-28-exterior-repair/PROOF.md#two-exterior-deletions",
+          "domain": "All exterior pairs, including endpoints",
+          "method": "Two unique-loss columns, residue capacity and exact finite boundary"
+        },
+        {
+          "kind": "extension",
+          "label": "Junction cases and full theorem",
+          "href": "../../problems/erdos-170/runs/2026-11-28-exterior-repair/PROOF.md#when-a-junction-is-deleted",
+          "domain": "Every distinct pair of original marks and every admissible insertion",
+          "method": "Progression localization and incompatible residues or insertion intervals"
+        },
+        {
+          "kind": "lean",
+          "label": "Lean residue lemmas",
+          "href": "../../lean/OpenMath/ExteriorRepair.lean",
+          "domain": "Signed absolute differences and residue-injective partner blocks",
+          "method": "Two-partner bound and cap-congruence impossibility"
+        },
+        {
+          "kind": "lean",
+          "label": "Referee's pinned build",
+          "href": "referee/ruler-lean.log",
+          "domain": "Lean 4.19.0 on a fresh copy of the pinned project",
+          "method": "Successful Lake build and theorem-specific axiom output"
+        },
+        {
+          "kind": "independent",
+          "label": "Referee's direct finite check",
+          "href": "referee/check_ruler.py",
+          "domain": "Every original-mark pair and fresh insertion for 1≤r≤16",
+          "method": "Direct residual difference masks, with full and broken repair controls"
+        },
+        {
+          "kind": "independent",
+          "label": "Independent replay result",
+          "href": "referee/ruler.log",
+          "domain": "29,016 deletion pairs and 58,929,528 fresh insertions",
+          "method": "Zero repairs throughout the exact finite boundary"
+        }
+      ]
+    }
+  ]
+}

@@ -40,8 +40,8 @@ At n=7 and modulus 133, can an admissible set require more than one replacement 
 
 ## Navigate
 
-[Reproduction instructions](../../REPRODUCING.md)  
-[Claim status](../../STATUS.md)  
+- [Reproduction instructions](../../REPRODUCING.md)
+- [Claim status](../../STATUS.md)
 
 [Reproduce the existing studies](../../REPRODUCING.md). A new catalog entry does not automatically run a new verifier.
 

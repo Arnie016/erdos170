@@ -12,25 +12,73 @@ For a ruler on {0,...,N}, every distance 1,...,N must occur as a difference of t
 
 ## Read this first
 
-Heuristic candidates are not optimality certificates. The continuous autocorrelation parameter tau is not the discrete sparse-ruler limit. No new #170 numerical or asymptotic result is added by this navigation release.
+The current stability theorem concerns a fixed-length two-deletion, one-insertion edit on the canonical Wichmann family. The unrestricted sparse-ruler asymptotic optimum is a different question.
 
 ## Results and evidence
 
-No numerical result is imported into this catalog for this lane. Original work remains available through the links below.
+| Date | Result | Validity | Proof and code |
+|---|---|---|---|
+| 2026-11-28 | No perfect two-delete, one-insert repair | ANALYTICAL_PROOF | [Proof](runs/2026-11-28-exterior-repair/PROOF.md) · [Code 1](runs/2026-11-28-exterior-repair/check_repair.py) · [Code 2](../../benchmarks/erdos-duel/referee/check_ruler.py) · [Code 3](../../lean/OpenMath/ExteriorRepair.lean) |
+| 2026-11-28 | Two-junction edit misses exactly r+5 distances | ANALYTICAL_PROOF | [Proof](runs/2026-11-28-exterior-repair/gpu/JUNCTION-EDIT.md) · [Code 1](runs/2026-11-28-exterior-repair/gpu/check_template.py) |
+| 2026-11-28 | Exact repair minima at 32 radii and eight held-out predictions | EXACT_FINITE_CERTIFICATE | [Proof](runs/2026-11-28-exterior-repair/gpu/README.md) · [Code 1](runs/2026-11-28-exterior-repair/gpu/RepairGPU.swift) · [Code 2](runs/2026-11-28-exterior-repair/gpu/repair.metal) · [Code 3](runs/2026-11-28-exterior-repair/gpu/verify_cpu.cpp) · [Code 4](runs/2026-11-28-exterior-repair/gpu/check_results.py) |
+| 2026-11-28 | The best repair deficit divided by r tends to one | ANALYTICAL_PROOF | [Proof](runs/2026-11-28-exterior-repair/DEFICIT-BOUNDS.md) · [Code 1](../../lean/OpenMath/ExteriorRepair.lean) · [Code 2](../../lean/OpenMath/DeficitBounds.lean) |
+| 2026-11-28 | Prior baseline for a strict middle and exterior deletion | ANALYTICAL_PROOF | [Proof](runs/2026-11-28-mixed-repair/PROOF.md) · [Code 1](runs/2026-11-28-mixed-repair/verify_edges.py) · [Code 2](runs/2026-11-28-mixed-repair/verify_mixed.py) · [Code 3](../../lean/OpenMath/OneNewMark.lean) |
+
+<details>
+<summary>Exact scope and evidence provenance</summary>
+
+### No perfect two-delete, one-insert repair
+
+At the original length of W(r,2r), every two original deletions and one fresh insertion miss a positive distance for r ≥ 1. The proof combines unique-distance and residue counts with a finite boundary checked independently through r=16. Lean verifies the residue lemmas.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+### Two-junction edit misses exactly r+5 distances
+
+Delete the junctions L and R and insert L+b. The exact complementary set has cardinality r+5 for every r ≥ 2. Literal pair enumeration checks the full set through radius 100. This is an upper bound on the minimum across edits.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+### Exact repair minima at 32 radii and eight held-out predictions
+
+Metal and independent C++ enumerated 213,936 deletion pairs and 1,657,494,000 legal edit triples at fixed length. The optimum is 4 at radius 1 and r+5 for radii 2 through 32. The prediction for 25 through 32 was committed before evaluation.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+### The best repair deficit divided by r tends to one
+
+For every r ≥ 2, the minimum number of missing distances in the full edit domain is between max(1,r−8) and r+5. The written argument proves the geometry. Lean proves specific modular lemmas and the rational epsilon implication assuming those inequalities.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+### Prior baseline for a strict middle and exterior deletion
+
+Deleting one strict middle mark and one exterior mark and adding one fresh integer cannot keep full distance coverage in W(r,2r). This result and its collision table were available before the duel and earned zero match points.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+</details>
 
 ## Next bounded question
 
-Audit a saved discrete candidate together with its stated lower bound before promoting it from a search output to an exact result.
+Does every legal two-delete, one-insert edit of the canonical ruler miss at least r+5 distances for every r ≥ 2?
 
-**Discriminating test:** A missing distance invalidates a complete-ruler claim. A candidate without a matching lower bound is not an optimum.
+**Discriminating test:** Find one r ≥ 33 and an explicit permitted edit missing at most r+4 distances. The two-junction construction gives the matching upper bound for every r ≥ 2.
 
 ## Navigate
 
-[Original installation and experiment guide](../../../README.md#sparse-ruler-guide)  
-[Source code](../../../src)  
-[Experiment configurations](../../../configs)  
-[Saved results](../../../results)  
-[Paper artifacts](../../../paper)  
+- [Original installation and experiment guide](../../../README.md#sparse-ruler-guide)
+- [Source code](../../../src)
+- [Experiment configurations](../../../configs)
+- [Saved results](../../../results)
+- [Paper artifacts](../../../paper)
+- [Two-researcher match and referee replay](../../benchmarks/erdos-duel/README.md)
+- [Frozen holdout prediction](runs/2026-11-28-exterior-repair/gpu/PREDICTION.md)
 
 [Reproduce the existing studies](../../REPRODUCING.md). A new catalog entry does not automatically run a new verifier.
 
