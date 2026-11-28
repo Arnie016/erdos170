@@ -143,12 +143,16 @@ def render(data: dict) -> dict[str,str]:
                 body += [f"### {r['title']}",'',r['scope'],'',
                          f"Formalization: **{r['formal_status']}**. Literature: **{r['literature']}**.",
                          (f"Recorded computational reproduction: [run]({r['evidence_run']}) at `{r['evidence_commit']}`. This is historical evidence, not a claim about today's CI." if r.get('evidence_run') else f"Evidence baseline: `{r['evidence_commit']}`. No CI execution is claimed for this entry. Inspect the proof and its assumptions."),'']
+                if r['formal_status'] == 'LEAN_VERIFIED_AT_COMMIT':
+                    evidence = r['formal_evidence']
+                    source = link(target, evidence['path'], 'Lean source')
+                    body += [f"Verified declaration `{evidence['theorem']}` at `{evidence['commit']}`. {source}", '']
             body+=['</details>','']
         else:
             body+=['No numerical result is imported into this catalog for this lane. Original work remains available through the links below.','']
         body+=['## Next bounded question','',p['next_question'],'',f"**Discriminating test:** {p['falsifier']}",'',
                '## Navigate','']
-        body += [link(target,r['path'],r['label'])+'  ' for r in p['resources']]
+        body += ['- '+link(target,r['path'],r['label']) for r in p['resources']]
         body+=['','[Reproduce the existing studies](../../REPRODUCING.md). A new catalog entry does not automatically run a new verifier.','',
                '## Versioning','',
                'New work goes in `runs/YYYY-MM-DD-short-name/` under this problem. Keep proof, code and receipts together; register them in `../catalog.json`. Existing dated study paths are stable.', '',

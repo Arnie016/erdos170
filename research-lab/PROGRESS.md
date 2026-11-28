@@ -8,6 +8,13 @@ Mathematical entries below are existing registered studies, not newly rediscover
 
 | Date | Problem | Contribution | Validity |
 |---|---|---|---|
+| 2026-11-28 | [erdos-170](problems/erdos-170/README.md) | [No perfect two-delete, one-insert repair](problems/erdos-170/runs/2026-11-28-exterior-repair/PROOF.md) | ANALYTICAL_PROOF |
+| 2026-11-28 | [erdos-170](problems/erdos-170/README.md) | [Two-junction edit misses exactly r+5 distances](problems/erdos-170/runs/2026-11-28-exterior-repair/gpu/JUNCTION-EDIT.md) | ANALYTICAL_PROOF |
+| 2026-11-28 | [erdos-170](problems/erdos-170/README.md) | [Exact repair minima at 32 radii and eight held-out predictions](problems/erdos-170/runs/2026-11-28-exterior-repair/gpu/README.md) | EXACT_FINITE_CERTIFICATE |
+| 2026-11-28 | [erdos-170](problems/erdos-170/README.md) | [The best repair deficit divided by r tends to one](problems/erdos-170/runs/2026-11-28-exterior-repair/DEFICIT-BOUNDS.md) | ANALYTICAL_PROOF |
+| 2026-11-28 | [erdos-170](problems/erdos-170/README.md) | [Prior baseline for a strict middle and exterior deletion](problems/erdos-170/runs/2026-11-28-mixed-repair/PROOF.md) | ANALYTICAL_PROOF |
+| 2026-11-28 | [erdos-117](problems/erdos-117/README.md) | [Exact graphical clique and cover numbers over finite fields](problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md) | ANALYTICAL_PROOF |
+| 2026-11-28 | [erdos-117](problems/erdos-117/README.md) | [Binary graph covers equal the number of dominating supports](problems/erdos-117/runs/2026-11-28-graph-covers/REPLAY.md) | ANALYTICAL_PROOF |
 | 2026-10-09 | [erdos-117](problems/erdos-117/README.md) | [174,251 rank-five scalar planes](studies/erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md) | EXACT_FINITE_CERTIFICATE |
 | 2026-10-08 | [erdos-117](problems/erdos-117/README.md) | [2,825 rank-four kernels](studies/erdos117-2026-10-08/proofs/all_rank4_pencils_census.md) | EXACT_FINITE_CERTIFICATE |
 | 2026-10-07 | [erdos-117](problems/erdos-117/README.md) | [4,096 ordered form pairs](studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md) | EXACT_FINITE_CERTIFICATE |
@@ -18,6 +25,8 @@ Mathematical entries below are existing registered studies, not newly rediscover
 | 2026-10-03 | [erdos-117](problems/erdos-117/README.md) | [Coupled-padding rank budget](studies/erdos117-2026-10-03/proofs/coupled_padding_rank_budget.md) | ANALYTICAL_PROOF |
 
 ## Infrastructure, separate from mathematical results
+
+**2026-11-28 · INFRASTRUCTURE:** [Added a two-desk proof benchmark with recorded challenges, a portable replay and a tested evidence-based scorer.](benchmarks/erdos-duel/README.md)
 
 **2026-10-14 · INFRASTRUCTURE:** [Added problem-first navigation, a reproducible progress index and navigation validation. No new mathematical theorem.](maintenance/2026-10-14-navigation.md)
 

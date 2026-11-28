@@ -12,12 +12,14 @@ Write a(G) for the minimum abelian-subgroup cover size and omega(G) for the maxi
 
 ## Read this first
 
-No solution of the headline problem is claimed here. Finite censuses, ordinary proofs and Lean-checked witnesses have different scopes. External open/solved status is not inferred from repository labels.
+The graph-family formula has an ordinary proof. Lean checks both binary map optima. The group realization and general finite-field extension have separate written arguments. Lecomte’s November preprint claims the unrestricted profile.
 
 ## Results and evidence
 
 | Date | Result | Validity | Proof and code |
 |---|---|---|---|
+| 2026-11-28 | Exact graphical clique and cover numbers over finite fields | ANALYTICAL_PROOF | [Proof](runs/2026-11-28-graph-covers/PROOF.md) · [Code 1](runs/2026-11-28-graph-covers/check_two_edges_f3.py) · [Code 2](../../benchmarks/erdos-duel/referee/check_odd_cover.py) |
+| 2026-11-28 | Binary graph covers equal the number of dominating supports | ANALYTICAL_PROOF | [Proof](runs/2026-11-28-graph-covers/REPLAY.md) · [Code 1](../../lean/OpenMath/GraphCovers.lean) · [Code 2](../../lean/audit_axioms.py) |
 | 2026-10-09 | 174,251 rank-five scalar planes | EXACT_FINITE_CERTIFICATE | [Proof](../../studies/erdos117-2026-10-09/proofs/rank5_two_coordinate_pencils.md) · [Code 1](../../studies/erdos117-2026-10-09/src/rank5_two_pencils.cpp) · [Code 2](../../studies/erdos117-2026-10-09/src/worker2_iso_cover.cpp) |
 | 2026-10-08 | 2,825 rank-four kernels | EXACT_FINITE_CERTIFICATE | [Proof](../../studies/erdos117-2026-10-08/proofs/all_rank4_pencils_census.md) · [Code 1](../../studies/erdos117-2026-10-08/src/worker1_rref_graph.py) · [Code 2](../../studies/erdos117-2026-10-08/src/worker2_bfs_subspace_cover.py) |
 | 2026-10-07 | 4,096 ordered form pairs | EXACT_FINITE_CERTIFICATE | [Proof](../../studies/erdos117-2026-10-07/proofs/order64_bilinear_family_census.md) · [Code 1](../../studies/erdos117-2026-10-07/src/worker1_census.py) · [Code 2](../../studies/erdos117-2026-10-07/src/worker2_independent.py) |
@@ -28,6 +30,22 @@ No solution of the headline problem is claimed here. Finite censuses, ordinary p
 
 <details>
 <summary>Exact scope and evidence provenance</summary>
+
+### Exact graphical clique and cover numbers over finite fields
+
+For edge commutator maps on a finite simple graph over any finite field, a weighted sum over dominating supports counts both optima and the maximal isotropic subspaces. The written proof also treats the associated graphical groups. Two independent odd-field examples exercise the construction.
+
+Formalization: **UNFORMALIZED**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+### Binary graph covers equal the number of dominating supports
+
+For each finite simple Boolean graph, the binary edge alternating map admits a clique of all dominating supports and a matching cover by isotropic subspaces. Both optimization inequalities hold over all binary vectors. This entry concerns the map theorem.
+
+Formalization: **LEAN_VERIFIED_AT_COMMIT**. Literature: **PRIORITY_UNCHECKED**.
+Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/actions/runs/46112990968) at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. This is historical evidence, not a claim about today's CI.
+
+Verified declaration `OpenMath.GraphCovers.binary_clique_cover_domination` at `a54a4b5ce6061f2c9375bd33641f4f7ae4284a21`. [Lean source](../../lean/OpenMath/GraphCovers.lean)
 
 ### 174,251 rank-five scalar planes
 
@@ -82,15 +100,16 @@ Recorded computational reproduction: [run](https://github.com/Arnie016/erdos170/
 
 ## Next bounded question
 
-Does a three-coordinate alternating map on F2^5 have a cover number strictly larger than its noncommuting clique number?
+Can a three-output alternating map on five binary coordinates outside the graphical family have a strict gap between its cover and clique numbers?
 
-**Discriminating test:** An independently checked matching cover and clique does not settle the whole class. One certified gap decides existence positively; a complete exclusion needs its own proof or complete domain.
+**Discriminating test:** Exhibit such a nongraphical map and certify its two optima independently, or exhaust the precisely defined class.
 
 ## Navigate
 
-[Claim and formalization status](../../STATUS.md)  
-[Lean witness library](../../lean/README.md)  
-[Public-source ledger](../../SOURCES.md)  
+- [Claim and formalization status](../../STATUS.md)
+- [Lean witness library](../../lean/README.md)
+- [Public-source ledger](../../SOURCES.md)
+- [Two-researcher match and referee replay](../../benchmarks/erdos-duel/README.md)
 
 [Reproduce the existing studies](../../REPRODUCING.md). A new catalog entry does not automatically run a new verifier.
 

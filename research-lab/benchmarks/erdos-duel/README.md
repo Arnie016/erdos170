@@ -11,6 +11,15 @@ The replay uses only the rules in the [frozen brief](PROJECT_BRIEF.md) and the r
 
 Group wins the match. Its weighted dominating-support formula gives two exact optima across every finite simple graph and finite field, and Lean checks the full binary case. Ruler closes every two-delete, one-insert edit in the canonical family at its original length by combining the general argument and an exact finite boundary. Lean checks the residue argument used by the Ruler proof. [Group proof](../../problems/erdos-117/runs/2026-11-28-graph-covers/PROOF.md) · [Ruler proof](../../problems/erdos-170/runs/2026-11-28-exterior-repair/PROOF.md)
 
+## The referee’s two challenges
+
+| Desk | Referee feedback | What changed before the award |
+| --- | --- | --- |
+| Group | Show that the proposed cover reaches every vector, including vectors with zero isolated coordinates. | The response extends each support to a dominating one and proves a matching clique. Lean checks the binary construction. The referee independently recovered an odd-field example of size 10. |
+| Ruler | Supply the finite boundary and account for deleted junctions. | The response gives an all-pair case split and an explicit finite boundary. The referee tried all 58,929,528 edits through radius 16 and tested a broken repair. |
+
+The [eight-event record](match.json) preserves the argument each desk submitted before receiving feedback.
+
 ## After the final score
 
 Compute exposed a sharper question for the ruler. Across 1,657,494,000 legal edits the observed optimum missed exactly the radius plus five distances for every radius 2 through 32. A two-junction construction attains that count for all larger radii too. A separate lower bound puts the best achievable deficit within 13 of the construction, giving a limit of one for the minimum deficit divided by the radius. The frozen match score predates this follow-up. [Quantitative theorem](../../problems/erdos-170/runs/2026-11-28-exterior-repair/DEFICIT-BOUNDS.md) · [Full search and held-out predictions](../../problems/erdos-170/runs/2026-11-28-exterior-repair/gpu/README.md)
@@ -35,9 +44,9 @@ LC_ALL=C python3 -B referee/check_ruler.py --max-r 16 --any-pair
 LC_ALL=C python3 -B referee/check_odd_cover.py
 ```
 
-The ruler check encodes each mark as one integer bit. Shifting the retained mark bits by each retained mark yields their positive differences. A reflection of the retained bits supplies the differences on the other side of each fresh insertion. The checker enumerates every original-mark deletion pair and every fresh insertion in the fixed interval for \(1\le r\le16\). It tests a known repair, a broken repair, and a missing endpoint. [Ruler replay](referee/ruler.log)
+The ruler check encodes each mark as one integer bit. Shifting the retained mark bits by each retained mark yields their positive differences. A reflection of the retained bits supplies the differences on the other side of each fresh insertion. The checker enumerates every original-mark deletion pair and every fresh insertion in the fixed interval for $1\le r\le16$. It tests a known repair, a broken repair, and a missing endpoint. [Ruler replay](referee/ruler.log)
 
-For the graph with edges 01 and 12 and isolated vertex 3, the group check computes signed determinants over \(\mathbb F_3\), searches for a clique, and constructs isotropic spans independently of the dominating-support formula. It validates the matching ten-element clique and ten-space cover against all 81 vectors. The checker rejects both a broken clique and a broken cover. [Odd-field replay](referee/odd_cover.log)
+For the graph with edges 01 and 12 and isolated vertex 3, the group check computes signed determinants over $\mathbb F_3$, searches for a clique, and constructs isotropic spans independently of the dominating-support formula. It validates the matching ten-element clique and ten-space cover against all 81 vectors. The checker rejects both a broken clique and a broken cover. [Odd-field replay](referee/odd_cover.log)
 
 ## Record another match
 

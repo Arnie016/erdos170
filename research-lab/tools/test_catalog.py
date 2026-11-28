@@ -28,7 +28,9 @@ class CatalogTests(unittest.TestCase):
         catalog.validate(self.data,self.root)
         self.assertIn('No CI execution is claimed',catalog.render(self.data)['research-lab/problems/erdos-117/README.md'])
     def test_finite_certificate_needs_code(self):
-        r=self.data['problems'][0]['results'][-1];r['code']=[]
+        r=next(result for result in self.data['problems'][0]['results']
+               if result['validity']=='EXACT_FINITE_CERTIFICATE')
+        r['code']=[]
         with self.assertRaises(ValueError): catalog.validate(self.data,self.root)
     def test_duplicate_problem_rejected(self):
         self.data['problems'].append(copy.deepcopy(self.data['problems'][0]))
